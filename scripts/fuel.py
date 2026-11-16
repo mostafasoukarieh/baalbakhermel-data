@@ -16,7 +16,7 @@ def fetch_rows(type_id):
         "User-Agent": "Mozilla/5.0 (baalbakhermel.com fuel prices bot)",
         "X-Requested-With": "XMLHttpRequest",
         "Referer": f"https://energyandwater.gov.lb/ar/prices?type={type_id}"})
-    html = json.loads(urllib.request.urlopen(req, timeout=60).read().decode("utf-8"))["html"]
+    html = json.loads(urllib.request.urlopen(req, timeout=60).read().decode("utf-8-sig"))["html"]
     body = html.split("<tbody>", 1)[1]
     rows = []
     for tr in re.findall(r"<tr>(.*?)</tr>", body, re.S):
