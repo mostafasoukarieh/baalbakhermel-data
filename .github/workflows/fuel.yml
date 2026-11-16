@@ -22,11 +22,11 @@ jobs:
         run: python scripts/fuel.py
       - name: حفظ التغييرات
         run: |
-          if git diff --quiet -- fuel.json 2>/dev/null && git ls-files --error-unmatch fuel.json >/dev/null 2>&1; then
+          if [ -z "$(git status --porcelain -- fuel.json fuel-news.txt)" ]; then
             echo "لا تغيير"; exit 0
           fi
           git config user.name "fuel-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add fuel.json
+          git add fuel.json fuel-news.txt
           git commit -m "أسعار المحروقات $(date -u +%F)"
           git push

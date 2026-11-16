@@ -1,5 +1,5 @@
 """يجلب أسعار المحروقات من موقع وزارة الطاقة والمياه ويكتبها في fuel.json"""
-import json, re, sys, urllib.parse, urllib.request
+import json, os, re, sys, urllib.parse, urllib.request
 from datetime import datetime, timezone, timedelta
 
 URL = "https://energyandwater.gov.lb/ajax/pricesCtrl.php"
@@ -44,6 +44,41 @@ def item(name, unit, cur, prev, prev_date):
             "change": cur - prev if prev else 0, "prev_date": prev_date}
 
 
+AR_MONTHS = ["كانون الثاني", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب",
+             "أيلول", "تشرين الأول", "تشرين الثاني", "كانون الأول"]
+AR_DAYS = ["الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت", "الأحد"]
+
+
+def ar_date(iso):
+    d = datetime.strptime(iso, "%Y-%m-%d")
+    return f"{AR_DAYS[d.weekday()]} {d.day} {AR_MONTHS[d.month - 1]} {d.year}"
+
+
+def change_text(c):
+    if c > 0:
+        return f"(+{c:,})"
+    if c < 0:
+        return f"(-{-c:,})"
+    return "(دون تغيير)"
+
+
+def news_text(out):
+    it = out["items"]
+    trend = sum(i["change"] for i in it[:3])
+    title = ("ارتفاع في أسعار المحروقات" if trend > 0 else
+             "انخفاض في أسعار المحروقات" if trend < 0 else "استقرار أسعار المحروقات")
+    lines = [f"⛽ {title} — جدول {ar_date(out['date'])}", "",
+             "صدر عن وزارة الطاقة والمياه جدول جديد لأسعار المحروقات، وجاءت الأسعار على الشكل التالي:", ""]
+    for i in it[:3]:
+        lines.append(f"• {i['name']}: {i['price']:,} ل.ل. {change_text(i['change'])}")
+    g = it[3]
+    gas_ch = change_text(g["change"]) if out["gas_date"] == out["date"] else "(دون تغيير)"
+    lines.append(f"• {g['name']}: {g['price']:,} ل.ل. {gas_ch}")
+    lines += ["", "الأسعار بالليرة اللبنانية لصفيحة 20 ليتر، وقارورة الغاز 10 كلغ.",
+              "المصدر: وزارة الطاقة والمياه", "", "#دليل_بعلبك_والهرمل #أسعار_المحروقات"]
+    return "\n".join(lines) + "\n"
+
+
 def main():
     liquid = fetch_rows(1)   # تاريخ | قرار | 95 | 98 | كاز | مازوت | ديزل أويل | تحميل
     gas = fetch_rows(5)      # تاريخ | قرار | قارورة غاز 10 كلغ | تحميل
@@ -74,12 +109,14 @@ def main():
     # لا نعيد كتابة الملف إذا لم تتغيّر الأسعار (حتى لا ينشأ commit بلا سبب)
     try:
         old = json.load(open("fuel.json", encoding="utf-8"))
-        if old.get("date") == out["date"] and old.get("items") == out["items"]:
+        if (old.get("date") == out["date"] and old.get("items") == out["items"]
+                and os.path.exists("fuel-news.txt")):
             print("لا جديد:", out["date"])
             return
     except FileNotFoundError:
         pass
     json.dump(out, open("fuel.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    open("fuel-news.txt", "w", encoding="utf-8").write(news_text(out))
     print("تم التحديث:", out["date"])
 
 
