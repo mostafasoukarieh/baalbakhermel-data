@@ -33,7 +33,7 @@ jobs:
           BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
           BLOGGER_MODE: ${{ github.event.inputs.mode || 'publish' }}
           FORCE: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
-          WEATHER_PAGE_URL: ""   # ضع هنا رابط صفحة الطقس المباشر
+          WEATHER_PAGE_URL: "https://www.baalbakhermel.com/p/weather-page.html"
         run: python scripts/weather.py
       - name: حفظ حالة النشر
         run: |
