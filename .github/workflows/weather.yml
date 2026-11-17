@@ -1,0 +1,46 @@
+name: نشرة الطقس اليومية
+
+on:
+  schedule:
+    # 04:03 و05:03 UTC = الساعة 7 صباحاً بتوقيت بيروت صيفاً وشتاءً
+    # (السكربت ينشر مرة واحدة فقط بعد الساعة 7)
+    - cron: "3 4,5 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "draft = مسودة للتجربة، publish = نشر فعلي"
+        default: draft
+        type: choice
+        options: [draft, publish]
+
+permissions:
+  contents: write
+
+concurrency: weather
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: نشر نشرة الطقس
+        env:
+          BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+          BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          BLOGGER_MODE: ${{ github.event.inputs.mode || 'publish' }}
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+          WEATHER_PAGE_URL: ""   # ضع هنا رابط صفحة الطقس المباشر
+        run: python scripts/weather.py
+      - name: حفظ حالة النشر
+        run: |
+          [ -f weather-posted.json ] || exit 0
+          [ -z "$(git status --porcelain -- weather-posted.json)" ] && exit 0
+          git config user.name "weather-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add weather-posted.json
+          git commit -m "نشرة الطقس $(TZ=Asia/Beirut date +%F)"
+          git pull --rebase -q && git push
