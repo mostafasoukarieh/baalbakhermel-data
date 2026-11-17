@@ -20,13 +20,20 @@ jobs:
           python-version: "3.12"
       - name: جلب الأسعار
         run: python scripts/fuel.py
+      - name: نشر الخبر على بلوغر
+        env:
+          BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+          BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          BLOGGER_MODE: draft   # غيّرها إلى publish للنشر المباشر
+        run: python scripts/blogger.py
       - name: حفظ التغييرات
         run: |
-          if [ -z "$(git status --porcelain -- fuel.json fuel-news.txt)" ]; then
+          if [ -z "$(git status --porcelain -- fuel.json fuel-news.txt posted.json)" ]; then
             echo "لا تغيير"; exit 0
           fi
           git config user.name "fuel-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add fuel.json fuel-news.txt
+          git add fuel.json fuel-news.txt posted.json 2>/dev/null || git add fuel.json fuel-news.txt
           git commit -m "أسعار المحروقات $(date -u +%F)"
           git push
