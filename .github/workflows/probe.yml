@@ -1,0 +1,20 @@
+name: probe-total
+on: workflow_dispatch
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -sSL -A "Mozilla/5.0" -o p.html -w "HTTP %{http_code} %{content_type} %{url_effective}\n" https://pricing.totalenergies.com.lb/fuelprice/ || true
+          wc -c p.html
+          python3 - <<'PY'
+          import re
+          h=open('p.html',encoding='utf-8',errors='replace').read()
+          t=re.sub(r'<script[\s\S]*?</script>|<style[\s\S]*?</style>','',h)
+          t=re.sub(r'<[^>]+>','|',t); t=re.sub(r'\s*\|[\s|]*',' | ',t)
+          print("TEXT:", t[:3500])
+          print("SCRIPTS:", re.findall(r'<script[^>]*src=["\']([^"\']+)',h)[:20])
+          print("IFRAMES:", re.findall(r'<iframe[^>]*src=["\']([^"\']+)',h))
+          print("APIS:", sorted(set(re.findall(r'["\'](/?(?:api|ajax|wp-json|graphql)[^"\']{0,80})["\']',h)))[:20])
+          print("TABLES:", h.count('<table'))
+          PY
