@@ -10,6 +10,8 @@ LABELS = ["طقس"]
 POST_HOUR = 7                     # ساعة النشر بتوقيت بيروت
 WEATHER_PAGE_URL = os.environ.get("WEATHER_PAGE_URL", "")  # رابط صفحة الطقس المباشر (اختياري)
 STATE_FILE = "weather-posted.json"
+# الصورة الثابتة للنشرة (تظهر في روابط المشاركة على واتساب وفيسبوك)
+IMAGE_URL = "https://raw.githubusercontent.com/mostafasoukarieh/baalbakhermel-data/main/assets/weather-og.jpg"
 TZ = ZoneInfo("Asia/Beirut")
 
 TOWNS = [
@@ -99,7 +101,8 @@ def build(locs):
     title = (f"{bi} طقس بعلبك والهرمل اليوم {ar_date(today)}: {bt}، "
              f"والحرارة بين {r(b['temperature_2m_min'][0])} و{r(b['temperature_2m_max'][0])} درجة")
 
-    p = []
+    p = [f"<p style='text-align:center'><img src='{IMAGE_URL}' alt='طقس بعلبك والهرمل' width='1200' height='630' "
+         "style='max-width:100%;height:auto;border-radius:12px'></p>"]
     p.append(f"<p>الطقس اليوم في <b>بعلبك</b> {bt}، والحرارة بين {r(b['temperature_2m_min'][0])} "
              f"و{r(b['temperature_2m_max'][0])} درجة مئوية. وفي <b>الهرمل</b> {w(h['weather_code'][0])[0]}، "
              f"والحرارة بين {r(h['temperature_2m_min'][0])} و{r(h['temperature_2m_max'][0])} درجة.</p>")
