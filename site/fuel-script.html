@@ -1,0 +1,87 @@
+<!-- سكربت صفحة المحروقات: يوضع مرة واحدة في أداة HTML/JavaScript في التخطيط -->
+<script>
+//<![CDATA[
+(function () {
+  // يعمل فقط في الصفحة التي فيها العنصر #bh-fuel، حتى لو حمّل القالب محتوى التدوينة لاحقاً
+  function boot() {
+    if (window.__bhFuel || !document.getElementById("bh-fuel")) return false;
+    window.__bhFuel = true;
+    init();
+    return true;
+  }
+  function init() {
+  // ===== عدّل اسم المستودع هنا إذا اخترت اسماً آخر =====
+  var DATA_URL = "https://raw.githubusercontent.com/mostafasoukarieh/baalbakhermel-data/main/fuel.json";
+  var REFRESH_MINUTES = 60;
+
+  var LOCALE = "ar-LB-u-nu-latn";
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = function (n) { return Number(n).toLocaleString("en-US"); };
+  function dateAr(iso, withDay) {
+    if (!iso) return "";
+    var o = { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Beirut" };
+    if (withDay) o.weekday = "long";
+    return new Date(iso + "T12:00:00").toLocaleDateString(LOCALE, o);
+  }
+  function changeBadge(c) {
+    if (c > 0) return '<span class="bhf-ch bhf-up">▲ ارتفع ' + fmt(c) + " ل.ل.</span>";
+    if (c < 0) return '<span class="bhf-ch bhf-down">▼ انخفض ' + fmt(-c) + " ل.ل.</span>";
+    return '<span class="bhf-ch bhf-same">● دون تغيير</span>';
+  }
+  function verb(c) {
+    return c > 0 ? "ارتفع " + fmt(c) + " ليرة" : c < 0 ? "انخفض " + fmt(-c) + " ليرة" : "بقي دون تغيير";
+  }
+
+  function usd(n, rate) { return "$" + (n / rate).toFixed(2); }
+
+  function render(d) {
+    var rate = d.usd_rate || 89700;
+    $("bhf-date").textContent = "جدول " + dateAr(d.date, true) + (d.decision ? " — قرار رقم " + d.decision : "");
+
+    // خبر جاهز للنشر
+    var it = d.items, liquid = it.slice(0, 3), gas = it[3];
+    var s = "<p>صدر عن وزارة الطاقة والمياه جدول أسعار المحروقات بتاريخ " + dateAr(d.date, true) + "، وجاءت الأسعار كالتالي:</p><p>";
+    s += liquid.map(function (x) {
+      return "• سعر صفيحة " + x.name + ": <b>" + fmt(x.price) + "</b> ليرة (" + verb(x.change) + ")";
+    }).join("<br>");
+    s += "<br>• سعر " + gas.name + ": <b>" + fmt(gas.price) + "</b> ليرة";
+    if (gas.change && d.gas_date === d.date) s += " (" + verb(gas.change) + ")";
+    s += "</p><p><small>السعر بالدولار على أساس " + fmt(rate) + " ليرة للدولار.</small></p>";
+    $("bhf-news").innerHTML = s;
+
+    $("bhf-cards").innerHTML = it.map(function (x, i) {
+      var note = (i === 3 && d.gas_date !== d.date)
+        ? '<div class="bhf-u">آخر تعديل: ' + dateAr(d.gas_date) + "</div>"
+        : '<div class="bhf-u">مقارنة بجدول ' + dateAr(x.prev_date) + "</div>";
+      return '<div class="bhf-card"><div class="bhf-n">' + x.name + '</div>' +
+        '<div class="bhf-p">' + fmt(x.price) + '</div><div class="bhf-u">' + x.unit + "</div>" +
+        '<div class="bhf-usd">≈ ' + usd(x.price, rate) + "</div>" +
+        changeBadge(x.change) + note + "</div>";
+    }).join("");
+
+    var h = "<tr><th>التاريخ</th><th>بنزين 95</th><th>بنزين 98</th><th>المازوت</th><th>بنزين 95 بالدولار</th></tr>";
+    h += (d.history || []).map(function (r) {
+      return "<tr><td>" + dateAr(r.date) + '</td><td class="n">' + fmt(r.b95) + '</td><td class="n">' +
+        fmt(r.b98) + '</td><td class="n">' + fmt(r.diesel) + '</td><td class="n">' + usd(r.b95, rate) + "</td></tr>";
+    }).join("");
+    $("bhf-hist").innerHTML = h;
+  }
+
+  function load() {
+    // ?t= يمنع المتصفح من عرض نسخة قديمة محفوظة
+    fetch(DATA_URL + "?t=" + Math.floor(Date.now() / 300000))
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(render)
+      .catch(function () { $("bhf-date").innerHTML = '<span class="bhf-err">تعذّر تحميل الأسعار حالياً، أعد المحاولة لاحقاً.</span>'; });
+  }
+  load();
+  setInterval(load, REFRESH_MINUTES * 60000);
+}
+  if (!boot()) {
+    var mo = new MutationObserver(function () { if (boot()) mo.disconnect(); });
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(function () { mo.disconnect(); }, 30000);
+  }
+})();
+//]]>
+</script>

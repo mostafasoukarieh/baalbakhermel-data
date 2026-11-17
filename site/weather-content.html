@@ -1,0 +1,69 @@
+<!-- ===== صفحة طقس بعلبك والهرمل — تتحدّث تلقائياً ===== -->
+<!-- تُلصق في محرر صفحة بلوغر بوضع «عرض HTML» -->
+<div id="bh-weather" dir="rtl">
+  <div class="bhw-head">
+    <h2>☁️ طقس بعلبك والهرمل</h2>
+    <div class="bhw-meta">
+      <span id="bhw-updated">جارٍ تحميل بيانات الطقس…</span>
+      <button id="bhw-refresh" type="button" title="تحديث الآن">⟳ تحديث</button>
+    </div>
+  </div>
+
+  <div class="bhw-bulletin">
+    <h3>📰 نشرة الطقس</h3>
+    <div id="bhw-news"><p>جارٍ إعداد النشرة…</p></div>
+    <ul id="bhw-alerts"></ul>
+  </div>
+
+  <h3 class="bhw-sec">🌡️ الطقس الآن في البلدات</h3>
+  <p class="bhw-hint">اضغط على أي بلدة لعرض توقعات الأيام السبعة القادمة.</p>
+  <div id="bhw-towns" class="bhw-grid"></div>
+
+  <h3 class="bhw-sec" id="bhw-fc-title">📅 توقعات الأسبوع</h3>
+  <div id="bhw-forecast" class="bhw-week"></div>
+
+  <p class="bhw-src">مصدر البيانات: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> — تتحدّث الصفحة تلقائياً كل 30 دقيقة.</p>
+</div>
+
+<style>
+#bh-weather{font-family:inherit;color:#1f2a2e;max-width:1000px;margin:0 auto;line-height:1.7}
+#bh-weather *{box-sizing:border-box}
+#bh-weather h2{margin:0;font-size:1.6em}
+#bh-weather h3{margin:0 0 .5em;font-size:1.2em}
+.bhw-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;
+  background:linear-gradient(135deg,#1e6091,#168aad);color:#fff;padding:16px 18px;border-radius:14px;margin-bottom:16px}
+.bhw-meta{display:flex;align-items:center;gap:10px;font-size:.9em}
+#bhw-refresh{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.5);
+  border-radius:8px;padding:4px 12px;cursor:pointer;font:inherit}
+#bhw-refresh:hover{background:rgba(255,255,255,.35)}
+.bhw-bulletin{background:#f4f9fb;border:1px solid #d6e8ef;border-radius:14px;padding:14px 18px;margin-bottom:18px}
+#bhw-news p{margin:.3em 0}
+#bhw-alerts{list-style:none;padding:0;margin:.6em 0 0}
+#bhw-alerts li{background:#fff4e5;border-right:4px solid #e67e22;padding:6px 10px;border-radius:6px;margin:6px 0}
+#bhw-alerts li.bhw-ok{background:#eaf7ee;border-right-color:#2e9e5b}
+.bhw-sec{margin-top:8px!important}
+.bhw-hint{margin:0 0 10px;color:#5b6b72;font-size:.9em}
+.bhw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-bottom:20px}
+.bhw-card{background:#fff;border:1px solid #e0e7ea;border-radius:12px;padding:12px;cursor:pointer;
+  transition:transform .15s,box-shadow .15s;text-align:center}
+.bhw-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.bhw-card.bhw-sel{border:2px solid #168aad;background:#f0fafd}
+.bhw-card .bhw-name{font-weight:bold;font-size:1.05em}
+.bhw-card .bhw-ico{font-size:2.1em;line-height:1.3}
+.bhw-card .bhw-temp{font-size:1.7em;font-weight:bold;direction:ltr}
+.bhw-card .bhw-desc{color:#36474f;font-size:.92em}
+.bhw-card .bhw-small{color:#6a7a80;font-size:.82em;margin-top:4px}
+.bhw-week{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:10px}
+.bhw-day{background:#fff;border:1px solid #e0e7ea;border-radius:12px;padding:10px;text-align:center}
+.bhw-day .bhw-dn{font-weight:bold}
+.bhw-day .bhw-dd{color:#6a7a80;font-size:.82em}
+.bhw-day .bhw-ico{font-size:1.9em}
+.bhw-day .bhw-mm{direction:ltr;font-weight:bold}
+.bhw-day .bhw-mm .bhw-min{color:#1e6091;font-weight:normal}
+.bhw-day .bhw-small{color:#6a7a80;font-size:.8em}
+.bhw-src{margin-top:18px;color:#6a7a80;font-size:.82em;text-align:center}
+.bhw-err{color:#b03a2e}
+</style>
+
+
+<!-- ===== نهاية صفحة الطقس ===== -->

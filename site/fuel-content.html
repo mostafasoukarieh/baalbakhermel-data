@@ -1,0 +1,43 @@
+<!-- ===== أسعار المحروقات — تتحدّث تلقائياً ===== -->
+<!-- تُلصق في محرر صفحة بلوغر بوضع «عرض HTML» -->
+<div id="bh-fuel" dir="rtl">
+  <div class="bhf-head">
+    <h2>⛽ أسعار المحروقات في لبنان</h2>
+    <div id="bhf-date">جارٍ تحميل الأسعار…</div>
+  </div>
+  <div id="bhf-news" class="bhf-news"></div>
+  <div id="bhf-cards" class="bhf-grid"></div>
+  <h3>📈 الجداول السابقة</h3>
+  <div class="bhf-tablewrap"><table id="bhf-hist"></table></div>
+  <p class="bhf-src">المصدر: جدول أسعار المحروقات الصادر عن وزارة الطاقة والمياه. تتحدّث الصفحة تلقائياً عند صدور كل جدول جديد.</p>
+</div>
+
+<style>
+#bh-fuel{font-family:inherit;color:#1f2a2e;max-width:1000px;margin:0 auto;line-height:1.7}
+#bh-fuel *{box-sizing:border-box}
+#bh-fuel h2{margin:0;font-size:1.6em}
+#bh-fuel h3{margin:18px 0 8px;font-size:1.2em}
+.bhf-head{background:linear-gradient(135deg,#8a3b12,#d35400);color:#fff;padding:16px 18px;border-radius:14px;margin-bottom:16px}
+.bhf-news{background:#fdf6f0;border:1px solid #f1dccb;border-radius:14px;padding:12px 18px;margin-bottom:16px}
+.bhf-news p{margin:.3em 0}
+.bhf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.bhf-card{background:#fff;border:1px solid #e6e0dc;border-radius:12px;padding:14px;text-align:center}
+.bhf-card .bhf-n{font-weight:bold;font-size:1.05em}
+.bhf-card .bhf-p{font-size:1.7em;font-weight:bold;direction:ltr;margin:4px 0}
+.bhf-card .bhf-u{color:#6a7a80;font-size:.82em}
+.bhf-card .bhf-usd{direction:ltr;font-weight:bold;color:#1e6091;margin-top:4px}
+.bhf-ch{display:inline-block;margin-top:6px;padding:2px 10px;border-radius:20px;font-size:.88em;direction:rtl}
+.bhf-up{background:#fdecea;color:#b03a2e}
+.bhf-down{background:#e8f6ee;color:#1e8449}
+.bhf-same{background:#eef1f2;color:#5b6b72}
+.bhf-tablewrap{overflow-x:auto}
+#bhf-hist{width:100%;border-collapse:collapse;font-size:.92em;background:#fff}
+#bhf-hist th,#bhf-hist td{border:1px solid #e6e0dc;padding:6px 8px;text-align:center;white-space:nowrap}
+#bhf-hist th{background:#fbefe6}
+#bhf-hist td.n{direction:ltr}
+.bhf-src{margin-top:14px;color:#6a7a80;font-size:.82em;text-align:center}
+.bhf-err{color:#b03a2e}
+</style>
+
+
+<!-- ===== نهاية صفحة المحروقات ===== -->
