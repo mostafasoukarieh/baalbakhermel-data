@@ -25,7 +25,7 @@ jobs:
           BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
           BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
           BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
-          BLOGGER_MODE: draft   # غيّرها إلى publish للنشر المباشر
+          BLOGGER_MODE: publish   # draft = مسودة، publish = نشر مباشر
         run: python scripts/blogger.py
       - name: حفظ التغييرات
         run: |
