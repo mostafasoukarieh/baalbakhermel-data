@@ -33,6 +33,7 @@
   }
 
   function usd(n, rate) { return "$" + (n / rate).toFixed(2); }
+  function e(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return "&#" + c.charCodeAt(0) + ";"; }); }
 
   function render(d) {
     var rate = d.usd_rate || 89700;
@@ -42,9 +43,9 @@
     var it = d.items, liquid = it.slice(0, 3), gas = it[3];
     var s = "<p>صدر عن وزارة الطاقة والمياه جدول أسعار المحروقات بتاريخ " + dateAr(d.date, true) + "، وجاءت الأسعار كالتالي:</p><p>";
     s += liquid.map(function (x) {
-      return "• سعر صفيحة " + x.name + ": <b>" + fmt(x.price) + "</b> ليرة (" + verb(x.change) + ")";
+      return "• سعر صفيحة " + e(x.name) + ": <b>" + fmt(x.price) + "</b> ليرة (" + verb(x.change) + ")";
     }).join("<br>");
-    s += "<br>• سعر " + gas.name + ": <b>" + fmt(gas.price) + "</b> ليرة";
+    s += "<br>• سعر " + e(gas.name) + ": <b>" + fmt(gas.price) + "</b> ليرة";
     if (gas.change && d.gas_date === d.date) s += " (" + verb(gas.change) + ")";
     s += "</p><p><small>السعر بالدولار على أساس " + fmt(rate) + " ليرة للدولار.</small></p>";
     $("bhf-news").innerHTML = s;
@@ -53,8 +54,8 @@
       var note = (i === 3 && d.gas_date !== d.date)
         ? '<div class="bhf-u">آخر تعديل: ' + dateAr(d.gas_date) + "</div>"
         : '<div class="bhf-u">مقارنة بجدول ' + dateAr(x.prev_date) + "</div>";
-      return '<div class="bhf-card"><div class="bhf-n">' + x.name + '</div>' +
-        '<div class="bhf-p">' + fmt(x.price) + '</div><div class="bhf-u">' + x.unit + "</div>" +
+      return '<div class="bhf-card"><div class="bhf-n">' + e(x.name) + '</div>' +
+        '<div class="bhf-p">' + fmt(x.price) + '</div><div class="bhf-u">' + e(x.unit) + "</div>" +
         '<div class="bhf-usd">≈ ' + usd(x.price, rate) + "</div>" +
         changeBadge(x.change) + note + "</div>";
     }).join("");
