@@ -17,4 +17,11 @@ jobs:
           print("IFRAMES:", re.findall(r'<iframe[^>]*src=["\']([^"\']+)',h))
           print("APIS:", sorted(set(re.findall(r'["\'](/?(?:api|ajax|wp-json|graphql)[^"\']{0,80})["\']',h)))[:20])
           print("TABLES:", h.count('<table'))
+          i=h.find('17/11') if '17/11' in h else h.find('Price in LBP')
+          print("RAWDATE:", repr(h[i-400:i+300]))
+          j=h.find('SP95'); print("RAW95:", repr(h[j-900:j+700]))
+          print("JS:"); import urllib.request
+          for f in ['demo2.js']:
+              try: print(urllib.request.urlopen(urllib.request.Request('https://pricing.totalenergies.com.lb/fuelprice/'+f,headers={'User-Agent':'Mozilla/5.0'})).read().decode('utf-8','replace')[:1500])
+              except Exception as e: print('ERR',e)
           PY
