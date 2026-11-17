@@ -7,3 +7,4 @@
 - يتحدّث تلقائياً عبر GitHub Actions (`.github/workflows/fuel.yml`) كل ساعتين بين 7 صباحاً و5 مساءً بتوقيت بيروت.
 - `fuel-news.txt` — خبر جاهز للنسخ والنشر عن آخر جدول.
 - المصدر: https://energyandwater.gov.lb/ar/prices?type=1
+- المصدر الأساسي للأسعار: TotalEnergies لبنان، والوزارة احتياطياً.
