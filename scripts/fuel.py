@@ -77,51 +77,91 @@ def news_text(out):
     lines.append(f"• {g['name']}: {g['price']:,} ل.ل. {gas_ch} — ${g['price'] / USD_RATE:.2f}")
     lines += ["", "الأسعار بالليرة اللبنانية لصفيحة 20 ليتر، وقارورة الغاز 10 كلغ.",
               f"السعر بالدولار على أساس {USD_RATE:,} ليرة للدولار.",
+              *([f"الفرق مقارنة بجدول {ar_date(it[0]['prev_date'])}."] if it[0].get("prev_date") else []),
               "المصدر: وزارة الطاقة والمياه", "", "#دليل_بعلبك_والهرمل #أسعار_المحروقات"]
     return "\n".join(lines) + "\n"
 
 
-def main():
-    liquid = fetch_rows(1)   # تاريخ | قرار | 95 | 98 | كاز | مازوت | ديزل أويل | تحميل
-    gas = fetch_rows(5)      # تاريخ | قرار | قارورة غاز 10 كلغ | تحميل
-    if len(liquid) < 2 or len(gas) < 2:
-        sys.exit("لم أجد صفوفاً كافية في الجدول")
-    c, p = liquid[0], liquid[1]
-    g, gp = gas[0], gas[1]
-    out = {
-        "date_text": c[0],
-        "date": iso_date(c[0]),
-        "decision": c[1],
-        "gas_date_text": g[0],
-        "gas_date": iso_date(g[0]),
-        "items": [
-            item("بنزين 95 أوكتان", "ل.ل. / صفيحة 20 ليتر", num(c[2]), num(p[2]), iso_date(p[0])),
-            item("بنزين 98 أوكتان", "ل.ل. / صفيحة 20 ليتر", num(c[3]), num(p[3]), iso_date(p[0])),
-            item("المازوت (ديزل أويل)", "ل.ل. / صفيحة 20 ليتر", num(c[6]), num(p[6]), iso_date(p[0])),
-            item("قارورة الغاز", "ل.ل. / قارورة 10 كلغ", num(g[2]), num(gp[2]), iso_date(gp[0])),
-        ],
-        "history": [{"date": iso_date(r[0]), "b95": num(r[2]), "b98": num(r[3]), "diesel": num(r[6])}
-                    for r in liquid[:12]],
-        "usd_rate": USD_RATE,
-        "source": "وزارة الطاقة والمياه — energyandwater.gov.lb",
-        "checked_at": datetime.now(timezone(timedelta(hours=2))).isoformat(timespec="minutes"),
-    }
-    if any(i["price"] <= 0 for i in out["items"]):
-        sys.exit("سعر غير صالح، لن أكتب الملف: " + json.dumps(out["items"], ensure_ascii=False))
+TOTAL_URL = "https://pricing.totalenergies.com.lb/fuelprice/"
+TOTAL_CODES = {"excellium-unleaded-95": "b95", "excellium-unleaded-98": "b98", "diesel": "diesel", "gasoil": "gas"}
+NAMES = [("b95", "بنزين 95 أوكتان", "ل.ل. / صفيحة 20 ليتر"), ("b98", "بنزين 98 أوكتان", "ل.ل. / صفيحة 20 ليتر"),
+         ("diesel", "المازوت (ديزل أويل)", "ل.ل. / صفيحة 20 ليتر"), ("gas", "قارورة الغاز", "ل.ل. / قارورة 10 كلغ")]
 
-    # لا نعيد كتابة الملف إذا لم تتغيّر الأسعار (حتى لا ينشأ commit بلا سبب)
+
+def from_total():
+    """المصدر الأساسي: صفحة أسعار توتال لبنان (تتحدّث أسرع من موقع الوزارة)."""
+    req = urllib.request.Request(TOTAL_URL, headers={"User-Agent": "Mozilla/5.0 (baalbakhermel.com fuel prices bot)"})
+    h = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
+    m = re.search(r'class="divToday"[^>]*>\s*(\d{1,2})/(\d{1,2})/(\d{4})', h)
+    if not m:
+        raise ValueError("لم أجد التاريخ في صفحة توتال")
+    date = f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+    vals = dict(re.findall(r'id="v(\d+)">\s*([\d,]+)\s*<', h))
+    ids = dict(re.findall(r'id="id(\d+)">\s*([\w-]+)\s*<', h))
+    prices = {TOTAL_CODES[code]: num(vals[n]) for n, code in ids.items() if code in TOTAL_CODES and n in vals}
+    return date, prices, "TotalEnergies لبنان"
+
+
+def from_ministry():
+    """المصدر الاحتياطي: جدول وزارة الطاقة والمياه."""
+    c = fetch_rows(1)[0]   # تاريخ | قرار | 95 | 98 | كاز | مازوت | ديزل أويل | تحميل
+    g = fetch_rows(5)[0]   # تاريخ | قرار | قارورة غاز 10 كلغ | تحميل
+    return iso_date(c[0]), {"b95": num(c[2]), "b98": num(c[3]), "diesel": num(c[6]), "gas": num(g[2])}, \
+        "وزارة الطاقة والمياه"
+
+
+def main():
     try:
         old = json.load(open("fuel.json", encoding="utf-8"))
-        if (old.get("date") == out["date"] and old.get("items") == out["items"]
-                and old.get("usd_rate") == out["usd_rate"]
-                and os.path.exists("fuel-news.txt")):
-            print("لا جديد:", out["date"])
-            return
     except FileNotFoundError:
-        pass
+        old = {}
+    oldp = {k: it["price"] for (k, *_), it in zip(NAMES, old.get("items", []))}
+
+    try:
+        date, prices, source = from_total()
+    except Exception as e:  # noqa: BLE001
+        print("تعذّر موقع توتال، أستعمل موقع الوزارة:", e)
+        date, prices, source = from_ministry()
+        if old.get("date") and date and date <= old["date"]:
+            print("جدول الوزارة ليس أحدث مما عندنا:", date)
+            return
+
+    if set(prices) != {"b95", "b98", "diesel", "gas"} or not all(500_000 < v < 20_000_000 for v in prices.values()):
+        sys.exit("أسعار غير صالحة، لن أكتب الملف: " + json.dumps(prices, ensure_ascii=False))
+
+    unchanged = prices == oldp and old.get("usd_rate") == USD_RATE and os.path.exists("fuel-news.txt")
+    if unchanged:
+        print("لا جديد، آخر جدول:", old.get("date"), "— المصدر:", source)
+        return
+    if prices == oldp:          # تغيّر سعر الدولار فقط: لا نغيّر تاريخ الجدول
+        date = old.get("date", date)
+
+    new_table = prices != oldp
+    items = []
+    for (key, name, unit), o in zip(NAMES, old.get("items") or [{}] * 4):
+        if new_table:
+            prev = oldp.get(key)
+            change, prev_date = (prices[key] - prev if prev else 0), old.get("date")
+        else:                   # تغيّر سعر الدولار فقط: نُبقي الفروقات كما هي
+            change, prev_date = o.get("change", 0), o.get("prev_date")
+        items.append({"name": name, "unit": unit, "price": prices[key], "change": change, "prev_date": prev_date})
+    gas_same = oldp.get("gas") == prices["gas"]
+    hist = [{"date": date, "b95": prices["b95"], "b98": prices["b98"], "diesel": prices["diesel"]}]
+    hist += [r for r in old.get("history", []) if r.get("date") != date]
+    out = {
+        "date_text": ar_date(date),
+        "date": date,
+        "decision": "",
+        "gas_date": old.get("gas_date", date) if gas_same else date,
+        "items": items,
+        "history": hist[:12],
+        "usd_rate": USD_RATE,
+        "source": source,
+        "checked_at": datetime.now(timezone(timedelta(hours=2))).isoformat(timespec="minutes"),
+    }
     json.dump(out, open("fuel.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     open("fuel-news.txt", "w", encoding="utf-8").write(news_text(out))
-    print("تم التحديث:", out["date"])
+    print("تم التحديث:", date, "— المصدر:", source)
 
 
 if __name__ == "__main__":

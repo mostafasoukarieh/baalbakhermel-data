@@ -1,5 +1,7 @@
 """ينشر خبر أسعار المحروقات على مدونة بلوغر عند صدور جدول جديد (مرة واحدة لكل جدول)."""
 import html, json, os, sys, urllib.error, urllib.parse, urllib.request
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from fuel import ar_date  # noqa: E402
 
 BLOG_ID = "87520547399987288"
 LABELS = ["محروقات"]
@@ -37,6 +39,7 @@ def build_post(fuel, news):
         f"{rows}</table>"
         "<p>الأسعار بالليرة اللبنانية لصفيحة 20 ليتر، وقارورة الغاز 10 كلغ.</p>"
         f"<p>السعر بالدولار محسوب على أساس {USD_RATE:,} ليرة للدولار.</p>"
+        + (f"<p>الفرق مقارنة بجدول {ar_date(fuel['items'][0]['prev_date'])}.</p>" if fuel["items"][0].get("prev_date") else "") +
         "<p><small>المصدر: وزارة الطاقة والمياه</small></p>"
         "</div>")
     return title, body
