@@ -1,10 +1,7 @@
 name: تحديث أسعار المحروقات
 
 on:
-  schedule:
-    # كل ساعتين من 7 صباحاً حتى 5 مساءً بتوقيت بيروت، كل يوم
-    # (الجدول يصدر عادة الثلاثاء والجمعة، لكنه يصدر أحياناً في أيام أخرى)
-    - cron: "14 5-15/2 * * *"
+  # المواعيد يشغّلها Google Apps Script (site/apps-script-scheduler.gs)
   workflow_dispatch:      # زر تشغيل يدوي
     inputs:
       update_post:

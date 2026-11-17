@@ -1,10 +1,7 @@
 name: نشرة الطقس اليومية
 
 on:
-  schedule:
-    # 04:03 و05:03 UTC = الساعة 7 صباحاً بتوقيت بيروت صيفاً وشتاءً
-    # (السكربت ينشر مرة واحدة فقط بعد الساعة 7)
-    - cron: "4 4,5 * * *"
+  # المواعيد يشغّلها Google Apps Script (site/apps-script-scheduler.gs)
   workflow_dispatch:
     inputs:
       mode:
