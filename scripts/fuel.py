@@ -3,6 +3,7 @@ import json, os, re, sys, urllib.parse, urllib.request
 from datetime import datetime, timezone, timedelta
 
 URL = "https://energyandwater.gov.lb/ajax/pricesCtrl.php"
+USD_RATE = 89700  # سعر الدولار بالليرة المعتمد
 MONTHS = {"كانون ثاني": 1, "كانون الثاني": 1, "شباط": 2, "آذار": 3, "اذار": 3, "نيسان": 4,
           "أيار": 5, "ايار": 5, "حزيران": 6, "تموز": 7, "آب": 8, "اب": 8, "أيلول": 9, "ايلول": 9,
           "تشرين أول": 10, "تشرين الأول": 10, "تشرين اول": 10, "تشرين ثاني": 11, "تشرين الثاني": 11,
@@ -70,11 +71,12 @@ def news_text(out):
     lines = [f"⛽ {title} — جدول {ar_date(out['date'])}", "",
              "صدر عن وزارة الطاقة والمياه جدول جديد لأسعار المحروقات، وجاءت الأسعار على الشكل التالي:", ""]
     for i in it[:3]:
-        lines.append(f"• {i['name']}: {i['price']:,} ل.ل. {change_text(i['change'])}")
+        lines.append(f"• {i['name']}: {i['price']:,} ل.ل. {change_text(i['change'])} — ${i['price'] / USD_RATE:.2f}")
     g = it[3]
     gas_ch = change_text(g["change"]) if out["gas_date"] == out["date"] else "(دون تغيير)"
-    lines.append(f"• {g['name']}: {g['price']:,} ل.ل. {gas_ch}")
+    lines.append(f"• {g['name']}: {g['price']:,} ل.ل. {gas_ch} — ${g['price'] / USD_RATE:.2f}")
     lines += ["", "الأسعار بالليرة اللبنانية لصفيحة 20 ليتر، وقارورة الغاز 10 كلغ.",
+              f"السعر بالدولار على أساس {USD_RATE:,} ليرة للدولار.",
               "المصدر: وزارة الطاقة والمياه", "", "#دليل_بعلبك_والهرمل #أسعار_المحروقات"]
     return "\n".join(lines) + "\n"
 
@@ -100,6 +102,7 @@ def main():
         ],
         "history": [{"date": iso_date(r[0]), "b95": num(r[2]), "b98": num(r[3]), "diesel": num(r[6])}
                     for r in liquid[:12]],
+        "usd_rate": USD_RATE,
         "source": "وزارة الطاقة والمياه — energyandwater.gov.lb",
         "checked_at": datetime.now(timezone(timedelta(hours=2))).isoformat(timespec="minutes"),
     }
@@ -110,6 +113,7 @@ def main():
     try:
         old = json.load(open("fuel.json", encoding="utf-8"))
         if (old.get("date") == out["date"] and old.get("items") == out["items"]
+                and old.get("usd_rate") == out["usd_rate"]
                 and os.path.exists("fuel-news.txt")):
             print("لا جديد:", out["date"])
             return

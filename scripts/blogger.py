@@ -2,7 +2,8 @@
 import html, json, os, sys, urllib.error, urllib.parse, urllib.request
 
 BLOG_ID = "87520547399987288"
-LABELS = ["محروقات", "اقتصاد"]
+LABELS = ["محروقات"]
+USD_RATE = 89700  # سعر الدولار بالليرة المعتمد
 # draft = مسودة تراجعها وتنشرها بنفسك، publish = نشر مباشر
 MODE = os.environ.get("BLOGGER_MODE", "draft")
 STATE_FILE = "posted.json"
@@ -24,6 +25,7 @@ def build_post(fuel, news):
     title = lines[0].replace("⛽", "").strip()
     rows = "".join(
         f"<tr><td>{html.escape(i['name'])}</td><td dir='ltr'>{i['price']:,}</td>"
+        f"<td dir='ltr'>${i['price'] / USD_RATE:.2f}</td>"
         f"<td dir='ltr' style='color:{'#b03a2e' if i['change'] > 0 else '#1e8449' if i['change'] < 0 else '#5b6b72'}'>"
         f"{'+' if i['change'] > 0 else ''}{i['change']:,}</td></tr>"
         for i in fuel["items"])
@@ -31,9 +33,10 @@ def build_post(fuel, news):
         "<div dir='rtl'>"
         "<p>صدر عن وزارة الطاقة والمياه جدول جديد لأسعار المحروقات، وجاءت الأسعار على الشكل التالي:</p>"
         "<table border='1' cellpadding='8' style='border-collapse:collapse;width:100%;text-align:center'>"
-        "<tr style='background:#fbefe6'><th>المادة</th><th>السعر (ل.ل.)</th><th>الفرق</th></tr>"
+        "<tr style='background:#fbefe6'><th>المادة</th><th>السعر (ل.ل.)</th><th>بالدولار</th><th>الفرق (ل.ل.)</th></tr>"
         f"{rows}</table>"
         "<p>الأسعار بالليرة اللبنانية لصفيحة 20 ليتر، وقارورة الغاز 10 كلغ.</p>"
+        f"<p>السعر بالدولار محسوب على أساس {USD_RATE:,} ليرة للدولار.</p>"
         "<p><small>المصدر: وزارة الطاقة والمياه</small></p>"
         "</div>")
     return title, body
