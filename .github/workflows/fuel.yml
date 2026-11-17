@@ -5,7 +5,12 @@ on:
     # كل ساعتين من 7 صباحاً حتى 5 مساءً بتوقيت بيروت، كل يوم
     # (الجدول يصدر عادة الثلاثاء والجمعة، لكنه يصدر أحياناً في أيام أخرى)
     - cron: "13 5-15/2 * * *"
-  workflow_dispatch: {}   # زر تشغيل يدوي للتجربة
+  workflow_dispatch:      # زر تشغيل يدوي
+    inputs:
+      update_post:
+        description: "حدّث منشور آخر جدول بدل إنشاء منشور جديد"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -25,6 +30,7 @@ jobs:
           BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
           BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
           BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          BLOGGER_UPDATE: ${{ github.event.inputs.update_post == 'true' && '1' || '0' }}
           BLOGGER_MODE: publish   # draft = مسودة، publish = نشر مباشر
         run: python scripts/blogger.py
       - name: حفظ التغييرات

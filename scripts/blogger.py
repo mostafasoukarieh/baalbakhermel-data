@@ -51,6 +51,20 @@ def main():
         return
     fuel = json.load(open("fuel.json", encoding="utf-8"))
     state = json.load(open(STATE_FILE, encoding="utf-8")) if os.path.exists(STATE_FILE) else {}
+
+    # تحديث المنشور الحالي (مثلاً بعد تصحيح الفروقات يدوياً في fuel.json)
+    if os.environ.get("BLOGGER_UPDATE") == "1" and state.get("post_id") and state.get("fuel_date") == fuel["date"]:
+        title, content = build_post(fuel, open("fuel-news.txt", encoding="utf-8").read())
+        req = urllib.request.Request(
+            f"https://www.googleapis.com/blogger/v3/blogs/{BLOG_ID}/posts/{state['post_id']}", method="PATCH",
+            data=json.dumps({"title": title, "content": content, "labels": LABELS}).encode(),
+            headers={"Authorization": "Bearer " + access_token(), "Content-Type": "application/json; charset=utf-8"})
+        try:
+            post = json.loads(urllib.request.urlopen(req, timeout=60).read())
+        except urllib.error.HTTPError as e:
+            sys.exit(f"فشل تحديث المنشور: {e.code} {e.read().decode()[:500]}")
+        print("تم تحديث المنشور:", post.get("url"))
+        return
     if state.get("fuel_date") == fuel["date"]:
         print("سبق نشر خبر هذا الجدول:", fuel["date"])
         return
