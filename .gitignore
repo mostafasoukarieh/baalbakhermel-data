@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+*.json.bak
+client_secret*.json
