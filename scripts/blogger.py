@@ -2,7 +2,7 @@
 import html, json, os, sys, urllib.error, urllib.parse, urllib.request
 
 BLOG_ID = "87520547399987288"
-LABELS = ["أسعار المحروقات", "اقتصاد"]
+LABELS = ["محروقات", "اقتصاد"]
 # draft = مسودة تراجعها وتنشرها بنفسك، publish = نشر مباشر
 MODE = os.environ.get("BLOGGER_MODE", "draft")
 STATE_FILE = "posted.json"
