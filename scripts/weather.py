@@ -107,6 +107,8 @@ def build(locs):
         p.append(f"<p>احتمال هطول الأمطار في بعلبك اليوم {b['precipitation_probability_max'][0]}%.</p>")
     p.append(f"<p>شروق الشمس {b['sunrise'][0][11:16]} وغروبها {b['sunset'][0][11:16]}.</p>")
 
+    if WEATHER_PAGE_URL:
+        p.append(f"<p>👈 <a href='{html.escape(WEATHER_PAGE_URL)}'><b>تابعوا الطقس لحظة بلحظة</b></a></p>")
     al = alerts(locs)
     if al:
         p.append("<h3>⚠️ تنبيهات</h3><ul>" + "".join(
@@ -132,7 +134,10 @@ def build(locs):
              f"و{r(b['temperature_2m_max'][1])} درجة{trend}.</p>")
 
     if WEATHER_PAGE_URL:
-        p.append(f"<p>👈 <a href='{html.escape(WEATHER_PAGE_URL)}'>تابعوا الطقس المباشر وتوقعات الأسبوع</a></p>")
+        p.append(f"<p style='text-align:center;margin:22px 0'><a href='{html.escape(WEATHER_PAGE_URL)}' "
+                 "style='display:inline-block;background:#1e6091;color:#fff;text-decoration:none;"
+                 "padding:12px 26px;border-radius:30px;font-weight:bold;font-size:1.05em'>"
+                 "🌦️ الطقس المباشر وتوقعات الأسبوع ←</a></p>")
     p.append("<p><small>مصدر البيانات: Open-Meteo</small></p>")
     return today, title, "<div dir='rtl'>" + "".join(p) + "</div>"
 
