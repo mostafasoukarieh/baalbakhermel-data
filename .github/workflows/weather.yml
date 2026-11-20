@@ -9,6 +9,11 @@ on:
         default: draft
         type: choice
         options: [draft, publish, snapshot]
+      source:
+        description: "auto = Open-Meteo ثم الاحتياطي، met = تجربة المصدر الاحتياطي"
+        default: auto
+        type: choice
+        options: [auto, met]
 
 permissions:
   contents: write
@@ -30,6 +35,7 @@ jobs:
           BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
           BLOGGER_MODE: ${{ github.event.inputs.mode || 'publish' }}
           FORCE: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+          WEATHER_SOURCE: ${{ github.event.inputs.source || 'auto' }}
           WEATHER_PAGE_URL: "https://www.baalbakhermel.com/p/weather-page.html"
         run: python scripts/weather.py
       - name: حفظ حالة النشر وبيانات الطقس

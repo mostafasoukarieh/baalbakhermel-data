@@ -163,7 +163,8 @@ def fetch_met(days=3, current=False):
 def fetch(days=3, current=False):
     """Open-Meteo مع 3 محاولات، ثم المصدر الاحتياطي MET Norway."""
     global SOURCE
-    for wait in (0, 20, 60):
+    waits = () if os.environ.get("WEATHER_SOURCE") == "met" else (0, 20, 60)
+    for wait in waits:
         if wait:
             time.sleep(wait)
         try:
