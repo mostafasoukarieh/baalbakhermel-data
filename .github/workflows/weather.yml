@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "draft = مسودة للتجربة، publish = نشر فعلي"
+        description: "draft = مسودة للتجربة، publish = نشر فعلي، snapshot = تحديث weather.json لصفحة الطقس"
         default: draft
         type: choice
-        options: [draft, publish]
+        options: [draft, publish, snapshot]
 
 permissions:
   contents: write
@@ -32,12 +32,11 @@ jobs:
           FORCE: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           WEATHER_PAGE_URL: "https://www.baalbakhermel.com/p/weather-page.html"
         run: python scripts/weather.py
-      - name: حفظ حالة النشر
+      - name: حفظ حالة النشر وبيانات الطقس
         run: |
-          [ -f weather-posted.json ] || exit 0
-          [ -z "$(git status --porcelain -- weather-posted.json)" ] && exit 0
+          [ -z "$(git status --porcelain -- weather-posted.json weather.json)" ] && exit 0
           git config user.name "weather-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add weather-posted.json
-          git commit -m "نشرة الطقس $(TZ=Asia/Beirut date +%F)"
+          git add -A -- weather-posted.json weather.json
+          git commit -m "الطقس $(TZ=Asia/Beirut date '+%F %H:%M')"
           git pull --rebase -q && git push

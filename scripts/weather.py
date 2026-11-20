@@ -1,5 +1,5 @@
 """نشرة طقس يومية لبعلبك والهرمل تُنشر على بلوغر بوسم «طقس» (مرة واحدة في اليوم)."""
-import html, json, os, sys, urllib.error, urllib.parse, urllib.request
+import html, json, os, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -50,16 +50,144 @@ def day_name(iso, i):
     return "اليوم" if i == 0 else "غداً" if i == 1 else AR_DAYS[datetime.strptime(iso, "%Y-%m-%d").weekday()]
 
 
-def fetch():
-    q = urllib.parse.urlencode({
-        "latitude": ",".join(str(t[1]) for t in TOWNS),
-        "longitude": ",".join(str(t[2]) for t in TOWNS),
-        "daily": "weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,"
-                 "precipitation_probability_max,snowfall_sum,wind_gusts_10m_max,sunrise,sunset",
-        "timezone": "Asia/Beirut", "forecast_days": 3,
-    })
-    data = json.loads(urllib.request.urlopen("https://api.open-meteo.com/v1/forecast?" + q, timeout=60).read())
+DAILY = ("weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,"
+         "precipitation_probability_max,snowfall_sum,wind_gusts_10m_max,sunrise,sunset")
+CURRENT = "temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,is_day"
+UA = {"User-Agent": "baalbakhermel.com weather (github.com/mostafasoukarieh/baalbakhermel-data)"}
+
+
+def get_json(url, timeout=40):
+    return json.loads(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read())
+
+
+def fetch_open_meteo(days=3, current=False):
+    q = {"latitude": ",".join(str(t[1]) for t in TOWNS), "longitude": ",".join(str(t[2]) for t in TOWNS),
+         "daily": DAILY, "timezone": "Asia/Beirut", "forecast_days": days}
+    if current:
+        q["current"] = CURRENT
+    data = get_json("https://api.open-meteo.com/v1/forecast?" + urllib.parse.urlencode(q))
     return data if isinstance(data, list) else [data]
+
+
+# ---------- مصدر احتياطي: المعهد النرويجي للأرصاد (MET Norway) ----------
+MET_CODE = [("thunder", 95), ("heavysnow", 75), ("lightsnow", 71), ("snowshowers", 85), ("snow", 73),
+            ("sleet", 66), ("heavyrainshowers", 82), ("lightrainshowers", 80), ("rainshowers", 81),
+            ("heavyrain", 65), ("lightrain", 61), ("rain", 63), ("fog", 45), ("cloudy", 3),
+            ("partlycloudy", 2), ("fair", 1), ("clearsky", 0)]
+
+
+def met_code(sym):
+    sym = (sym or "").split("_")[0]
+    for k, c in MET_CODE:
+        if sym == k or (k in ("thunder",) and k in sym):
+            return c
+    for k, c in MET_CODE:
+        if sym.startswith(k):
+            return c
+    return 3
+
+
+SUN = {}
+
+
+def sun_times(day):
+    """شروق الشمس وغروبها في بعلبك (الفرق بين البلدات دقيقة أو اثنتان)."""
+    if day not in SUN:
+        try:
+            sp = get_json(f"https://api.met.no/weatherapi/sunrise/3.0/sun?lat=34.006&lon=36.218&date={day}&offset=+02:00")["properties"]
+            SUN[day] = (sp["sunrise"]["time"][:16], sp["sunset"]["time"][:16])
+        except Exception:  # noqa: BLE001
+            SUN[day] = (day + "T06:15", day + "T16:30")
+    return SUN[day]
+
+
+def fetch_met(days=3, current=False):
+    out = []
+    for _, lat, lon in TOWNS:
+        ts = get_json(f"https://api.met.no/weatherapi/locationforecast/2.0/complete?lat={lat}&lon={lon}")["properties"]["timeseries"]
+        by_day = {}
+        cur = None
+        for e in ts:
+            t = datetime.fromisoformat(e["time"].replace("Z", "+00:00")).astimezone(TZ)
+            det = e["data"]["instant"]["details"]
+            nxt = e["data"].get("next_1_hours") or e["data"].get("next_6_hours") or {}
+            nd = nxt.get("details", {})
+            hours = 1 if "next_1_hours" in e["data"] else 6
+            dd = by_day.setdefault(t.strftime("%Y-%m-%d"), {"t": [], "p": 0.0, "pp": [], "g": [], "codes": [], "snow": 0.0})
+            dd["t"].append(det.get("air_temperature"))
+            if "wind_speed_of_gust" in det:
+                dd["g"].append(det["wind_speed_of_gust"] * 3.6)
+            if "probability_of_precipitation" in nd:
+                dd["pp"].append(nd["probability_of_precipitation"])
+            sym = nxt.get("summary", {}).get("symbol_code")
+            if sym and (hours == 1 or t.hour % 6 == 0):
+                amt = nd.get("precipitation_amount", 0) or 0
+                dd["p"] += amt
+                c = met_code(sym)
+                if c in (71, 73, 75, 85):
+                    dd["snow"] += amt
+                if 6 <= t.hour <= 18:
+                    dd["codes"].append(c)
+            if cur is None:
+                cur = {"temperature_2m": det.get("air_temperature"), "relative_humidity_2m": det.get("relative_humidity"),
+                       "apparent_temperature": det.get("air_temperature"), "weather_code": met_code(sym),
+                       "wind_speed_10m": round((det.get("wind_speed") or 0) * 3.6, 1),
+                       "is_day": 1 if 6 <= t.hour < 18 else 0}
+        keys = sorted(by_day)[:days]
+        daily = {k: [] for k in DAILY.split(",")}
+        daily["time"] = keys
+        for k in keys:
+            dd = by_day[k]
+            temps = [x for x in dd["t"] if x is not None]
+            codes = dd["codes"] or [3]
+            # الحالة الغالبة في النهار، مع تقديم المطر/الثلج/العواصف إن ظهرت ساعتين أو أكثر
+            wet = [c for c in codes if c >= 45]
+            code = max(set(wet), key=wet.count) if len(wet) >= 2 else max(set(codes), key=codes.count)
+            daily["weather_code"].append(code)
+            daily["temperature_2m_max"].append(max(temps))
+            daily["temperature_2m_min"].append(min(temps))
+            daily["precipitation_sum"].append(round(dd["p"], 1))
+            daily["precipitation_probability_max"].append(round(max(dd["pp"])) if dd["pp"] else (60 if dd["p"] >= 1 else 0))
+            daily["snowfall_sum"].append(round(dd["snow"], 1))
+            daily["wind_gusts_10m_max"].append(round(max(dd["g"]), 1) if dd["g"] else 0)
+            sr, ss = sun_times(k)
+            daily["sunrise"].append(sr)
+            daily["sunset"].append(ss)
+        loc = {"latitude": lat, "longitude": lon, "daily": daily, "source": "MET Norway"}
+        if current:
+            loc["current"] = cur
+        out.append(loc)
+    return out
+
+
+def fetch(days=3, current=False):
+    """Open-Meteo مع 3 محاولات، ثم المصدر الاحتياطي MET Norway."""
+    global SOURCE
+    for wait in (0, 20, 60):
+        if wait:
+            time.sleep(wait)
+        try:
+            data = fetch_open_meteo(days, current)
+            SOURCE = "Open-Meteo"
+            return data
+        except Exception as e:  # noqa: BLE001
+            print("Open-Meteo فشل:", e)
+    print("الانتقال إلى المصدر الاحتياطي MET Norway")
+    SOURCE = "MET Norway"
+    return fetch_met(days, current)
+
+
+SOURCE = "Open-Meteo"
+
+
+def snapshot():
+    """يحفظ weather.json (بصيغة Open-Meteo) لتستعمله صفحة الطقس إذا تعذّر الاتصال المباشر."""
+    data = fetch(days=7, current=True)
+    for loc in data:
+        loc["source"] = SOURCE
+    json.dump({"updated": datetime.now(TZ).isoformat(timespec="minutes"), "source": SOURCE, "towns": [t[0] for t in TOWNS],
+               "data": data}, open("weather.json", "w", encoding="utf-8"), ensure_ascii=False)
+    print("تم حفظ weather.json من", SOURCE)
 
 
 def alerts(locs):
@@ -141,12 +269,15 @@ def build(locs):
                  "style='display:inline-block;background:#1e6091;color:#fff;text-decoration:none;"
                  "padding:12px 26px;border-radius:30px;font-weight:bold;font-size:1.05em'>"
                  "🌦️ الطقس المباشر وتوقعات الأسبوع ←</a></p>")
-    p.append("<p><small>مصدر البيانات: Open-Meteo</small></p>")
+    p.append(f"<p><small>مصدر البيانات: {SOURCE}</small></p>")
     return today, title, "<div dir='rtl'>" + "".join(p) + "</div>"
 
 
 def main():
     mode = os.environ.get("BLOGGER_MODE", "publish")
+    if mode == "snapshot":
+        snapshot()
+        return
     force = os.environ.get("FORCE") == "1"
     now = datetime.now(TZ)
     if not force and now.hour < POST_HOUR:
@@ -154,7 +285,8 @@ def main():
         return
     state = json.load(open(STATE_FILE, encoding="utf-8")) if os.path.exists(STATE_FILE) else {}
     if mode == "publish" and state.get("date") == now.strftime("%Y-%m-%d"):
-        print("نُشرت نشرة اليوم سابقاً")
+        print("نُشرت نشرة اليوم سابقاً، تحديث النسخة الاحتياطية فقط")
+        snapshot()
         return
 
     today, title, content = build(fetch())
@@ -179,6 +311,10 @@ def main():
     if mode == "publish":   # المسودات التجريبية لا تمنع نشر نشرة اليوم
         json.dump({"date": today, "post_id": post.get("id"), "url": post.get("url")},
                   open(STATE_FILE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+        try:
+            snapshot()
+        except Exception as e:  # noqa: BLE001
+            print("تعذّر حفظ النسخة الاحتياطية:", e)
 
 
 if __name__ == "__main__":

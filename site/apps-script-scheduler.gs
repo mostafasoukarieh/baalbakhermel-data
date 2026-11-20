@@ -25,11 +25,18 @@ function dispatch_(workflow, inputs) {
   console.log('تم تشغيل ' + workflow);
 }
 
-/** أسعار المحروقات: كل ساعة بين 7 صباحاً و6 مساءً */
+/** يعمل كل ساعة: أسعار المحروقات + نسخة الطقس الاحتياطية + إعادة محاولة نشرة الطقس */
 function runFuel() {
   var h = Number(Utilities.formatDate(new Date(), 'Asia/Beirut', 'H'));
-  if (h < 7 || h > 18) return;
-  dispatch_('fuel.yml', { update_post: 'false' });
+  var jobs = [];
+  if (h >= 7 && h <= 18) jobs.push(['fuel.yml', { update_post: 'false' }]);
+  // إذا فشلت نشرة الصباح، تُعاد المحاولة كل ساعة حتى الظهر (السكربت لا ينشر نشرتين في اليوم)
+  if (h >= 8 && h <= 13) jobs.push(['weather.yml', { mode: 'publish' }]);
+  // نسخة احتياطية لصفحة الطقس المباشر
+  else if (h >= 6 && h <= 23) jobs.push(['weather.yml', { mode: 'snapshot' }]);
+  jobs.forEach(function (j) {
+    try { dispatch_(j[0], j[1]); } catch (e) { console.error(e); }
+  });
 }
 
 /** نشرة الطقس اليومية (السكربت نفسه يمنع نشر نشرتين في اليوم نفسه) */
