@@ -1,0 +1,54 @@
+<!doctype html><html dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:C;src:url(fonts/cairo-arabic-900-normal.woff2);font-weight:900;unicode-range:U+0600-06FF,U+FE70-FEFF}
+@font-face{font-family:C;src:url(fonts/cairo-latin-900-normal.woff2);font-weight:900}
+@font-face{font-family:C;src:url(fonts/cairo-arabic-800-normal.woff2);font-weight:800;unicode-range:U+0600-06FF,U+FE70-FEFF}
+@font-face{font-family:C;src:url(fonts/cairo-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:T;src:url(fonts/tajawal-arabic-700-normal.woff2);font-weight:700;unicode-range:U+0600-06FF,U+FE70-FEFF}
+@font-face{font-family:T;src:url(fonts/tajawal-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:T;src:url(fonts/tajawal-arabic-500-normal.woff2);font-weight:500;unicode-range:U+0600-06FF,U+FE70-FEFF}
+@font-face{font-family:T;src:url(fonts/tajawal-latin-500-normal.woff2);font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;overflow:hidden;background:#04172F;font-family:T}
+.c{position:relative;width:1200px;height:630px;overflow:hidden;
+background:radial-gradient(60% 80% at 15% 30%,rgba(16,82,166,.55),transparent 70%),radial-gradient(50% 60% at 95% 100%,rgba(222,30,40,.22),transparent 70%),linear-gradient(160deg,#07254A,#04172F 60%)}
+.grid{position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 96px)}
+.star{position:absolute;border-radius:50%;background:#fff}
+.met{position:absolute;height:2px;border-radius:2px;transform:rotate(-32deg);transform-origin:right center;background:linear-gradient(90deg,transparent,rgba(245,247,250,.9))}
+.met::after{content:"";position:absolute;right:-3px;top:-2px;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 10px 3px rgba(68,138,227,.9)}
+svg.atom{position:absolute;left:110px;top:330px;opacity:.85}
+.logo{position:absolute;left:58px;top:58px;width:400px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.45))}
+.txt{position:absolute;right:70px;top:70px;width:620px;text-align:right;color:#F5F7FA}
+.kick{display:inline-block;font-family:C;font-weight:800;font-size:22px;color:#fff;background:#DE1E28;padding:4px 20px 6px;border-radius:4px}
+h1{font-family:C;font-weight:900;font-size:66px;line-height:1.25;margin:22px 0 6px}
+h1 span{color:#448AE3}
+.date{font-family:T;font-weight:700;font-size:28px;color:#E5757B;margin-bottom:26px}
+ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+li{font-family:T;font-weight:500;font-size:23px;color:#F5F7FA;display:flex;align-items:center;gap:12px;justify-content:flex-start}
+li::before{content:"";width:10px;height:10px;border-radius:50%;background:#DE1E28;flex:none;box-shadow:0 0 8px #DE1E28}
+.foot{position:absolute;left:0;right:0;bottom:0;height:56px;background:rgba(2,11,23,.7);border-top:2px solid #DE1E28;display:flex;align-items:center;justify-content:space-between;padding:0 70px;color:#F5F7FA;font-family:T;font-weight:700;font-size:20px}
+.foot b{color:#448AE3;direction:ltr}
+</style></head><body><div class="c"><div class="grid"></div>
+<div id="sky"></div>
+<svg class="atom" width="300" height="230" viewBox="0 0 400 310">
+ <g fill="none" stroke-width="2.5" transform="translate(200 155)">
+  <ellipse rx="170" ry="48" stroke="rgba(68,138,227,.75)"/>
+  <ellipse rx="170" ry="48" stroke="rgba(68,138,227,.55)" transform="rotate(60)"/>
+  <ellipse rx="170" ry="48" stroke="rgba(229,117,123,.6)" transform="rotate(-60)"/>
+ </g>
+ <circle cx="200" cy="155" r="14" fill="#DE1E28"/><circle cx="200" cy="155" r="26" fill="rgba(222,30,40,.25)"/>
+ <circle cx="370" cy="155" r="8" fill="#448AE3"/><circle cx="115" cy="81" r="8" fill="#F5F7FA"/><circle cx="115" cy="229" r="8" fill="#448AE3"/>
+</svg>
+<img class="logo" src="logo.png">
+<div class="txt">
+ <span class="kick">العدد {{ISSUE}}</span>
+ <h1>نشرة الفيزياء<br><span>الأسبوعية</span></h1>
+ <div class="date">{{DATES}}</div>
+ <ul>{{ITEMS}}</ul>
+</div>
+<div class="foot"><span>تجمع أساتذة الفيزياء في لبنان</span><b>apt-lb.net</b></div>
+</div>
+<script>
+let s=document.getElementById('sky'),r=(a,b)=>a+Math.random()*(b-a);Math.random=(()=>{let x=7;return()=>((x=(x*16807)%2147483647)/2147483647)})();
+for(let i=0;i<90;i++){let d=document.createElement('div');d.className='star';let z=r(1,2.6);Object.assign(d.style,{left:r(0,1200)+'px',top:r(0,570)+'px',width:z+'px',height:z+'px',opacity:r(.25,.9)});s.appendChild(d)}
+[[480,40,190],[700,10,120],[1050,30,150],[560,260,90],[300,20,110]].forEach(([x,y,l])=>{let m=document.createElement('div');m.className='met';Object.assign(m.style,{left:x+'px',top:y+'px',width:l+'px'});s.appendChild(m)});
+</script></body></html>

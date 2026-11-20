@@ -1,0 +1,59 @@
+<!-- الخطوط والتنسيق في آخر التدوينة حتى لا يظهر نص الـCSS في مقتطف البطاقة -->
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&amp;family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+<style>
+.lapt-news{--pitch-dark:#04172F;--pitch:#07254A;--blue:#1052A6;--blue-light:#448AE3;--beige:#F5F7FA;--line:rgba(245,247,250,.16);--red:#DE1E28;--red-soft:#E5757B;}
+.lapt-news,.lapt-news *{box-sizing:border-box;}
+.lapt-news{direction:rtl;text-align:right;background:var(--pitch-dark);color:var(--beige);font-family:'Tajawal',sans-serif;line-height:1.9;-webkit-font-smoothing:antialiased;}
+.lapt-news .cover{margin:0;padding:0;background:var(--pitch-dark);line-height:0;}
+.lapt-news .cover a{display:block;margin:0!important;}
+.lapt-news .cover img{display:block;width:100%;max-width:1200px;height:auto;margin:0 auto;border:0;}
+.lapt-news .wrap{max-width:760px;margin:0 auto;padding:0 20px 60px;}
+.lapt-news .hero{position:relative;background:radial-gradient(120% 160% at 50% -20%,var(--pitch) 0%,var(--pitch-dark) 62%);color:var(--beige);padding:56px 20px 52px;overflow:hidden;text-align:center;}
+.lapt-news .hero::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,transparent 2px 96px);opacity:.5;pointer-events:none;}
+.lapt-news .hero::after{content:"";position:absolute;left:50%;top:-140px;width:340px;height:340px;border:2px solid rgba(245,247,250,.16);border-radius:50%;transform:translateX(-50%);pointer-events:none;}
+.lapt-news .kicker{position:relative;display:inline-block;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;color:var(--red-soft);padding-bottom:14px;opacity:0;animation:laptRiseIn .7s ease forwards;}
+.lapt-news h1{position:relative;font-family:'Cairo',sans-serif;font-weight:800;font-size:clamp(26px,5vw,40px);line-height:1.45;color:var(--beige);margin:0 0 18px;opacity:0;animation:laptRiseIn .8s ease .12s forwards;}
+.lapt-news .lede{position:relative;text-align:center;font-size:17px;color:var(--beige);max-width:560px;margin:0 auto;opacity:0;animation:laptRiseIn .8s ease .26s forwards;}
+.lapt-news .floodlight{position:absolute;top:-60px;left:50%;width:520px;height:320px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(68,138,227,.35),transparent 65%);animation:laptGlow 5s ease-in-out infinite;pointer-events:none;}
+@keyframes laptRiseIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+@keyframes laptGlow{0%,100%{opacity:.55;}50%{opacity:1;}}
+@media (prefers-reduced-motion:reduce){.lapt-news .kicker,.lapt-news h1,.lapt-news .lede{animation:none;opacity:1;}.lapt-news .floodlight{animation:none;}}
+.lapt-news article{padding-top:44px;}
+.lapt-news .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;font-size:13px;color:var(--blue-light);margin-bottom:34px;}
+.lapt-news .meta span:not(:last-child)::after{content:"•";margin-inline-start:10px;color:var(--red);}
+.lapt-news h2{font-family:'Cairo',sans-serif;font-weight:700;font-size:22px;color:var(--red-soft);margin:46px 0 14px;display:flex;align-items:center;gap:10px;}
+.lapt-news h2 .dot{width:9px;height:9px;border-radius:50%;background:var(--red);flex:none;}
+.lapt-news h3{font-family:'Cairo',sans-serif;font-weight:700;font-size:18px;color:var(--beige);margin:26px 0 8px;line-height:1.6;}
+.lapt-news p{font-size:16.5px;margin:0 0 14px;color:var(--beige);}
+.lapt-news ul,.lapt-news ol{margin:0 0 16px;padding-inline-start:20px;}
+.lapt-news li{margin-bottom:8px;font-size:16px;color:var(--beige);}
+.lapt-news li::marker{color:var(--red);}
+.lapt-news strong{color:var(--blue-light);font-weight:700;}
+.lapt-news a{color:var(--blue-light);}
+.lapt-news .divider{border:0;height:1px;background:repeating-linear-gradient(90deg,var(--blue-light) 0 10px,transparent 10px 18px);margin:40px 0;opacity:.5;}
+.lapt-news .pull{background:rgba(245,247,250,.06);border:1px solid var(--line);color:var(--beige);border-radius:4px;padding:26px 24px;margin:28px 0;position:relative;text-align:center;}
+.lapt-news .pull .big{font-family:'Cairo',sans-serif;font-weight:800;font-size:clamp(22px,5vw,30px);color:var(--red-soft);display:block;margin-bottom:6px;}
+.lapt-news .pull .cap{font-size:14px;color:var(--beige);opacity:.85;}
+.lapt-news .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:20px 0 8px;}
+@media (max-width:640px){.lapt-news .grid3{grid-template-columns:1fr;}}
+.lapt-news .stat{border:1px solid var(--line);border-radius:4px;padding:16px;background:rgba(245,247,250,.05);text-align:center;}
+.lapt-news .stat b{display:block;font-family:'Cairo',sans-serif;color:var(--red-soft);font-size:15px;margin-bottom:4px;}
+.lapt-news .grid3 .stat b{font-size:30px;line-height:1.3;direction:ltr;}
+.lapt-news .stat span{font-size:14.5px;color:var(--beige);opacity:.9;}
+.lapt-news .teach{border-inline-start:3px solid var(--red);background:rgba(68,138,227,.08);padding:12px 16px;margin:6px 0 18px;border-radius:0 4px 4px 0;font-size:15.5px;}
+.lapt-news .teach b{font-family:'Cairo',sans-serif;color:var(--red-soft);}
+.lapt-news .src{font-size:13.5px;opacity:.85;margin-top:-6px;}
+.lapt-news .src a{text-decoration:none;}
+.lapt-news .src a:hover{text-decoration:underline;}
+.lapt-news .ltr{direction:ltr;unicode-bidi:embed;}
+.lapt-news .sources li{font-size:14px;}
+.lapt-news .closing{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);text-align:center;}
+.lapt-news .closing p{font-size:16px;}
+.lapt-news .cta{display:inline-block;margin-top:10px;background:var(--red);color:var(--beige)!important;text-decoration:none;font-family:'Cairo',sans-serif;font-weight:700;font-size:15px;padding:12px 26px;border-radius:3px;transition:background .2s ease,transform .2s ease;}
+.lapt-news .cta:hover{background:var(--red-soft);color:var(--pitch-dark)!important;transform:translateY(-1px);}
+.lapt-news .channels{margin-top:22px;font-size:14px;color:var(--beige);opacity:.85;}
+.lapt-news .channels a{color:var(--blue-light);text-decoration:none;font-weight:500;}
+.lapt-news .channels a:hover{text-decoration:underline;}
+</style>

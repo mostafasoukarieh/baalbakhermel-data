@@ -1,0 +1,71 @@
+name: نشرة الفيزياء الأسبوعية (apt-lb.net)
+
+on:
+  # يعمل تلقائياً حين تُرفع نشرة جديدة إلى lapt/issues/
+  push:
+    branches: [main]
+    paths: ["lapt/issues/**"]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "auto = أول عدد مسودة ثم نشر مباشر، draft = مسودة، publish = نشر، check = فحص الوصول فقط"
+        default: auto
+        type: choice
+        options: [auto, draft, publish, check]
+
+permissions:
+  contents: write
+
+concurrency: lapt-newsletter
+
+jobs:
+  newsletter:
+    runs-on: ubuntu-latest
+    env:
+      BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+      BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
+      BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+      LAPT_MODE: ${{ github.event.inputs.mode || 'auto' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: فحص الوصول إلى مدونة التجمع
+        if: env.LAPT_MODE == 'check'
+        run: python scripts/lapt_newsletter.py check
+
+      - name: تثبيت المتصفح لتصميم الغلاف
+        if: env.LAPT_MODE != 'check'
+        run: |
+          pip install -q playwright
+          python -m playwright install --with-deps chromium
+
+      - name: تصميم الغلاف
+        if: env.LAPT_MODE != 'check'
+        run: python scripts/lapt_newsletter.py build
+
+      - name: حفظ الغلاف
+        if: env.LAPT_MODE != 'check'
+        run: |
+          git config user.name "lapt-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain -- lapt/issues)" ]; then
+            git add lapt/issues
+            git commit -m "غلاف نشرة الفيزياء"
+            git pull --rebase -q && git push
+          fi
+          echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: النشر على بلوغر
+        if: env.LAPT_MODE != 'check'
+        run: python scripts/lapt_newsletter.py publish
+
+      - name: حفظ حالة النشر
+        if: env.LAPT_MODE != 'check'
+        run: |
+          [ -z "$(git status --porcelain -- lapt/state.json)" ] && exit 0
+          git add lapt/state.json
+          git commit -m "نشر نشرة الفيزياء"
+          git pull --rebase -q && git push
