@@ -177,12 +177,30 @@
   }
 
   var lastLoad = 0;
+  // نسخة احتياطية يحدّثها GitHub كل ساعة، تُستعمل إذا تعذّر الاتصال المباشر بمصدر الطقس
+  var BACKUP_URL = "https://raw.githubusercontent.com/mostafasoukarieh/baalbakhermel-data/main/weather.json";
+  function getJson(url, ms) {
+    var ctl = window.AbortController ? new AbortController() : null;
+    var t = ctl && setTimeout(function () { ctl.abort(); }, ms || 12000);
+    return fetch(url, ctl ? { signal: ctl.signal, cache: "no-store" } : {}).then(function (res) {
+      if (t) clearTimeout(t);
+      if (!res.ok) throw new Error(res.status);
+      return res.json();
+    });
+  }
   function load() {
     lastLoad = Date.now();
     $("bhw-updated").textContent = "جارٍ التحديث…";
-    fetch(buildUrl())
-      .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
+    getJson(buildUrl(), 12000)
+      .catch(function () { return getJson(buildUrl(), 15000); })   // محاولة ثانية
       .then(function (json) { render(Array.isArray(json) ? json : [json]); })
+      .catch(function () {
+        return getJson(BACKUP_URL + "?t=" + Date.now(), 15000).then(function (b) {
+          render(b.data);
+          var tm = new Date(b.updated).toLocaleTimeString(LOCALE, { hour: "2-digit", minute: "2-digit", timeZone: TZ });
+          $("bhw-updated").textContent = "آخر تحديث: " + tm + " (نسخة احتياطية)";
+        });
+      })
       .catch(function () {
         $("bhw-updated").innerHTML = '<span class="bhw-err">تعذّر جلب البيانات، ستُعاد المحاولة بعد دقيقة.</span>';
         clearTimeout(timer); timer = setTimeout(load, 60000);
