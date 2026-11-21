@@ -1,0 +1,40 @@
+name: مسودة إعلان مبوّب
+
+on:
+  # يشغّله نموذج «أضف إعلانك» (Apps Script: Ads.gs) عند وصول إعلان جديد
+  workflow_dispatch:
+    inputs:
+      ad_id:
+        description: "رقم الإعلان"
+        required: true
+      title:
+        description: "عنوان المنشور"
+        required: true
+      labels:
+        description: "التسميات مفصولة بفاصلة"
+        required: false
+      content:
+        description: "محتوى المنشور (HTML)"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: إنشاء المسودة في بلوغر
+        env:
+          BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+          BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          AD_ID: ${{ github.event.inputs.ad_id }}
+          AD_TITLE: ${{ github.event.inputs.title }}
+          AD_LABELS: ${{ github.event.inputs.labels }}
+          AD_CONTENT: ${{ github.event.inputs.content }}
+        run: python scripts/ad_draft.py
