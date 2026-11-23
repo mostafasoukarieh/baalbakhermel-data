@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-23",
+  "final": false,
+  "updated": "09:20",
+  "headline": "دوري أبطال آسيا للنخبة بمشاركة الهلال والأهلي والاتحاد، ولبنان يواجه إيران في كأس آسيا للكرة الشاطئية",
+  "groups": [
+    {
+      "scope": "محلية",
+      "competition": "كأس آسيا للكرة الشاطئية 2026 (تايلاند) – المجموعة الثانية",
+      "matches": [
+        {
+          "time": "09:00",
+          "home": "لبنان",
+          "away": "إيران",
+          "status": "upcoming",
+          "note": "الجولة الثالثة والأخيرة من دور المجموعات؛ لبنان متصدّر بـ6 نقاط"
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري أبطال آسيا للنخبة",
+      "matches": [
+        {
+          "time": "15:45",
+          "home": "نيفتشي",
+          "away": "الهلال",
+          "status": "upcoming",
+          "channel": "beIN Sports 1"
+        },
+        {
+          "time": "18:00",
+          "home": "الشمال",
+          "away": "الأهلي السعودي",
+          "status": "upcoming",
+          "channel": "beIN Sports 1"
+        },
+        {
+          "time": "18:00",
+          "home": "العين",
+          "away": "استقلال طهران",
+          "status": "upcoming",
+          "channel": "beIN Sports 2"
+        },
+        {
+          "time": "18:00",
+          "home": "تراكتور",
+          "away": "الوصل",
+          "status": "upcoming",
+          "channel": "beIN Sports 3"
+        },
+        {
+          "time": "20:15",
+          "home": "الاتحاد",
+          "away": "باختاكور",
+          "status": "upcoming",
+          "channel": "beIN Sports 3"
+        },
+        {
+          "time": "20:15",
+          "home": "القوة الجوية",
+          "away": "الغرافة",
+          "status": "upcoming",
+          "channel": "beIN Sports 1"
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الإنجليزي الممتاز – المرحلة 12",
+      "matches": [
+        {
+          "time": "22:00",
+          "home": "برنتفورد",
+          "away": "إيفرتون",
+          "status": "upcoming",
+          "channel": "beIN Sports 2"
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الإسباني – المرحلة 13",
+      "matches": [
+        {
+          "time": "22:00",
+          "home": "ليفانتي",
+          "away": "إلتشي",
+          "status": "upcoming",
+          "channel": "beIN Sports 4"
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الإيطالي – المرحلة 12",
+      "matches": [
+        {
+          "time": "21:45",
+          "home": "مونزا",
+          "away": "فيورنتينا",
+          "status": "upcoming",
+          "venue": "ملعب يو-باور، مونزا"
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري المصري الممتاز – المرحلة 9",
+      "matches": [
+        {
+          "time": "17:00",
+          "home": "الجونة",
+          "away": "الزمالك",
+          "status": "upcoming",
+          "channel": "أون سبورت"
+        },
+        {
+          "time": "20:00",
+          "home": "الأهلي",
+          "away": "بيراميدز",
+          "status": "upcoming",
+          "venue": "ستاد القاهرة الدولي",
+          "channel": "أون سبورت"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "الاتحاد اللبناني لكرة القدم",
+      "url": "https://the-lfa.com.lb/news/beachsoccerafc26_m2.php"
+    },
+    {
+      "name": "صدى البلد",
+      "url": "https://www.elbalad.news/7190918"
+    },
+    {
+      "name": "رابطة الدوري الإنجليزي",
+      "url": "https://www.premierleague.com/en/news/4725574/fixture-amendments-for-premier-league-matches-in-november"
+    },
+    {
+      "name": "رابطة الليغا",
+      "url": "https://www.laliga.com/es-MA/laliga-easports/resultados"
+    },
+    {
+      "name": "Fantacalcio",
+      "url": "https://www.fantacalcio.it/serie-a/calendario/12/2026-27/monza-fiorentina/18071"
+    },
+    {
+      "name": "اليوم السابع",
+      "url": "https://youm7.com/story/2026/11/22/%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D8%B5%D8%AF%D8%A7%D8%B1%D8%A9-%D9%8A%D8%B4%D8%AA%D8%B9%D9%84-%D8%BA%D8%AF%D9%8B%D8%A7-%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%88%D9%84%D8%A9-%D8%A7%D9%84%D8%AA%D8%A7%D8%B3%D8%B9%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A/7625686"
+    }
+  ]
+}
