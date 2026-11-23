@@ -73,7 +73,9 @@ python3 scripts/greengoal.py build && python3 scripts/greengoal.py preview   # �
 ```
 احذف الأغلفة المولّدة محلياً (`cover.png` و`matches/*.png` الجديدة) قبل الـcommit؛ GitHub يولّدها بنفسه.
 
-## صفحة الدوري اللبناني (صفحة ثابتة) — `greengoal/league.json`
+## صفحة الدوري اللبناني (صفحة ثابتة)
+الاسم الرسمي للبطولة: **دوري فانتازيا اللبناني** (فانتازيا: شركة رقائق البطاطا اللبنانية الراعية للدوري). استعمل هذا الاسم في الصفحة، وابحث به وبـ«الدوري اللبناني» معاً.
+ — `greengoal/league.json`
 صفحة بلوغر ثابتة (`/p/lebanese-league.html`) تقرأ `greengoal/league.json` مباشرة من GitHub وتتحدّث وحدها
 (كل 10 دقائق، وكل دقيقتين أثناء المباريات الجارية). **رفع league.json لا يشغّل أي workflow**: يكفي الـpush.
 محتوى الصفحة نفسه في `site/greengoal-league-page.html`؛ تعديله ورفعه يحدّث الصفحة على بلوغر تلقائياً
@@ -81,7 +83,7 @@ python3 scripts/greengoal.py build && python3 scripts/greengoal.py preview   # �
 
 ```json
 {
-  "competition": "الدوري اللبناني لكرة القدم – الدرجة الأولى",
+  "competition": "دوري فانتازيا اللبناني لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
   "updated": "2026-11-23 19:30",
   "relegation": 0,

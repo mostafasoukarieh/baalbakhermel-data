@@ -27,7 +27,7 @@ STATE_FILE = os.path.join(ROOT, "state.json")
 TODAY_FILE = os.path.join(ROOT, "today.json")
 LEAGUE_FILE = os.path.join(ROOT, "league.json")
 LEAGUE_PAGE_HTML = os.path.join("site", "greengoal-league-page.html")
-LEAGUE_PAGE_TITLE = "الدوري اللبناني: الترتيب والنتائج"
+LEAGUE_PAGE_TITLE = "دوري فانتازيا اللبناني: الترتيب والنتائج"
 LEAGUE_PAGE_SLUG = "lebanese-league"
 WHATSAPP = "96176705190"
 
