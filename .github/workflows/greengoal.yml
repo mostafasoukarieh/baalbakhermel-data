@@ -28,6 +28,8 @@ jobs:
       GG_MODE: ${{ github.event.inputs.mode || 'auto' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -41,8 +43,9 @@ jobs:
         run: python scripts/greengoal.py validate
 
       - name: صفحة الدوري اللبناني
-        if: env.GG_MODE == 'page' || (github.event_name == 'push' && contains(join(github.event.commits.*.modified, ','), 'site/greengoal-league-page.html'))
+        if: env.GG_MODE == 'page' || github.event_name == 'push'
         run: |
+          if [ "$GG_MODE" != page ] && ! git diff --name-only HEAD~1 HEAD | grep -q '^site/greengoal-league-page.html$'; then echo 'الصفحة لم تتغير'; exit 0; fi
           python scripts/greengoal.py page
           git config user.name "greengoal-bot"
           git config user.email "actions@users.noreply.github.com"
