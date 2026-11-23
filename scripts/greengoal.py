@@ -25,6 +25,10 @@ MATCHES = os.path.join(ROOT, "matches")
 ASSETS = os.path.join(ROOT, "assets")
 STATE_FILE = os.path.join(ROOT, "state.json")
 TODAY_FILE = os.path.join(ROOT, "today.json")
+LEAGUE_FILE = os.path.join(ROOT, "league.json")
+LEAGUE_PAGE_HTML = os.path.join("site", "greengoal-league-page.html")
+LEAGUE_PAGE_TITLE = "الدوري اللبناني: الترتيب والنتائج"
+LEAGUE_PAGE_SLUG = "lebanese-league"
 WHATSAPP = "96176705190"
 
 SCOPES = ["بعلبك-الهرمل", "محلية", "دولية"]
@@ -230,6 +234,66 @@ def day_body(data):
     return "".join(parts)
 
 
+# ---------------------------------------------------------------- الدوري اللبناني (صفحة ثابتة)
+
+def validate_league():
+    if not os.path.exists(LEAGUE_FILE):
+        return []
+    d = load_json(LEAGUE_FILE)
+    problems = []
+    rows = d.get("standings") or []
+    if len(rows) < 6:
+        problems.append("standings: جدول الترتيب ناقص")
+    teams = set()
+    for i, t in enumerate(rows):
+        for k in ("team", "p", "w", "d", "l", "gf", "ga", "pts"):
+            if k not in t:
+                problems.append(f"standings[{i}] ينقصه {k}")
+        if all(k in t for k in ("p", "w", "d", "l", "pts")):
+            if t["w"] + t["d"] + t["l"] != t["p"]:
+                problems.append(f"{t['team']}: فاز+تعادل+خسر لا يساوي لعب")
+            if t["w"] * 3 + t["d"] != t["pts"] and not t.get("deducted"):
+                problems.append(f"{t['team']}: النقاط لا تساوي 3×فاز+تعادل (إن كان هناك خصم نقاط ضع deducted)")
+        teams.add(t.get("team"))
+    pts = [t.get("pts", 0) for t in rows]
+    if pts != sorted(pts, reverse=True):
+        problems.append("standings غير مرتّب حسب النقاط")
+    for part in ("previous", "current"):
+        for m in (d.get(part) or {}).get("matches", []):
+            for k in ("date", "home", "away", "status"):
+                if not m.get(k):
+                    problems.append(f"{part}: مباراة ينقصها {k}")
+            if m.get("status") not in STATUS:
+                problems.append(f"{part}: status غير معروف {m.get('status')}")
+            if m.get("status") in ("finished", "live") and (m.get("home_score") is None or m.get("away_score") is None):
+                problems.append(f"{part}: {m.get('home')} – {m.get('away')} بلا نتيجة")
+            for side in ("home", "away"):
+                if m.get(side) and m[side] not in teams:
+                    problems.append(f"{part}: الفريق «{m[side]}» غير موجود في جدول الترتيب (وحّد الأسماء)")
+    return problems
+
+
+def cmd_page():
+    """ينشئ صفحة بلوغر الثابتة للدوري اللبناني أو يحدّث محتواها (البيانات نفسها تُقرأ من league.json)."""
+    from blogger_api import api, blog_id, token
+    state = load_state()
+    t = token()
+    bid = blog_id(t, BLOG_URL)
+    content = open(LEAGUE_PAGE_HTML, encoding="utf-8").read()
+    info = state.get("league_page") or {}
+    if info.get("page_id"):
+        p = api("PATCH", f"blogs/{bid}/pages/{info['page_id']}", t,
+                body={"title": LEAGUE_PAGE_TITLE, "content": content})
+    else:
+        # العنوان الإنجليزي أولاً ليصير الرابط /p/lebanese-league.html، ثم العنوان العربي
+        p = api("POST", f"blogs/{bid}/pages", t, query={"isDraft": "false"},
+                body={"kind": "blogger#page", "title": LEAGUE_PAGE_SLUG, "content": content})
+        p = api("PATCH", f"blogs/{bid}/pages/{p['id']}", t, body={"title": LEAGUE_PAGE_TITLE})
+    state["league_page"] = {"page_id": p.get("id"), "url": p.get("url"), "status": p.get("status")}
+    save_json(STATE_FILE, state)
+    print("صفحة الدوري:", p.get("status"), p.get("url"))
+
+
 # ---------------------------------------------------------------- القالب المشترك للتدوينة
 
 def wrap(title, kicker, body, cover_url=None):
@@ -265,6 +329,7 @@ def cmd_validate(strict=True):
     for day in match_days():
         p, _ = validate_day(day)
         bad += [f"matches/{day}: {x}" for x in p]
+    bad += [f"league.json: {x}" for x in validate_league()]
     if bad:
         print("\n".join(bad))
         if strict:
@@ -416,4 +481,4 @@ def cmd_publish():
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "validate"
     {"validate": cmd_validate, "build": cmd_build, "publish": cmd_publish,
-     "preview": cmd_preview, "check": cmd_check}[cmd]()
+     "preview": cmd_preview, "check": cmd_check, "page": cmd_page}[cmd]()

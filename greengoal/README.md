@@ -72,3 +72,28 @@ python3 scripts/greengoal.py validate          # يجب أن يطبع: كل ال
 python3 scripts/greengoal.py build && python3 scripts/greengoal.py preview   # معاينة اختيارية
 ```
 احذف الأغلفة المولّدة محلياً (`cover.png` و`matches/*.png` الجديدة) قبل الـcommit؛ GitHub يولّدها بنفسه.
+
+## صفحة الدوري اللبناني (صفحة ثابتة) — `greengoal/league.json`
+صفحة بلوغر ثابتة (`/p/lebanese-league.html`) تقرأ `greengoal/league.json` مباشرة من GitHub وتتحدّث وحدها
+(كل 10 دقائق، وكل دقيقتين أثناء المباريات الجارية). **رفع league.json لا يشغّل أي workflow**: يكفي الـpush.
+محتوى الصفحة نفسه في `site/greengoal-league-page.html`؛ تعديله ورفعه يحدّث الصفحة على بلوغر تلقائياً
+(أو Actions ← mode = page).
+
+```json
+{
+  "competition": "الدوري اللبناني لكرة القدم – الدرجة الأولى",
+  "season": "2026-2027",
+  "updated": "2026-11-23 19:30",
+  "relegation": 0,
+  "standings": [{"team": "جويا", "p": 7, "w": 5, "d": 1, "l": 1, "gf": 15, "ga": 2, "pts": 16}],
+  "previous": {"title": "نتائج الأسبوع الماضي", "matches": [...]},
+  "current":  {"title": "مباريات هذا الأسبوع", "matches": [...]},
+  "sources": [{"name": "...", "url": "https://..."}]
+}
+```
+- `standings` مرتّب كما في الترتيب الرسمي. يُفحص: فاز+تعادل+خسر = لعب، والنقاط = 3×فاز + تعادل (إن وُجد خصم نقاط رسمي ضع `"deducted": 3`).
+- `relegation`: عدد الفرق الهابطة إن أعلنه الاتحاد (يلوّن آخر الجدول بالأحمر)، وإلا 0.
+- المباراة: `date` (YYYY-MM-DD)، `time` (HH:MM **بتوقيت بيروت**)، `home`، `away`، `status` (upcoming/live/finished/postponed/cancelled/unknown)، `home_score`، `away_score`، `minute` للجارية، `venue` و`note` اختياريان.
+- أسماء الفرق في المباريات يجب أن تطابق أسماء جدول الترتيب حرفياً (الفحص يرفض غير ذلك).
+- `previous` = مباريات الأسبوع الماضي (من الإثنين إلى الأحد) بنتائجها، و`current` = مباريات هذا الأسبوع (من الإثنين إلى الأحد)، ومعها المؤجّلة المعاد جدولتها هذا الأسبوع. كل إثنين تنتقل مباريات `current` إلى `previous`.
+- لا تخترع نتيجة أو موعداً: من مصدرين متطابقين أو من الاتحاد اللبناني لكرة القدم.

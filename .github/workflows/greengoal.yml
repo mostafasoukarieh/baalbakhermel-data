@@ -4,14 +4,14 @@ on:
   # يعمل تلقائياً حين ترفع المهمة اليومية خبراً جديداً أو تحدّث ملف مباريات
   push:
     branches: [main]
-    paths: ["greengoal/posts/**", "greengoal/matches/*.json"]
+    paths: ["greengoal/posts/**", "greengoal/matches/*.json", "site/greengoal-league-page.html"]
   workflow_dispatch:
     inputs:
       mode:
-        description: "auto = أول نشر مسودات ثم نشر مباشر، draft = مسودة، publish = نشر، check = فحص الوصول فقط"
+        description: "auto = أول نشر مسودات ثم نشر مباشر، draft = مسودة، publish = نشر، check = فحص الوصول فقط، page = إنشاء/تحديث صفحة الدوري اللبناني"
         default: auto
         type: choice
-        options: [auto, draft, publish, check]
+        options: [auto, draft, publish, check, page]
 
 permissions:
   contents: write
@@ -40,18 +40,28 @@ jobs:
         if: env.GG_MODE != 'check'
         run: python scripts/greengoal.py validate
 
+      - name: صفحة الدوري اللبناني
+        if: env.GG_MODE == 'page' || (github.event_name == 'push' && contains(join(github.event.commits.*.modified, ','), 'site/greengoal-league-page.html'))
+        run: |
+          python scripts/greengoal.py page
+          git config user.name "greengoal-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain -- greengoal/state.json)" ]; then
+            git add greengoal/state.json && git commit -m "صفحة الدوري اللبناني" && git pull --rebase -q && git push
+          fi
+
       - name: تثبيت المتصفح لتصميم الأغلفة
-        if: env.GG_MODE != 'check'
+        if: env.GG_MODE != 'check' && env.GG_MODE != 'page'
         run: |
           pip install -q playwright
           python -m playwright install --with-deps chromium
 
       - name: تصميم الأغلفة
-        if: env.GG_MODE != 'check'
+        if: env.GG_MODE != 'check' && env.GG_MODE != 'page'
         run: python scripts/greengoal.py build
 
       - name: حفظ الأغلفة
-        if: env.GG_MODE != 'check'
+        if: env.GG_MODE != 'check' && env.GG_MODE != 'page'
         run: |
           git config user.name "greengoal-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -63,11 +73,11 @@ jobs:
           echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
       - name: النشر على بلوغر
-        if: env.GG_MODE != 'check'
+        if: env.GG_MODE != 'check' && env.GG_MODE != 'page'
         run: python scripts/greengoal.py publish
 
       - name: حفظ حالة النشر
-        if: env.GG_MODE != 'check'
+        if: env.GG_MODE != 'check' && env.GG_MODE != 'page'
         run: |
           [ -z "$(git status --porcelain -- greengoal/state.json greengoal/today.json)" ] && exit 0
           git add greengoal/state.json greengoal/today.json

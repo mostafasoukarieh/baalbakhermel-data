@@ -1,0 +1,45 @@
+{
+  "competition": "الدوري اللبناني لكرة القدم – الدرجة الأولى",
+  "season": "2026-2027",
+  "updated": "2026-11-23 19:30",
+  "verified": false,
+  "standings": [
+    {"team": "جويا", "p": 7, "w": 5, "d": 1, "l": 1, "gf": 15, "ga": 2, "pts": 16},
+    {"team": "الصفاء", "p": 6, "w": 5, "d": 1, "l": 0, "gf": 14, "ga": 3, "pts": 16},
+    {"team": "العهد", "p": 7, "w": 3, "d": 3, "l": 1, "gf": 5, "ga": 4, "pts": 12},
+    {"team": "النجمة", "p": 5, "w": 3, "d": 2, "l": 0, "gf": 8, "ga": 3, "pts": 11},
+    {"team": "التضامن صور", "p": 7, "w": 3, "d": 1, "l": 3, "gf": 13, "ga": 16, "pts": 10},
+    {"team": "الأنصار", "p": 4, "w": 2, "d": 2, "l": 0, "gf": 8, "ga": 6, "pts": 8},
+    {"team": "طرابلس", "p": 7, "w": 2, "d": 2, "l": 3, "gf": 8, "ga": 9, "pts": 8},
+    {"team": "الحكمة", "p": 7, "w": 1, "d": 3, "l": 3, "gf": 5, "ga": 9, "pts": 6},
+    {"team": "شباب الساحل", "p": 6, "w": 1, "d": 2, "l": 3, "gf": 2, "ga": 7, "pts": 5},
+    {"team": "الإخاء الأهلي عاليه", "p": 7, "w": 1, "d": 1, "l": 5, "gf": 4, "ga": 12, "pts": 4},
+    {"team": "المبرة", "p": 7, "w": 1, "d": 1, "l": 5, "gf": 2, "ga": 10, "pts": 4},
+    {"team": "الرياضي العباسية", "p": 6, "w": 0, "d": 3, "l": 3, "gf": 3, "ga": 6, "pts": 3}
+  ],
+  "previous": {
+    "title": "نتائج الأسبوع الماضي",
+    "matches": [
+      {"date": "2026-11-20", "time": "13:15", "home": "الحكمة", "away": "شباب الساحل", "home_score": 1, "away_score": 1, "status": "finished"},
+      {"date": "2026-11-21", "time": "13:15", "home": "الإخاء الأهلي عاليه", "away": "العهد", "home_score": 0, "away_score": 1, "status": "finished"},
+      {"date": "2026-11-21", "time": "13:15", "home": "النجمة", "away": "المبرة", "home_score": 1, "away_score": 0, "status": "finished"},
+      {"date": "2026-11-21", "time": "20:30", "home": "الصفاء", "away": "الأنصار", "home_score": 1, "away_score": 1, "status": "finished"},
+      {"date": "2026-11-22", "time": "13:15", "home": "التضامن صور", "away": "جويا", "home_score": 0, "away_score": 5, "status": "finished"},
+      {"date": "2026-11-22", "time": "13:15", "home": "طرابلس", "away": "الرياضي العباسية", "home_score": 0, "away_score": 0, "status": "finished"}
+    ]
+  },
+  "current": {
+    "title": "مباريات هذا الأسبوع",
+    "matches": [
+      {"date": "2026-11-25", "time": "13:15", "home": "شباب الساحل", "away": "الأنصار", "status": "upcoming"},
+      {"date": "2026-11-25", "time": "20:30", "home": "الصفاء", "away": "النجمة", "status": "upcoming"},
+      {"date": "2026-11-27", "time": "13:15", "home": "المبرة", "away": "الإخاء الأهلي عاليه", "status": "upcoming"},
+      {"date": "2026-11-27", "time": "13:15", "home": "التضامن صور", "away": "العهد", "status": "upcoming"},
+      {"date": "2026-11-28", "time": "13:15", "home": "الرياضي العباسية", "away": "شباب الساحل", "status": "upcoming"},
+      {"date": "2026-11-28", "time": "16:00", "home": "جويا", "away": "الصفاء", "status": "upcoming"},
+      {"date": "2026-11-29", "time": "13:15", "home": "النجمة", "away": "الحكمة", "status": "upcoming"},
+      {"date": "2026-11-29", "time": "16:00", "home": "الأنصار", "away": "طرابلس", "status": "upcoming"}
+    ]
+  },
+  "sources": [{"name": "futbol24", "url": "https://www.futbol24.com/national/Lebanon/Premier-League/2026-2027"}]
+}

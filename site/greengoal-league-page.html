@@ -1,0 +1,141 @@
+<!-- ===== صفحة ثابتة: الدوري اللبناني لكرة القدم – الدرجة الأولى (greengoal.net) =====
+     تُنشر كصفحة بلوغر بأمر: Actions ← «الأخبار الرياضية ومباريات اليوم» ← mode = page
+     البيانات: greengoal/league.json في مستودع baalbakhermel-data (تحدّثها مهام Claude)،
+     والصفحة تعيد قراءتها كل 10 دقائق، وكل دقيقتين أثناء المباريات الجارية. -->
+<div class="gg-post gg-league" dir="rtl">
+  <div class="lg-wrap">
+    <div class="lg-head">
+      <span class="lg-kicker">الدوري اللبناني · الدرجة الأولى</span>
+      <h2 class="lg-title">جدول الترتيب والنتائج</h2>
+      <p class="lg-sub" id="lgSub">جارٍ تحميل البيانات…</p>
+    </div>
+
+    <div class="lg-live" id="lgLive" hidden></div>
+
+    <h3 class="lg-h"><span class="lg-dot"></span>جدول الترتيب</h3>
+    <div class="lg-tablewrap">
+      <table class="lg-table">
+        <thead><tr><th>#</th><th class="lg-team">الفريق</th><th>لعب</th><th>فاز</th><th>تعادل</th><th>خسر</th><th>له</th><th>عليه</th><th>الفارق</th><th>النقاط</th></tr></thead>
+        <tbody id="lgTable"><tr><td colspan="10" class="lg-empty">جارٍ التحميل…</td></tr></tbody>
+      </table>
+    </div>
+
+    <h3 class="lg-h"><span class="lg-dot"></span><span id="lgCurTitle">مباريات هذا الأسبوع</span></h3>
+    <div class="lg-list" id="lgCurrent"></div>
+
+    <h3 class="lg-h"><span class="lg-dot"></span><span id="lgPrevTitle">نتائج الأسبوع الماضي</span></h3>
+    <div class="lg-list" id="lgPrevious"></div>
+
+    <p class="lg-src" id="lgSrc"></p>
+  </div>
+</div>
+<style>
+.gg-league{--dark:#0c1f16;--deep:#12331f;--turf:#2f9e5c;--turf-l:#54c17d;--chalk:#f4f7ef;--dim:#c9d6c8;--gold:#ffb703;--gold-l:#ffd166;--line:rgba(244,247,239,.14);
+  direction:rtl;text-align:right;background:var(--dark);color:var(--chalk);font-family:'Tajawal',sans-serif;line-height:1.7;border-radius:14px;overflow:hidden}
+.gg-league *{box-sizing:border-box}
+.gg-league .lg-wrap{max-width:900px;margin:0 auto;padding:22px 14px 30px}
+.gg-league .lg-head{background:linear-gradient(135deg,var(--deep),#0a5f33);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:18px}
+.gg-league .lg-kicker{display:inline-block;background:var(--gold);color:#081109;font-family:'Cairo',sans-serif;font-weight:800;font-size:13px;padding:2px 12px 4px;border-radius:4px}
+.gg-league .lg-title{font-family:'Cairo',sans-serif;font-weight:900;font-size:26px;color:#fff;margin:10px 0 2px}
+.gg-league .lg-sub{color:var(--dim);font-size:13.5px;margin:0}
+.gg-league .lg-h{display:flex;align-items:center;gap:10px;font-family:'Cairo',sans-serif;font-weight:800;font-size:19px;color:var(--turf-l);margin:26px 0 10px}
+.gg-league .lg-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex:none}
+.gg-league .lg-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--deep)}
+.gg-league .lg-table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
+.gg-league .lg-table th{background:rgba(0,0,0,.3);color:var(--dim);font-weight:700;font-size:12.5px;padding:9px 6px;text-align:center;border-bottom:1px solid var(--line)}
+.gg-league .lg-table td{padding:9px 6px;text-align:center;border-bottom:1px dashed var(--line);color:var(--chalk)}
+.gg-league .lg-table tr:last-child td{border-bottom:0}
+.gg-league .lg-table .lg-team{text-align:right;font-weight:700;white-space:nowrap}
+.gg-league .lg-table td.lg-pts{font-family:'Cairo',sans-serif;font-weight:900;color:var(--gold-l);font-size:16px}
+.gg-league .lg-table td.lg-pos{font-weight:800;color:var(--dim)}
+.gg-league .lg-table tr.lg-top td.lg-pos{color:#062411;background:var(--turf-l)}
+.gg-league .lg-table tr.lg-bottom td.lg-pos{color:#fff;background:#a93226}
+.gg-league .lg-table td.lg-gd{direction:ltr;unicode-bidi:isolate}
+.gg-league .lg-day{font-size:13px;font-weight:700;color:var(--gold-l);margin:14px 0 4px}
+.gg-league .lg-list{background:var(--deep);border:1px solid var(--line);border-radius:12px;padding:4px 14px 10px}
+.gg-league .lg-m{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.gg-league .lg-m:last-child{border-bottom:0}
+.gg-league .lg-mh,.gg-league .lg-ma{font-weight:700;font-size:15px}
+.gg-league .lg-mh{text-align:left}.gg-league .lg-ma{text-align:right}
+.gg-league .lg-s{min-width:76px;text-align:center;border-radius:8px;padding:2px 10px;font-family:'Cairo',sans-serif;font-weight:800;font-size:16px;background:rgba(0,0,0,.35);border:1px solid var(--line);color:var(--gold-l);white-space:nowrap}
+.gg-league .lg-fin{background:var(--turf);border-color:var(--turf);color:#062411}
+.gg-league .lg-on{background:#c0392b;border-color:#c0392b;color:#fff;animation:lgpulse 1.6s infinite}
+.gg-league .lg-off{font-size:12.5px;color:#ffb4a8}
+.gg-league .lg-x{grid-column:1/-1;text-align:center;font-size:12px;color:var(--dim);margin-top:-6px}
+.gg-league .lg-empty{color:var(--dim);text-align:center;padding:14px}
+.gg-league .lg-live{background:rgba(192,57,43,.16);border:1px solid rgba(192,57,43,.55);border-radius:12px;padding:6px 14px 8px;margin-bottom:6px}
+.gg-league .lg-live[hidden]{display:none}
+.gg-league .lg-live b.lg-lt{display:flex;align-items:center;gap:8px;font-family:'Cairo',sans-serif;color:#ffb4a8;margin:6px 0 2px}
+.gg-league .lg-live b.lg-lt::before{content:"";width:9px;height:9px;border-radius:50%;background:#e74c3c;animation:lgpulse 1.6s infinite}
+.gg-league .lg-src{font-size:12.5px;color:var(--dim);margin-top:18px}
+.gg-league .lg-src a{color:var(--turf-l)}
+@keyframes lgpulse{0%,100%{opacity:1}50%{opacity:.45}}
+@media (max-width:520px){.gg-league .lg-title{font-size:22px}.gg-league .lg-mh,.gg-league .lg-ma{font-size:13.5px}.gg-league .lg-s{min-width:62px;font-size:15px}}
+</style>
+<script>
+//<![CDATA[
+(function () {
+  var URL = 'https://raw.githubusercontent.com/mostafasoukarieh/baalbakhermel-data/main/greengoal/league.json';
+  var DAYS = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+  var MONTHS = ['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'];
+  var ST = { postponed: 'تأجّلت', cancelled: 'أُلغيت', unknown: 'غير مؤكدة' };
+  var timer = null;
+  function $(id) { return document.getElementById(id); }
+  if (!$('lgTable')) return;
+  function e(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return '&#' + c.charCodeAt(0) + ';'; }); }
+  function dayName(iso) { var d = new Date(iso + 'T12:00:00'); return DAYS[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()]; }
+  function score(m) {
+    if (m.status === 'finished' || m.status === 'live')
+      return '<span class="lg-s ' + (m.status === 'live' ? 'lg-on' : 'lg-fin') + '">' + e(m.home_score) + ' - ' + e(m.away_score) + '</span>';
+    if (ST[m.status]) return '<span class="lg-s lg-off">' + ST[m.status] + '</span>';
+    return '<span class="lg-s">' + e(m.time || '—') + '</span>';
+  }
+  function row(m) {
+    var x = [m.status === 'live' ? (m.minute ? 'الدقيقة ' + m.minute : 'جارية') : '', m.venue, m.note].filter(Boolean).join(' · ');
+    return '<div class="lg-m"><span class="lg-mh">' + e(m.home) + '</span>' + score(m) + '<span class="lg-ma">' + e(m.away) + '</span>' +
+      (x ? '<span class="lg-x">' + e(x) + '</span>' : '') + '</div>';
+  }
+  function list(ms) {
+    if (!ms || !ms.length) return '<div class="lg-empty">لا مباريات.</div>';
+    var out = '', last = '';
+    ms.slice().sort(function (a, b) { return (a.date + (a.time || '')) < (b.date + (b.time || '')) ? -1 : 1; }).forEach(function (m) {
+      if (m.date !== last) { out += '<div class="lg-day">' + dayName(m.date) + '</div>'; last = m.date; }
+      out += row(m);
+    });
+    return out;
+  }
+  function render(d) {
+    var n = d.standings.length;
+    $('lgTable').innerHTML = d.standings.map(function (t, i) {
+      var gd = t.gf - t.ga;
+      return '<tr class="' + (i === 0 ? 'lg-top' : i >= n - (d.relegation || 0) ? 'lg-bottom' : '') + '">' +
+        '<td class="lg-pos">' + (i + 1) + '</td><td class="lg-team">' + e(t.team) + '</td>' +
+        '<td>' + e(t.p) + '</td><td>' + e(t.w) + '</td><td>' + e(t.d) + '</td><td>' + e(t.l) + '</td>' +
+        '<td>' + e(t.gf) + '</td><td>' + e(t.ga) + '</td><td class="lg-gd">' + (gd > 0 ? '+' : '') + gd + '</td>' +
+        '<td class="lg-pts">' + e(t.pts) + '</td></tr>';
+    }).join('');
+    var cur = (d.current && d.current.matches) || [], prev = (d.previous && d.previous.matches) || [];
+    var live = cur.filter(function (m) { return m.status === 'live'; });
+    $('lgLive').hidden = !live.length;
+    $('lgLive').innerHTML = live.length ? '<b class="lg-lt">مباشر الآن</b>' + live.map(row).join('') : '';
+    $('lgCurTitle').textContent = (d.current && d.current.title) || 'مباريات هذا الأسبوع';
+    $('lgPrevTitle').textContent = (d.previous && d.previous.title) || 'نتائج الأسبوع الماضي';
+    $('lgCurrent').innerHTML = list(cur);
+    $('lgPrevious').innerHTML = list(prev);
+    $('lgSub').textContent = (d.competition || '') + ' · موسم ' + (d.season || '') + (d.updated ? ' · آخر تحديث ' + d.updated + ' بتوقيت بيروت' : '');
+    $('lgSrc').innerHTML = d.sources && d.sources.length ? 'المصادر: ' + d.sources.map(function (s) {
+      return '<a href="' + e(s.url) + '" target="_blank" rel="nofollow noopener">' + e(s.name) + '</a>';
+    }).join('، ') : '';
+    clearTimeout(timer);
+    timer = setTimeout(load, (live.length ? 2 : 10) * 60 * 1000);
+  }
+  function load() {
+    fetch(URL + '?t=' + Math.floor(Date.now() / 60000), { cache: 'no-store', credentials: 'omit' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(render)
+      .catch(function () { $('lgSub').textContent = 'تعذّر تحميل البيانات حالياً، أعد المحاولة بعد قليل.'; timer = setTimeout(load, 5 * 60 * 1000); });
+  }
+  load();
+})();
+//]]>
+</script>
