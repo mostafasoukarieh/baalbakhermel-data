@@ -1,8 +1,8 @@
 {
   "date": "2026-11-23",
-  "final": false,
-  "updated": "18:55",
-  "headline": "لبنان يخسر أمام إيران ويُنهي مجموعته ثانياً متأهلاً إلى ربع نهائي كأس آسيا للكرة الشاطئية، والهلال يتعادل مع نيفتشي",
+  "final": true,
+  "updated": "00:55",
+  "headline": "بيراميدز يُسقط الأهلي 2-0، وبرنتفورد يكتسح إيفرتون 4-0، والوصل يفوز بخماسية في تبريز، ولبنان يتأهل إلى ربع نهائي كأس آسيا للكرة الشاطئية",
   "groups": [
     {
       "scope": "محلية",
@@ -37,39 +37,49 @@
           "time": "18:00",
           "home": "الشمال",
           "away": "الأهلي السعودي",
-          "status": "unknown",
+          "status": "finished",
           "channel": "beIN Sports 1",
-          "note": "جارية وقت التحديث؛ الأهلي تقدّم بهدف فراس البريكان (د 11)"
+          "note": "الشمال قلب تأخّره وفاز",
+          "home_score": 3,
+          "away_score": 2
         },
         {
           "time": "18:00",
           "home": "العين",
           "away": "استقلال طهران",
-          "status": "unknown",
+          "status": "finished",
           "channel": "beIN Sports 2",
-          "note": "جارية وقت التحديث؛ النتيجة في التحديث المقبل"
+          "note": "التعادل أنهى سلسلة انتصارات العين",
+          "home_score": 1,
+          "away_score": 1
         },
         {
           "time": "18:00",
           "home": "تراكتور",
           "away": "الوصل",
-          "status": "unknown",
+          "status": "finished",
           "channel": "beIN Sports 3",
-          "note": "جارية وقت التحديث؛ النتيجة في التحديث المقبل"
+          "home_score": 1,
+          "away_score": 5
         },
         {
           "time": "20:15",
           "home": "الاتحاد",
           "away": "باختاكور",
-          "status": "upcoming",
-          "channel": "beIN Sports 3"
+          "status": "finished",
+          "channel": "beIN Sports 3",
+          "home_score": 2,
+          "away_score": 0
         },
         {
           "time": "20:15",
           "home": "القوة الجوية",
           "away": "الغرافة",
-          "status": "upcoming",
-          "channel": "beIN Sports 1"
+          "status": "finished",
+          "channel": "beIN Sports 1",
+          "home_score": 2,
+          "away_score": 1,
+          "note": "القوة الجوية قلب تأخّره"
         }
       ]
     },
@@ -81,8 +91,11 @@
           "time": "22:00",
           "home": "برنتفورد",
           "away": "إيفرتون",
-          "status": "upcoming",
-          "channel": "beIN Sports 2"
+          "status": "finished",
+          "channel": "beIN Sports 2",
+          "home_score": 4,
+          "away_score": 0,
+          "note": "إيفرتون أكمل المباراة بعشرة لاعبين بعد طرد تاركوفسكي"
         }
       ]
     },
@@ -94,8 +107,10 @@
           "time": "22:00",
           "home": "ليفانتي",
           "away": "إلتشي",
-          "status": "upcoming",
-          "channel": "beIN Sports 4"
+          "status": "finished",
+          "channel": "beIN Sports 4",
+          "home_score": 1,
+          "away_score": 1
         }
       ]
     },
@@ -107,8 +122,10 @@
           "time": "21:45",
           "home": "مونزا",
           "away": "فيورنتينا",
-          "status": "upcoming",
-          "venue": "ملعب يو-باور، مونزا"
+          "status": "finished",
+          "venue": "ملعب يو-باور، مونزا",
+          "home_score": 3,
+          "away_score": 0
         }
       ]
     },
@@ -120,17 +137,22 @@
           "time": "17:00",
           "home": "الجونة",
           "away": "الزمالك",
-          "status": "unknown",
+          "status": "finished",
           "channel": "أون سبورت",
-          "note": "الزمالك متقدّم 2-0 بهدفي عدي الدباغ حتى الدقيقة 78؛ النتيجة النهائية في التحديث المقبل"
+          "note": "ثنائية عدي الدباغ",
+          "home_score": 1,
+          "away_score": 2
         },
         {
           "time": "20:00",
           "home": "الأهلي",
           "away": "بيراميدز",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "ستاد القاهرة الدولي",
-          "channel": "أون سبورت"
+          "channel": "أون سبورت",
+          "home_score": 0,
+          "away_score": 2,
+          "note": "بيراميدز يبتعد بالصدارة"
         }
       ]
     }
@@ -183,6 +205,42 @@
     {
       "name": "المشهد",
       "url": "https://www.almashhad.news/news/509267"
+    },
+    {
+      "name": "الاتحاد الآسيوي لكرة القدم",
+      "url": "https://www.the-afc.com/en/club/afc_champions_league_elite.html/news/md5-al-ittihad-club-ksa-2-0-pakhtakor-uzb"
+    },
+    {
+      "name": "الاتحاد الآسيوي لكرة القدم",
+      "url": "https://www.the-afc.com/ar/club/afc_champions_league_elite.html/news/md5-air-force-sc-irq-2-1-al-gharafa-sc-qat-1"
+    },
+    {
+      "name": "وكالة أنباء الإمارات",
+      "url": "https://www.wam.ae/en/article/17ji318-wasl-beat-tractor-5-1-afc-champions-league-elite"
+    },
+    {
+      "name": "وكالة الأنباء السعودية",
+      "url": "https://www.spa.gov.sa/en/N2734641"
+    },
+    {
+      "name": "ESPN",
+      "url": "https://www.espn.co.uk/football/match/_/gameId/401879237"
+    },
+    {
+      "name": "ESPN",
+      "url": "https://africa.espn.com/football/match/_/gameId/401875009"
+    },
+    {
+      "name": "New Straits Times",
+      "url": "https://www.nst.com.my/sports/football/2026/11/1584321/esteghlal-draw-ends-al-ains-perfect-asian-champions-league-start"
+    },
+    {
+      "name": "صدى البلد",
+      "url": "https://www.elbalad.news/7192215"
+    },
+    {
+      "name": "اليوم السابع",
+      "url": "https://www.youm7.com/story/2026/11/23/%D8%A8%D9%8A%D8%B1%D8%A7%D9%85%D9%8A%D8%AF%D8%B2-%D9%8A%D9%87%D8%B2%D9%85-%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%89-%D8%A8%D8%AB%D9%86%D8%A7%D8%A6%D9%8A%D8%A9-%D9%86%D8%B8%D9%8A%D9%81%D8%A9-%D9%88%D9%8A%D8%A8%D8%AA%D8%B9%D8%AF-%D8%A8%D8%B5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8-%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%89/7630138"
     }
   ]
 }
