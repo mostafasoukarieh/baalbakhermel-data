@@ -8,3 +8,7 @@
 - `fuel-news.txt` — خبر جاهز للنسخ والنشر عن آخر جدول.
 - المصدر: https://energyandwater.gov.lb/ar/prices?type=1
 - المصدر الأساسي للأسعار: TotalEnergies لبنان، والوزارة احتياطياً.
+
+## Green Goal Arena (greengoal.net)
+- `greengoal/` — الأخبار الرياضية ومباريات اليوم ونتائجها لموقع الملعب، تنشرها مهمة Claude اليومية عبر `.github/workflows/greengoal.yml`. التفاصيل في `greengoal/README.md`.
+- `site/greengoal-matches.html` — ودجت «مباريات اليوم» للصفحة الرئيسية.

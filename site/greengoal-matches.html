@@ -1,0 +1,96 @@
+<!-- ===== Green Goal: مباريات اليوم — تتحدّث تلقائياً =====
+     الاستعمال: في بلوغر ← التخطيط ← أضف أداة «HTML/JavaScript» فوق قسم الأخبار، والصق هذا الملف كاملاً.
+     (أو الصقه في قالب الصفحة الرئيسية قبل قسم #news-baalbek)
+     البيانات: greengoal/today.json في مستودع baalbakhermel-data، تكتبها المهمة اليومية. -->
+<section id="gg-today" dir="rtl" aria-live="polite">
+  <div class="ggt-head">
+    <h2>⚽ مباريات اليوم</h2>
+    <span id="ggt-date">جارٍ التحميل…</span>
+  </div>
+  <div class="ggt-tabs" id="ggt-tabs"></div>
+  <div id="ggt-list"></div>
+  <a id="ggt-more" class="ggt-more" href="#news" hidden>كل التفاصيل والنتائج ←</a>
+</section>
+<style>
+#gg-today{--d:#06281C;--g:#0F8A4B;--gl:#2FD27A;--gold:#F2C14E;max-width:1000px;margin:24px auto;padding:0 12px;font-family:inherit;line-height:1.7}
+#gg-today *{box-sizing:border-box}
+#gg-today .ggt-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;background:linear-gradient(135deg,var(--d),var(--g));color:#fff;padding:14px 18px;border-radius:14px 14px 0 0}
+#gg-today h2{margin:0;font-size:1.45em;color:#fff}
+#gg-today #ggt-date{font-size:.92em;color:#BFF5D5}
+#gg-today .ggt-tabs{display:flex;gap:6px;flex-wrap:wrap;background:var(--d);padding:8px 12px}
+#gg-today .ggt-tabs button{border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;border-radius:20px;padding:3px 14px;cursor:pointer;font:inherit;font-size:.9em}
+#gg-today .ggt-tabs button[aria-pressed=true]{background:var(--gold);color:var(--d);border-color:var(--gold);font-weight:bold}
+#gg-today #ggt-list{background:#fff;border:1px solid #dfe8e2;border-top:0;border-radius:0 0 14px 14px;padding:4px 14px 10px}
+#gg-today .ggt-comp{font-weight:bold;color:var(--g);margin:12px 0 2px;font-size:.95em}
+#gg-today .ggt-m{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #e3ebe5}
+#gg-today .ggt-m:last-child{border-bottom:0}
+#gg-today .ggt-h{text-align:left;font-weight:bold;color:#1d2b24}#gg-today .ggt-a{text-align:right;font-weight:bold;color:#1d2b24}
+#gg-today .ggt-s{min-width:70px;text-align:center;border-radius:6px;padding:2px 8px;font-weight:bold;background:#eef4f0;color:#1d2b24;white-space:nowrap}
+#gg-today .ggt-fin{background:var(--g);color:#fff}#gg-today .ggt-live{background:#C0392B;color:#fff}
+#gg-today .ggt-off{font-size:.8em;color:#b03a2e}
+#gg-today .ggt-x{grid-column:1/-1;text-align:center;font-size:.8em;color:#6b7c73;margin-top:-6px}
+#gg-today .ggt-empty{padding:14px;text-align:center;color:#6b7c73}
+#gg-today .ggt-more{display:block;text-align:center;margin-top:10px;font-weight:bold;color:var(--g);text-decoration:none}
+</style>
+<script>
+//<![CDATA[
+(function () {
+  var URL = "https://raw.githubusercontent.com/mostafasoukarieh/baalbakhermel-data/main/greengoal/today.json";
+  var SCOPES = ["بعلبك-الهرمل", "محلية", "دولية"], NAMES = {"محلية": "لبنان"};
+  var ST = {postponed: "تأجّلت", cancelled: "أُلغيت", unknown: "غير مؤكدة"};
+  var data = null, current = "all";
+  function $(id) { return document.getElementById(id); }
+  function e(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return "&#" + c.charCodeAt(0) + ";"; }); }
+  function beirutDate(offsetDays) {
+    var d = new Date(Date.now() + (offsetDays || 0) * 864e5);
+    return d.toLocaleDateString("en-CA", {timeZone: "Asia/Beirut"});
+  }
+  function score(m) {
+    if (m.status === "finished" || m.status === "live")
+      return '<span class="ggt-s ' + (m.status === "live" ? "ggt-live" : "ggt-fin") + '">' + e(m.home_score) + " - " + e(m.away_score) + "</span>";
+    if (ST[m.status]) return '<span class="ggt-s ggt-off">' + ST[m.status] + "</span>";
+    return '<span class="ggt-s">' + e(m.time || "—") + "</span>";
+  }
+  function render() {
+    var html = "", n = 0;
+    data.groups.forEach(function (g) {
+      if (current !== "all" && g.scope !== current) return;
+      if (!g.matches || !g.matches.length) return;
+      html += '<div class="ggt-comp">' + e(g.competition) + "</div>";
+      g.matches.forEach(function (m) {
+        n++;
+        var x = [m.status === "live" ? (m.note || "جارية") : "", m.venue, m.channel].filter(Boolean).join(" · ");
+        html += '<div class="ggt-m"><span class="ggt-h">' + e(m.home) + "</span>" + score(m) +
+                '<span class="ggt-a">' + e(m.away) + "</span>" + (x ? '<span class="ggt-x">' + e(x) + "</span>" : "") + "</div>";
+      });
+    });
+    $("ggt-list").innerHTML = n ? html : '<div class="ggt-empty">لا مباريات في هذا القسم اليوم.</div>';
+  }
+  function tabs() {
+    var have = SCOPES.filter(function (s) { return data.groups.some(function (g) { return g.scope === s && g.matches && g.matches.length; }); });
+    var b = '<button data-s="all" aria-pressed="true">الكل</button>';
+    have.forEach(function (s) { b += '<button data-s="' + s + '" aria-pressed="false">' + (NAMES[s] || s) + "</button>"; });
+    $("ggt-tabs").innerHTML = b;
+    $("ggt-tabs").onclick = function (ev) {
+      var t = ev.target.closest("button"); if (!t) return;
+      current = t.getAttribute("data-s");
+      [].forEach.call($("ggt-tabs").children, function (x) { x.setAttribute("aria-pressed", x === t); });
+      render();
+    };
+  }
+  function load() {
+    fetch(URL + "?t=" + Math.floor(Date.now() / 300000), {cache: "no-store"}).then(function (r) { return r.json(); }).then(function (d) {
+      // يُعرض ملف اليوم، أو ملف الأمس حتى الثالثة فجراً (نتائج السهرة)
+      var fresh = d.date === beirutDate(0) || (d.date === beirutDate(-1) && Number(new Date().toLocaleString("en-US", {timeZone: "Asia/Beirut", hour: "numeric", hour12: false})) < 12);
+      if (!fresh) { $("ggt-date").textContent = "تُنشر مباريات اليوم صباحاً"; $("ggt-list").innerHTML = '<div class="ggt-empty">لم تُنشر مباريات اليوم بعد.</div>'; return; }
+      data = d;
+      $("ggt-date").textContent = (d.title || "") + (d.updated ? " · آخر تحديث " + d.updated : "");
+      if (d.post_url) { $("ggt-more").href = d.post_url; $("ggt-more").hidden = false; }
+      tabs(); render();
+    }).catch(function () { $("ggt-date").textContent = "تعذّر تحميل المباريات"; });
+  }
+  load();
+  setInterval(load, 10 * 60 * 1000);
+})();
+//]]>
+</script>

@@ -1,0 +1,75 @@
+name: الأخبار الرياضية ومباريات اليوم (greengoal.net)
+
+on:
+  # يعمل تلقائياً حين ترفع المهمة اليومية خبراً جديداً أو تحدّث ملف مباريات
+  push:
+    branches: [main]
+    paths: ["greengoal/posts/**", "greengoal/matches/*.json"]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "auto = أول نشر مسودات ثم نشر مباشر، draft = مسودة، publish = نشر، check = فحص الوصول فقط"
+        default: auto
+        type: choice
+        options: [auto, draft, publish, check]
+
+permissions:
+  contents: write
+
+concurrency: greengoal
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+      BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
+      BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+      GG_MODE: ${{ github.event.inputs.mode || 'auto' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: فحص الوصول إلى مدونة Green Goal
+        if: env.GG_MODE == 'check'
+        run: python scripts/greengoal.py check
+
+      - name: فحص الملفات
+        if: env.GG_MODE != 'check'
+        run: python scripts/greengoal.py validate
+
+      - name: تثبيت المتصفح لتصميم الأغلفة
+        if: env.GG_MODE != 'check'
+        run: |
+          pip install -q playwright
+          python -m playwright install --with-deps chromium
+
+      - name: تصميم الأغلفة
+        if: env.GG_MODE != 'check'
+        run: python scripts/greengoal.py build
+
+      - name: حفظ الأغلفة
+        if: env.GG_MODE != 'check'
+        run: |
+          git config user.name "greengoal-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain -- greengoal/posts greengoal/matches)" ]; then
+            git add greengoal/posts greengoal/matches
+            git commit -m "أغلفة Green Goal"
+            git pull --rebase -q && git push
+          fi
+          echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: النشر على بلوغر
+        if: env.GG_MODE != 'check'
+        run: python scripts/greengoal.py publish
+
+      - name: حفظ حالة النشر
+        if: env.GG_MODE != 'check'
+        run: |
+          [ -z "$(git status --porcelain -- greengoal/state.json greengoal/today.json)" ] && exit 0
+          git add greengoal/state.json greengoal/today.json
+          git commit -m "نشر Green Goal"
+          git pull --rebase -q && git push
