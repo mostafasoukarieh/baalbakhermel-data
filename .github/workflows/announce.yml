@@ -1,0 +1,35 @@
+name: تدوينات معدّة (announcements)
+
+on:
+  push:
+    branches: [main]
+    paths: ["announcements/*/meta.json", "announcements/*/post.html"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: announcements
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: النشر على بلوغر
+        env:
+          BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+          BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+        run: python scripts/announce.py
+      - name: حفظ الحالة
+        run: |
+          [ -z "$(git status --porcelain -- announcements/state.json)" ] && exit 0
+          git config user.name "announce-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add announcements/state.json
+          git commit -m "تدوينات معدّة: حالة النشر"
+          git pull --rebase -q && git push
