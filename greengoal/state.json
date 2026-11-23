@@ -1,5 +1,36 @@
 {
-  "auto_started": false,
-  "posts": {},
-  "matches": {}
+  "auto_started": true,
+  "posts": {
+    "2026-11-23-01": {
+      "post_id": "3236898647402854166",
+      "status": "DRAFT",
+      "url": "https://www.greengoal.net/",
+      "title": "ناشئو لبنان إلى نهائيات كأس آسيا 2027 بالعلامة الكاملة، والشاطئية تتصدّر مجموعتها",
+      "label": "محلية"
+    },
+    "2026-11-23-02": {
+      "post_id": "927866955082518619",
+      "status": "DRAFT",
+      "url": "https://www.greengoal.net/",
+      "title": "ليفربول يكتسح مانشستر يونايتد 4-0 في أنفيلد ويفسد بداية بوكيتينو",
+      "label": "دولية"
+    },
+    "2026-11-23-03": {
+      "post_id": "5703306939758420106",
+      "status": "DRAFT",
+      "url": "https://www.greengoal.net/",
+      "title": "الأندية العربية على موعد مع دوري أبطال آسيا للنخبة اليوم",
+      "label": "دولية"
+    }
+  },
+  "matches": {
+    "2026-11-23": {
+      "post_id": "6619066325379594572",
+      "status": "DRAFT",
+      "url": "https://www.greengoal.net/",
+      "hash": "5ce59fe1f1d0",
+      "phase": "fixtures",
+      "title": "مباريات اليوم الإثنين 23 تشرين الثاني 2026"
+    }
+  }
 }
