@@ -1,1 +1,12 @@
-{"last_issue": 6, "published": {}}
+{
+  "last_issue": 7,
+  "published": {
+    "7": {
+      "post_id": "8705303572687936383",
+      "status": "DRAFT",
+      "url": "https://www.apt-lb.net/",
+      "cover": "https://raw.githubusercontent.com/mostafasoukarieh/baalbakhermel-data/417e9e924ce4ab07d0ca5c69616bb12650bd939e/lapt/issues/07/cover.png"
+    }
+  },
+  "auto_started": true
+}
