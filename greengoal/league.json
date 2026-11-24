@@ -1,7 +1,7 @@
 {
   "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
-  "updated": "2026-11-23 19:35",
+  "updated": "2026-11-24 08:35",
   "verified": false,
   "standings": [
     {
@@ -249,6 +249,18 @@
     {
       "name": "futbol24",
       "url": "https://www.futbol24.com/national/Lebanon/Premier-League/2026-2027"
+    },
+    {
+      "name": "winwin",
+      "url": "https://www.winwin.com/%D9%83%D8%B1%D8%A9-%D9%82%D8%AF%D9%85/%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A%D8%A7%D8%AA/%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D8%AA%D8%A7%D8%B2/%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8"
+    },
+    {
+      "name": "Soccerway",
+      "url": "https://www.soccerway.com/lebanon/premier-league/"
+    },
+    {
+      "name": "صوت الفرح",
+      "url": "https://www.sawtalfarah.com/?p=398075"
     }
   ]
 }
