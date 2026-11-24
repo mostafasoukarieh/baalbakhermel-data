@@ -1,249 +1,181 @@
 {
-  "date": "2026-11-23",
-  "final": true,
-  "updated": "00:55",
-  "headline": "بيراميدز يُسقط الأهلي 2-0، وبرنتفورد يكتسح إيفرتون 4-0، والوصل يفوز بخماسية في تبريز، ولبنان يتأهل إلى ربع نهائي كأس آسيا للكرة الشاطئية",
+  "date": "2026-11-24",
+  "final": false,
+  "updated": "08:55",
+  "headline": "ريال مدريد أمام آيندهوفن ومانشستر سيتي مع نابولي وأرسنال ضد دورتموند في دوري أبطال أوروبا، والنصر يستضيف السد آسيوياً",
   "groups": [
     {
-      "scope": "محلية",
-      "competition": "كأس آسيا للكرة الشاطئية 2026 (تايلاند) – المجموعة الثانية",
-      "matches": [
-        {
-          "time": "09:00",
-          "home": "لبنان",
-          "away": "إيران",
-          "status": "finished",
-          "note": "إيران تصدّرت المجموعة بـ9 نقاط، ولبنان ثانٍ ومتأهل إلى ربع النهائي",
-          "home_score": 2,
-          "away_score": 7
-        }
-      ]
-    },
-    {
       "scope": "دولية",
-      "competition": "دوري أبطال آسيا للنخبة",
+      "competition": "دوري أبطال أوروبا – المرحلة الخامسة",
       "matches": [
         {
-          "time": "15:45",
-          "home": "نيفتشي",
-          "away": "الهلال",
-          "status": "finished",
-          "channel": "beIN Sports 1",
-          "home_score": 2,
-          "away_score": 2,
-          "note": "الهلال تقدّم بهدفين في الشوط الأول"
-        },
-        {
-          "time": "18:00",
-          "home": "الشمال",
-          "away": "الأهلي السعودي",
-          "status": "finished",
-          "channel": "beIN Sports 1",
-          "note": "الشمال قلب تأخّره وفاز",
-          "home_score": 3,
-          "away_score": 2
-        },
-        {
-          "time": "18:00",
-          "home": "العين",
-          "away": "استقلال طهران",
-          "status": "finished",
-          "channel": "beIN Sports 2",
-          "note": "التعادل أنهى سلسلة انتصارات العين",
-          "home_score": 1,
-          "away_score": 1
-        },
-        {
-          "time": "18:00",
-          "home": "تراكتور",
-          "away": "الوصل",
-          "status": "finished",
+          "time": "19:45",
+          "home": "غلطة سراي",
+          "away": "أستون فيلا",
+          "status": "upcoming",
+          "venue": "رامز بارك، إسطنبول",
           "channel": "beIN Sports 3",
-          "home_score": 1,
-          "away_score": 5
+          "note": ""
         },
         {
-          "time": "20:15",
-          "home": "الاتحاد",
-          "away": "باختاكور",
-          "status": "finished",
-          "channel": "beIN Sports 3",
-          "home_score": 2,
-          "away_score": 0
-        },
-        {
-          "time": "20:15",
-          "home": "القوة الجوية",
-          "away": "الغرافة",
-          "status": "finished",
-          "channel": "beIN Sports 1",
-          "home_score": 2,
-          "away_score": 1,
-          "note": "القوة الجوية قلب تأخّره"
-        }
-      ]
-    },
-    {
-      "scope": "دولية",
-      "competition": "الدوري الإنجليزي الممتاز – المرحلة 12",
-      "matches": [
-        {
-          "time": "22:00",
-          "home": "برنتفورد",
-          "away": "إيفرتون",
-          "status": "finished",
-          "channel": "beIN Sports 2",
-          "home_score": 4,
-          "away_score": 0,
-          "note": "إيفرتون أكمل المباراة بعشرة لاعبين بعد طرد تاركوفسكي"
-        }
-      ]
-    },
-    {
-      "scope": "دولية",
-      "competition": "الدوري الإسباني – المرحلة 13",
-      "matches": [
-        {
-          "time": "22:00",
-          "home": "ليفانتي",
-          "away": "إلتشي",
-          "status": "finished",
+          "time": "19:45",
+          "home": "بودو غليمت",
+          "away": "لاسك لينز",
+          "status": "upcoming",
+          "venue": "أسبميرا",
           "channel": "beIN Sports 4",
-          "home_score": 1,
-          "away_score": 1
-        }
-      ]
-    },
-    {
-      "scope": "دولية",
-      "competition": "الدوري الإيطالي – المرحلة 12",
-      "matches": [
-        {
-          "time": "21:45",
-          "home": "مونزا",
-          "away": "فيورنتينا",
-          "status": "finished",
-          "venue": "ملعب يو-باور، مونزا",
-          "home_score": 3,
-          "away_score": 0
-        }
-      ]
-    },
-    {
-      "scope": "دولية",
-      "competition": "الدوري المصري الممتاز – المرحلة 9",
-      "matches": [
-        {
-          "time": "17:00",
-          "home": "الجونة",
-          "away": "الزمالك",
-          "status": "finished",
-          "channel": "أون سبورت",
-          "note": "ثنائية عدي الدباغ",
-          "home_score": 1,
-          "away_score": 2
+          "note": ""
         },
         {
-          "time": "20:00",
-          "home": "الأهلي",
-          "away": "بيراميدز",
-          "status": "finished",
-          "venue": "ستاد القاهرة الدولي",
-          "channel": "أون سبورت",
-          "home_score": 0,
-          "away_score": 2,
-          "note": "بيراميدز يبتعد بالصدارة"
+          "time": "22:00",
+          "home": "ريال مدريد",
+          "away": "آيندهوفن",
+          "status": "upcoming",
+          "venue": "مدريد",
+          "channel": "beIN Sports 1",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "مانشستر سيتي",
+          "away": "نابولي",
+          "status": "upcoming",
+          "venue": "ملعب الاتحاد، مانشستر",
+          "channel": "beIN Sports 3",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "أرسنال",
+          "away": "بوروسيا دورتموند",
+          "status": "upcoming",
+          "venue": "الإمارات، لندن",
+          "channel": "beIN Sports 4",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "كومو",
+          "away": "أيك أثينا",
+          "status": "upcoming",
+          "venue": "جوزيبي سينيغاليا",
+          "channel": "beIN Sports 5",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "فينورد",
+          "away": "بورتو",
+          "status": "upcoming",
+          "venue": "دي كويب، روتردام",
+          "channel": "beIN Sports 6",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "لايبزيغ",
+          "away": "لانس",
+          "status": "upcoming",
+          "venue": "ريد بُل أرينا",
+          "channel": "beIN Sports 8",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "سلوفان براتيسلافا",
+          "away": "ريال بيتيس",
+          "status": "upcoming",
+          "venue": "براتيسلافا",
+          "channel": "beIN Sports 9",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري أبطال آسيا للنخبة – منطقة الغرب",
+      "matches": [
+        {
+          "time": "18:00",
+          "home": "شباب الأهلي",
+          "away": "القادسية",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 2",
+          "note": ""
+        },
+        {
+          "time": "20:15",
+          "home": "النصر",
+          "away": "السد",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 2",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري أبطال آسيا للنخبة – منطقة الشرق",
+      "matches": [
+        {
+          "time": "09:45",
+          "home": "نيوكاسل جيتس",
+          "away": "كاشيوا ريسول",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 2",
+          "note": ""
+        },
+        {
+          "time": "12:00",
+          "home": "كيوتو سانغا",
+          "away": "بوهانغ ستيلرز",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 3",
+          "note": ""
+        },
+        {
+          "time": "14:15",
+          "home": "شنغهاي بورت",
+          "away": "بوريرام يونايتد",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 2",
+          "note": ""
         }
       ]
     }
   ],
   "sources": [
     {
-      "name": "الاتحاد اللبناني لكرة القدم",
-      "url": "https://the-lfa.com.lb/news/beachsoccerafc26_m2.php"
+      "name": "الاتحاد الأوروبي لكرة القدم (UEFA)",
+      "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/"
     },
     {
-      "name": "صدى البلد",
-      "url": "https://www.elbalad.news/7190918"
-    },
-    {
-      "name": "رابطة الدوري الإنجليزي",
-      "url": "https://www.premierleague.com/en/news/4725574/fixture-amendments-for-premier-league-matches-in-november"
-    },
-    {
-      "name": "رابطة الليغا",
-      "url": "https://www.laliga.com/es-MA/laliga-easports/resultados"
-    },
-    {
-      "name": "Fantacalcio",
-      "url": "https://www.fantacalcio.it/serie-a/calendario/12/2026-27/monza-fiorentina/18071"
+      "name": "Sport News Africa",
+      "url": "https://sportnewsafrica.com/en/news/champions-league-fixtures-midweek-schedule-and-kick-off-times-24-25-november-2026/"
     },
     {
       "name": "اليوم السابع",
-      "url": "https://youm7.com/story/2026/11/22/%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D8%B5%D8%AF%D8%A7%D8%B1%D8%A9-%D9%8A%D8%B4%D8%AA%D8%B9%D9%84-%D8%BA%D8%AF%D9%8B%D8%A7-%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%88%D9%84%D8%A9-%D8%A7%D9%84%D8%AA%D8%A7%D8%B3%D8%B9%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A/7625686"
+      "url": "https://www.youm7.com/story/2026/11/24/%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AB%D9%84%D8%A7%D8%AB%D8%A7%D8%A1-24-11-2026-%D9%88%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9/7629035"
     },
     {
-      "name": "الاتحاد الآسيوي لكرة القدم",
-      "url": "https://www.the-afc.com/en/club/afc_champions_league_elite.html/news/md5-pfc-neftchi-uzb-2-2-al-hilal-sfc-ksa"
+      "name": "العين الإخبارية",
+      "url": "https://al-ain.com/article/today-matches-24-november-2026"
     },
     {
-      "name": "ESPN",
-      "url": "https://africa.espn.com/football/match/_/gameId/401912612"
+      "name": "Africa Soccer",
+      "url": "https://africasoccer.com/real-madrid-manchester-city-and-asian-elite-action-feature-in-tuesdays-football-schedule/"
     },
     {
-      "name": "IRIB News",
-      "url": "https://www.irib-news.ir/fa/news/5974443/"
-    },
-    {
-      "name": "Tehran Times",
-      "url": "https://www.tehrantimes.com/news/532444/Iran-ease-Lebanon-at-AFC-Beach-Soccer-Asian-Cup-2026"
-    },
-    {
-      "name": "مصراوي",
-      "url": "https://www.masrawy.com/sports/sports_news/details/2026/11/23/3083295/"
-    },
-    {
-      "name": "المشهد",
-      "url": "https://www.almashhad.news/news/509267"
-    },
-    {
-      "name": "الاتحاد الآسيوي لكرة القدم",
-      "url": "https://www.the-afc.com/en/club/afc_champions_league_elite.html/news/md5-al-ittihad-club-ksa-2-0-pakhtakor-uzb"
-    },
-    {
-      "name": "الاتحاد الآسيوي لكرة القدم",
-      "url": "https://www.the-afc.com/ar/club/afc_champions_league_elite.html/news/md5-air-force-sc-irq-2-1-al-gharafa-sc-qat-1"
-    },
-    {
-      "name": "وكالة أنباء الإمارات",
-      "url": "https://www.wam.ae/en/article/17ji318-wasl-beat-tractor-5-1-afc-champions-league-elite"
-    },
-    {
-      "name": "وكالة الأنباء السعودية",
-      "url": "https://www.spa.gov.sa/en/N2734641"
-    },
-    {
-      "name": "ESPN",
-      "url": "https://www.espn.co.uk/football/match/_/gameId/401879237"
-    },
-    {
-      "name": "ESPN",
-      "url": "https://africa.espn.com/football/match/_/gameId/401875009"
-    },
-    {
-      "name": "New Straits Times",
-      "url": "https://www.nst.com.my/sports/football/2026/11/1584321/esteghlal-draw-ends-al-ains-perfect-asian-champions-league-start"
-    },
-    {
-      "name": "صدى البلد",
-      "url": "https://www.elbalad.news/7192215"
-    },
-    {
-      "name": "اليوم السابع",
-      "url": "https://www.youm7.com/story/2026/11/23/%D8%A8%D9%8A%D8%B1%D8%A7%D9%85%D9%8A%D8%AF%D8%B2-%D9%8A%D9%87%D8%B2%D9%85-%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%89-%D8%A8%D8%AB%D9%86%D8%A7%D8%A6%D9%8A%D8%A9-%D9%86%D8%B8%D9%8A%D9%81%D8%A9-%D9%88%D9%8A%D8%A8%D8%AA%D8%B9%D8%AF-%D8%A8%D8%B5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8-%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%89/7630138"
+      "name": "Austadiums",
+      "url": "https://www.austadiums.com/sport/event/35259"
     }
   ],
-  "post_url": "https://www.greengoal.net/2026/11/23-2026.html",
-  "title": "نتائج مباريات الإثنين 23 تشرين الثاني 2026",
-  "phase": "results"
+  "post_url": "https://www.greengoal.net/2026/11/24-2026.html",
+  "title": "مباريات اليوم الثلاثاء 24 تشرين الثاني 2026",
+  "phase": "fixtures"
 }
