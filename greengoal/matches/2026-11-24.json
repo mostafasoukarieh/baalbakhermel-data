@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-24",
+  "final": false,
+  "updated": "08:55",
+  "headline": "ريال مدريد أمام آيندهوفن ومانشستر سيتي مع نابولي وأرسنال ضد دورتموند في دوري أبطال أوروبا، والنصر يستضيف السد آسيوياً",
+  "groups": [
+    {
+      "scope": "دولية",
+      "competition": "دوري أبطال أوروبا – المرحلة الخامسة",
+      "matches": [
+        {
+          "time": "19:45",
+          "home": "غلطة سراي",
+          "away": "أستون فيلا",
+          "status": "upcoming",
+          "venue": "رامز بارك، إسطنبول",
+          "channel": "beIN Sports 3",
+          "note": ""
+        },
+        {
+          "time": "19:45",
+          "home": "بودو غليمت",
+          "away": "لاسك لينز",
+          "status": "upcoming",
+          "venue": "أسبميرا",
+          "channel": "beIN Sports 4",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "ريال مدريد",
+          "away": "آيندهوفن",
+          "status": "upcoming",
+          "venue": "مدريد",
+          "channel": "beIN Sports 1",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "مانشستر سيتي",
+          "away": "نابولي",
+          "status": "upcoming",
+          "venue": "ملعب الاتحاد، مانشستر",
+          "channel": "beIN Sports 3",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "أرسنال",
+          "away": "بوروسيا دورتموند",
+          "status": "upcoming",
+          "venue": "الإمارات، لندن",
+          "channel": "beIN Sports 4",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "كومو",
+          "away": "أيك أثينا",
+          "status": "upcoming",
+          "venue": "جوزيبي سينيغاليا",
+          "channel": "beIN Sports 5",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "فينورد",
+          "away": "بورتو",
+          "status": "upcoming",
+          "venue": "دي كويب، روتردام",
+          "channel": "beIN Sports 6",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "لايبزيغ",
+          "away": "لانس",
+          "status": "upcoming",
+          "venue": "ريد بُل أرينا",
+          "channel": "beIN Sports 8",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "سلوفان براتيسلافا",
+          "away": "ريال بيتيس",
+          "status": "upcoming",
+          "venue": "براتيسلافا",
+          "channel": "beIN Sports 9",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري أبطال آسيا للنخبة – منطقة الغرب",
+      "matches": [
+        {
+          "time": "18:00",
+          "home": "شباب الأهلي",
+          "away": "القادسية",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 2",
+          "note": ""
+        },
+        {
+          "time": "20:15",
+          "home": "النصر",
+          "away": "السد",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 2",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري أبطال آسيا للنخبة – منطقة الشرق",
+      "matches": [
+        {
+          "time": "09:45",
+          "home": "نيوكاسل جيتس",
+          "away": "كاشيوا ريسول",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 2",
+          "note": ""
+        },
+        {
+          "time": "12:00",
+          "home": "كيوتو سانغا",
+          "away": "بوهانغ ستيلرز",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 3",
+          "note": ""
+        },
+        {
+          "time": "14:15",
+          "home": "شنغهاي بورت",
+          "away": "بوريرام يونايتد",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports 2",
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "الاتحاد الأوروبي لكرة القدم (UEFA)",
+      "url": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/"
+    },
+    {
+      "name": "Sport News Africa",
+      "url": "https://sportnewsafrica.com/en/news/champions-league-fixtures-midweek-schedule-and-kick-off-times-24-25-november-2026/"
+    },
+    {
+      "name": "اليوم السابع",
+      "url": "https://www.youm7.com/story/2026/11/24/%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AB%D9%84%D8%A7%D8%AB%D8%A7%D8%A1-24-11-2026-%D9%88%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9/7629035"
+    },
+    {
+      "name": "العين الإخبارية",
+      "url": "https://al-ain.com/article/today-matches-24-november-2026"
+    },
+    {
+      "name": "Africa Soccer",
+      "url": "https://africasoccer.com/real-madrid-manchester-city-and-asian-elite-action-feature-in-tuesdays-football-schedule/"
+    },
+    {
+      "name": "Austadiums",
+      "url": "https://www.austadiums.com/sport/event/35259"
+    }
+  ]
+}
