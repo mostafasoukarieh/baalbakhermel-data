@@ -1,8 +1,8 @@
 {
   "date": "2026-11-24",
-  "final": false,
-  "updated": "18:55",
-  "headline": "ريال مدريد أمام آيندهوفن ومانشستر سيتي مع نابولي وأرسنال ضد دورتموند في دوري أبطال أوروبا، والنصر يستضيف السد آسيوياً",
+  "final": true,
+  "updated": "00:50",
+  "headline": "خماسية لريال مدريد أمام آيندهوفن، وتعادل سيتي مع نابولي وأرسنال مع دورتموند، وفوز النصر على السد آسيوياً",
   "groups": [
     {
       "scope": "دولية",
@@ -12,82 +12,100 @@
           "time": "19:45",
           "home": "غلطة سراي",
           "away": "أستون فيلا",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "رامز بارك، إسطنبول",
           "channel": "beIN Sports 3",
-          "note": ""
+          "note": "الهدف: دنيز غول (77)",
+          "home_score": 1,
+          "away_score": 0
         },
         {
           "time": "19:45",
           "home": "بودو غليمت",
           "away": "لاسك لينز",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "أسبميرا",
           "channel": "beIN Sports 4",
-          "note": ""
+          "note": "هدف بالخطأ في مرمى لاسك (90+2)",
+          "home_score": 1,
+          "away_score": 0
         },
         {
           "time": "22:00",
           "home": "ريال مدريد",
           "away": "آيندهوفن",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "مدريد",
           "channel": "beIN Sports 1",
-          "note": ""
+          "note": "مبابي (64، 84)، فالفيردي، بيلينغهام، فينيسيوس – بيريسيتش (ركلة جزاء 32)",
+          "home_score": 5,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "مانشستر سيتي",
           "away": "نابولي",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "ملعب الاتحاد، مانشستر",
           "channel": "beIN Sports 3",
-          "note": ""
+          "note": "بوعدي وشرقي (86) – هويلوند (55) ونوا لانغ",
+          "home_score": 2,
+          "away_score": 2
         },
         {
           "time": "22:00",
           "home": "أرسنال",
           "away": "بوروسيا دورتموند",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "الإمارات، لندن",
           "channel": "beIN Sports 4",
-          "note": ""
+          "note": "غيوكيريس (10) – باير (55)",
+          "home_score": 1,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "كومو",
           "away": "أيك أثينا",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "جوزيبي سينيغاليا",
           "channel": "beIN Sports 5",
-          "note": ""
+          "note": "الهدف: لويس ميا",
+          "home_score": 1,
+          "away_score": 0
         },
         {
           "time": "22:00",
           "home": "فينورد",
           "away": "بورتو",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "دي كويب، روتردام",
           "channel": "beIN Sports 6",
-          "note": ""
+          "note": "هدف بالخطأ في مرمى فينورد (2)",
+          "home_score": 0,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "لايبزيغ",
           "away": "لانس",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "ريد بُل أرينا",
           "channel": "beIN Sports 8",
-          "note": ""
+          "note": "راوم (6)، نوسا (9 و90+4) – أودول (58)",
+          "home_score": 3,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "سلوفان براتيسلافا",
           "away": "ريال بيتيس",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "براتيسلافا",
           "channel": "beIN Sports 9",
-          "note": ""
+          "note": "كوتشو هرنانديز (هدفان)",
+          "home_score": 0,
+          "away_score": 2
         }
       ]
     },
@@ -99,19 +117,23 @@
           "time": "18:00",
           "home": "شباب الأهلي",
           "away": "القادسية",
-          "status": "unknown",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports 2",
-          "note": "انطلقت الساعة 18:00، والنتيجة تُحدَّث لاحقاً"
+          "note": "",
+          "home_score": 1,
+          "away_score": 5
         },
         {
           "time": "20:15",
           "home": "النصر",
           "away": "السد",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports 2",
-          "note": ""
+          "note": "",
+          "home_score": 2,
+          "away_score": 1
         }
       ]
     },
@@ -191,9 +213,29 @@
     {
       "name": "أخبار 24",
       "url": "https://www.akhbaar24.com/%D8%B3%D8%A8%D9%88%D8%B1%D8%AA-24/%D8%A7%D9%84%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A9/%D8%B4%D9%86%D8%BA%D9%87%D8%A7%D9%8A-%D8%A8%D9%88%D8%B1%D8%AA-%D9%8A%D8%AA%D9%81%D9%88%D9%82-%D8%B9%D9%84%D9%89-%D8%A8%D9%88%D8%B1%D9%8A%D8%B1%D8%A7%D9%85-%D9%8A%D9%88%D9%86%D8%A7%D9%8A%D8%AA%D8%AF-%D9%81%D9%8A-%D9%86%D8%AE%D8%A8%D8%A9-%D8%A2%D8%B3%D9%8A%D8%A7-776786"
+    },
+    {
+      "name": "The Irish Times",
+      "url": "https://www.irishtimes.com/sport/soccer/2026/11/24/champions-league-wrap-arsenal-held-by-dortmund-after-failing-to-hold-lead/"
+    },
+    {
+      "name": "Dave.sport",
+      "url": "https://dave.sport/news/champions-league-results-24-november-2026/"
+    },
+    {
+      "name": "ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/401912584"
+    },
+    {
+      "name": "Flashscore",
+      "url": "https://www.flashscore.com/news/soccer-afc-champions-league-scorching-felix-strike-earns-al-nassr-asian-champions-league-win/t26BN12b/"
+    },
+    {
+      "name": "Africa Soccer",
+      "url": "https://africasoccer.com/al-qadsiah-thrash-shabab-al-ahli-5-1-to-strengthen-afc-champions-league-elite-position/"
     }
   ],
   "post_url": "https://www.greengoal.net/2026/11/24-2026.html",
-  "title": "مباريات اليوم الثلاثاء 24 تشرين الثاني 2026: النتائج أولاً بأول",
-  "phase": "partial"
+  "title": "نتائج مباريات الثلاثاء 24 تشرين الثاني 2026",
+  "phase": "results"
 }
