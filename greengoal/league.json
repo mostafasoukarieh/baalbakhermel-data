@@ -1,7 +1,7 @@
 {
   "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
-  "updated": "2026-11-25 08:45",
+  "updated": "2026-11-25 15:30",
   "verified": false,
   "standings": [
     {
@@ -192,7 +192,7 @@
         "time": "14:15",
         "home": "شباب الساحل",
         "away": "الأنصار",
-        "status": "upcoming"
+        "status": "unknown"
       },
       {
         "date": "2026-11-25",
