@@ -1,8 +1,8 @@
 {
   "date": "2026-11-25",
   "final": false,
-  "updated": "08:42",
-  "headline": "قمة الصفاء والنجمة ليلاً، والشاطئية اللبنانية أمام البحرين في ربع نهائي آسيا، وليفربول وسان جيرمان وبايرن ومانشستر يونايتد في دوري الأبطال",
+  "updated": "18:45",
+  "headline": "منتخب لبنان للكرة الشاطئية يهزم البحرين 6-4 ويبلغ نصف نهائي آسيا، والأنصار يفوز على شباب الساحل، والليلة قمة الصفاء والنجمة ودوري الأبطال",
   "groups": [
     {
       "scope": "محلية",
@@ -12,10 +12,12 @@
           "time": "14:15",
           "home": "شباب الساحل",
           "away": "الأنصار",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "",
-          "note": ""
+          "note": "مباراة مؤجلة من المرحلة الثالثة",
+          "home_score": 0,
+          "away_score": 1
         },
         {
           "time": "21:30",
@@ -36,10 +38,12 @@
           "time": "12:00",
           "home": "البحرين",
           "away": "لبنان",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "بان نام خيم، فانغ نغا (تايلاند)",
           "channel": "",
-          "note": ""
+          "note": "لبنان إلى نصف النهائي لملاقاة إيران الجمعة",
+          "home_score": 4,
+          "away_score": 6
         }
       ]
     },
@@ -147,6 +151,18 @@
     {
       "name": "الأخبار",
       "url": "https://www.al-akhbar.com/NewspaperArticles/sports/911399/%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D9%84%D9%8A%D9%84%D9%8A%D8%A9-%D9%82%D9%88%D9%8A%D8%A9-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%B5%D9%81%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D9%86%D8%AC%D9%85%D8%A9"
+    },
+    {
+      "name": "الاتحاد الآسيوي لكرة القدم",
+      "url": "https://www.the-afc.com/en/national/afc_beach_soccer_asian_cup.html/news/q-final-bahrain-4-6-lebanon"
+    },
+    {
+      "name": "MTV",
+      "url": "https://www.mtv.com.lb/news/1761885"
+    },
+    {
+      "name": "لبنان 24",
+      "url": "https://www.lebanon24.com/news/sports/1599574/%D9%81%D9%88%D8%B2-%D8%A7%D9%84%D8%A7%D9%86%D8%B5%D8%A7%D8%B1-%D8%B9%D9%84%D9%89-%D8%B4%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-1-0"
     }
   ]
 }
