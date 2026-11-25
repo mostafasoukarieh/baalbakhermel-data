@@ -1,7 +1,7 @@
 {
   "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
-  "updated": "2026-11-25 15:30",
+  "updated": "2026-11-25 22:25",
   "verified": false,
   "standings": [
     {
@@ -45,6 +45,16 @@
       "pts": 11
     },
     {
+      "team": "الأنصار",
+      "p": 5,
+      "w": 3,
+      "d": 2,
+      "l": 0,
+      "gf": 9,
+      "ga": 6,
+      "pts": 11
+    },
+    {
       "team": "التضامن صور",
       "p": 7,
       "w": 3,
@@ -53,16 +63,6 @@
       "gf": 13,
       "ga": 16,
       "pts": 10
-    },
-    {
-      "team": "الأنصار",
-      "p": 4,
-      "w": 2,
-      "d": 2,
-      "l": 0,
-      "gf": 8,
-      "ga": 6,
-      "pts": 8
     },
     {
       "team": "طرابلس",
@@ -86,12 +86,12 @@
     },
     {
       "team": "شباب الساحل",
-      "p": 6,
+      "p": 7,
       "w": 1,
       "d": 2,
-      "l": 3,
+      "l": 4,
       "gf": 2,
-      "ga": 7,
+      "ga": 8,
       "pts": 5
     },
     {
@@ -192,14 +192,16 @@
         "time": "14:15",
         "home": "شباب الساحل",
         "away": "الأنصار",
-        "status": "unknown"
+        "status": "finished",
+        "home_score": 0,
+        "away_score": 1
       },
       {
         "date": "2026-11-25",
         "time": "21:30",
         "home": "الصفاء",
         "away": "النجمة",
-        "status": "upcoming"
+        "status": "unknown"
       },
       {
         "date": "2026-11-27",
@@ -269,6 +271,14 @@
     {
       "name": "365Scores",
       "url": "https://www.365scores.com/ar/football/league/premier-league-566/standings"
+    },
+    {
+      "name": "MTV",
+      "url": "https://www.mtv.com.lb/news/1761885"
+    },
+    {
+      "name": "Lebanon24",
+      "url": "https://www.lebanon24.com/news/sports/1599574"
     }
   ]
 }
