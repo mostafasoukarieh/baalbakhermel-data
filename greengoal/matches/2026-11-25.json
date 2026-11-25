@@ -1,8 +1,8 @@
 {
   "date": "2026-11-25",
   "final": false,
-  "updated": "18:45",
-  "headline": "منتخب لبنان للكرة الشاطئية يهزم البحرين 6-4 ويبلغ نصف نهائي آسيا، والأنصار يفوز على شباب الساحل، والليلة قمة الصفاء والنجمة ودوري الأبطال",
+  "updated": "00:44",
+  "headline": "ليل يُسقط بايرن ميونيخ 2-1، وليفربول يكتسح كلوب بروج 3-0، وتعادل باريس سان جيرمان مع روما ومانشستر يونايتد مع سبورتينغ، ولبنان إلى نصف نهائي آسيا للكرة الشاطئية",
   "groups": [
     {
       "scope": "محلية",
@@ -23,10 +23,10 @@
           "time": "21:30",
           "home": "الصفاء",
           "away": "النجمة",
-          "status": "upcoming",
+          "status": "unknown",
           "venue": "",
           "channel": "",
-          "note": ""
+          "note": "لم تتأكد النتيجة من مصدر موثوق حتى الآن"
         }
       ]
     },
@@ -55,82 +55,100 @@
           "time": "19:45",
           "home": "صباح",
           "away": "برشلونة",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "ثنائية لأنتوني غوردون",
+          "home_score": 1,
+          "away_score": 4
         },
         {
           "time": "19:45",
           "home": "سلافيا براغ",
           "away": "فياريال",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 0,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "كلوب بروج",
           "away": "ليفربول",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "ثنائية لألكسندر إيزاك وهدف لفلوريان فيرتز",
+          "home_score": 0,
+          "away_score": 3
         },
         {
           "time": "22:00",
           "home": "باريس سان جيرمان",
           "away": "روما",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 2,
+          "away_score": 2
         },
         {
           "time": "22:00",
           "home": "سبورتينغ لشبونة",
           "away": "مانشستر يونايتد",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "ثنائية لبرونو فرنانديز",
+          "home_score": 2,
+          "away_score": 2
         },
         {
           "time": "22:00",
           "home": "ليل",
           "away": "بايرن ميونيخ",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 2,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "إنتر ميلان",
           "away": "شتوتغارت",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 2,
+          "away_score": 0
         },
         {
           "time": "22:00",
           "home": "أتلتيكو مدريد",
           "away": "فايكنغ",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 2,
+          "away_score": 0
         },
         {
           "time": "22:00",
           "home": "شاختار دونيتسك",
           "away": "فنربخشة",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 0,
+          "away_score": 1
         }
       ]
     }
@@ -163,6 +181,18 @@
     {
       "name": "لبنان 24",
       "url": "https://www.lebanon24.com/news/sports/1599574/%D9%81%D9%88%D8%B2-%D8%A7%D9%84%D8%A7%D9%86%D8%B5%D8%A7%D8%B1-%D8%B9%D9%84%D9%89-%D8%B4%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-1-0"
+    },
+    {
+      "name": "Yahoo Sports",
+      "url": "https://sports.yahoo.com/soccer/live/manchester-united-sporting-end-in-chaotic-draw-psg-bayern-munich-drop-points-in-dramatic-champions-league-day-222711566.html"
+    },
+    {
+      "name": "UNN",
+      "url": "https://unn.ua/en/news/shakhtar-narrowly-lost-to-fenerbahce-and-other-results-from-the-champions-league-matches"
+    },
+    {
+      "name": "APA",
+      "url": "https://en.apa.az/football/champions-league-bayern-munich-suffer-defeat-psg-drop-points-538613"
     }
   ]
 }
