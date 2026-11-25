@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-25",
+  "final": false,
+  "updated": "08:42",
+  "headline": "قمة الصفاء والنجمة ليلاً، والشاطئية اللبنانية أمام البحرين في ربع نهائي آسيا، وليفربول وسان جيرمان وبايرن ومانشستر يونايتد في دوري الأبطال",
+  "groups": [
+    {
+      "scope": "محلية",
+      "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
+      "matches": [
+        {
+          "time": "14:15",
+          "home": "شباب الساحل",
+          "away": "الأنصار",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        },
+        {
+          "time": "21:30",
+          "home": "الصفاء",
+          "away": "النجمة",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "محلية",
+      "competition": "كأس آسيا للكرة الشاطئية 2026 – ربع النهائي",
+      "matches": [
+        {
+          "time": "12:00",
+          "home": "البحرين",
+          "away": "لبنان",
+          "status": "upcoming",
+          "venue": "بان نام خيم، فانغ نغا (تايلاند)",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري أبطال أوروبا – المرحلة الخامسة",
+      "matches": [
+        {
+          "time": "19:45",
+          "home": "صباح",
+          "away": "برشلونة",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "19:45",
+          "home": "سلافيا براغ",
+          "away": "فياريال",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "كلوب بروج",
+          "away": "ليفربول",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "باريس سان جيرمان",
+          "away": "روما",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "سبورتينغ لشبونة",
+          "away": "مانشستر يونايتد",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "ليل",
+          "away": "بايرن ميونيخ",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "إنتر ميلان",
+          "away": "شتوتغارت",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "أتلتيكو مدريد",
+          "away": "فايكنغ",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "شاختار دونيتسك",
+          "away": "فنربخشة",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "الاتحاد الأوروبي لكرة القدم (UEFA)",
+      "url": "https://www.uefa.com/uefachampionsleague/news/02ab-2219497a67d6-4ad6623df0a1-1000--champions-league-matchday-5-key-stats-and-what-to-look-o/"
+    },
+    {
+      "name": "Sport-Flash",
+      "url": "https://www.sport-flash.com/sports/football/us/calendar/2026-11-25/uefa-champions-league-2026-2027"
+    },
+    {
+      "name": "الاتحاد الآسيوي لكرة القدم",
+      "url": "https://www.the-afc.com/en/national/afc_beach_soccer_asian_cup.html/news/preview-qf-bahrain-v-lebanon"
+    },
+    {
+      "name": "الأخبار",
+      "url": "https://www.al-akhbar.com/NewspaperArticles/sports/911399/%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D9%84%D9%8A%D9%84%D9%8A%D8%A9-%D9%82%D9%88%D9%8A%D8%A9-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%B5%D9%81%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D9%86%D8%AC%D9%85%D8%A9"
+    }
+  ]
+}
