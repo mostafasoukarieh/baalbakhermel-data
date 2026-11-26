@@ -1,7 +1,7 @@
 {
   "date": "2026-11-26",
   "final": false,
-  "updated": "08:55",
+  "updated": "18:48",
   "headline": "ميلان في بيرايوس، ويوفنتوس مع أومونيا، وكريستال بالاس أمام ريال سوسيداد في الدوري الأوروبي الليلة",
   "groups": [
     {
@@ -150,19 +150,21 @@
           "time": "16:25",
           "home": "الفتح",
           "away": "الرياض",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "ثمانية",
-          "note": ""
+          "note": "الهدف: مراد باتنا (70)",
+          "home_score": 1,
+          "away_score": 0
         },
         {
           "time": "17:05",
           "home": "أبها",
           "away": "الشباب",
-          "status": "upcoming",
+          "status": "unknown",
           "venue": "",
           "channel": "ثمانية",
-          "note": ""
+          "note": "الشباب متقدّم 1-0 في آخر تحديث، والنتيجة النهائية بانتظار التأكيد"
         },
         {
           "time": "19:30",
@@ -192,6 +194,14 @@
     {
       "name": "المشهد",
       "url": "https://www.almashhad.news/news/509773"
+    },
+    {
+      "name": "يلا شوت – الفتح يتجاوز الرياض",
+      "url": "https://www.ysscores.com/en/news/14106635/al-fateh-sc-edge-al-riyadh-with-batna-goal-in-saudi-pro-league"
+    },
+    {
+      "name": "سعودي – أبها والشباب",
+      "url": "https://www.so3ody.com/matches/2147279097"
     }
   ]
 }
