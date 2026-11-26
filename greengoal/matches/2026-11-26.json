@@ -1,0 +1,197 @@
+{
+  "date": "2026-11-26",
+  "final": false,
+  "updated": "08:55",
+  "headline": "ميلان في بيرايوس، ويوفنتوس مع أومونيا، وكريستال بالاس أمام ريال سوسيداد في الدوري الأوروبي الليلة",
+  "groups": [
+    {
+      "scope": "دولية",
+      "competition": "الدوري الأوروبي – المرحلة الخامسة",
+      "matches": [
+        {
+          "time": "19:45",
+          "home": "أولمبياكوس",
+          "away": "ميلان",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "19:45",
+          "home": "دينامو زغرب",
+          "away": "باير ليفركوزن",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "19:45",
+          "home": "فيكتوريا بلزن",
+          "away": "بنفيكا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "19:45",
+          "home": "مرسيليا",
+          "away": "ليفسكي صوفيا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "19:45",
+          "home": "سيلتا فيغو",
+          "away": "بورنموث",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "يوفنتوس",
+          "away": "أومونيا نيقوسيا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "كريستال بالاس",
+          "away": "ريال سوسيداد",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "ليون",
+          "away": "ليلستروم",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "سندرلاند",
+          "away": "ياغيلونيا بياليستوك",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "توريينسي",
+          "away": "سلتيك",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري المؤتمر الأوروبي – المرحلة الرابعة",
+      "matches": [
+        {
+          "time": "19:45",
+          "home": "برايتون",
+          "away": "يونيفيرسيتاتيا كرايوفا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "19:45",
+          "home": "هارتس",
+          "away": "موناكو",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "بوراتش بانيا لوكا",
+          "away": "أتالانتا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "سسكا صوفيا",
+          "away": "طرابزون سبور",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري روشن السعودي – المرحلة 13",
+      "matches": [
+        {
+          "time": "16:25",
+          "home": "الفتح",
+          "away": "الرياض",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "ثمانية",
+          "note": ""
+        },
+        {
+          "time": "17:05",
+          "home": "أبها",
+          "away": "الشباب",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "ثمانية",
+          "note": ""
+        },
+        {
+          "time": "19:30",
+          "home": "الفيصلي",
+          "away": "الدرعية",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "ثمانية",
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "الاتحاد الأوروبي لكرة القدم (UEFA) – الدوري الأوروبي",
+      "url": "https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures-and-re/"
+    },
+    {
+      "name": "الاتحاد الأوروبي لكرة القدم (UEFA) – دوري المؤتمر",
+      "url": "https://www.uefa.com/uefaconferenceleague/news/02a8-2174cb200f25-b94693ddff4e-1000--202627-conference-league-all-the-league-phase-fixtures/"
+    },
+    {
+      "name": "الشرق رياضة",
+      "url": "https://sports.asharq.com/football/124184/"
+    },
+    {
+      "name": "المشهد",
+      "url": "https://www.almashhad.news/news/509773"
+    }
+  ]
+}
