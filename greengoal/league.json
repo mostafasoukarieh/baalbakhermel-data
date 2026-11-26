@@ -1,19 +1,9 @@
 {
   "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
-  "updated": "2026-11-25 22:25",
+  "updated": "2026-11-26 08:40",
   "verified": false,
   "standings": [
-    {
-      "team": "الصفاء",
-      "p": 6,
-      "w": 5,
-      "d": 1,
-      "l": 0,
-      "gf": 14,
-      "ga": 3,
-      "pts": 16
-    },
     {
       "team": "جويا",
       "p": 7,
@@ -25,6 +15,26 @@
       "pts": 16
     },
     {
+      "team": "الصفاء",
+      "p": 7,
+      "w": 5,
+      "d": 1,
+      "l": 1,
+      "gf": 14,
+      "ga": 4,
+      "pts": 16
+    },
+    {
+      "team": "النجمة",
+      "p": 6,
+      "w": 4,
+      "d": 2,
+      "l": 0,
+      "gf": 9,
+      "ga": 3,
+      "pts": 14
+    },
+    {
       "team": "العهد",
       "p": 7,
       "w": 3,
@@ -33,16 +43,6 @@
       "gf": 5,
       "ga": 4,
       "pts": 12
-    },
-    {
-      "team": "النجمة",
-      "p": 5,
-      "w": 3,
-      "d": 2,
-      "l": 0,
-      "gf": 8,
-      "ga": 3,
-      "pts": 11
     },
     {
       "team": "الأنصار",
@@ -201,14 +201,10 @@
         "time": "21:30",
         "home": "الصفاء",
         "away": "النجمة",
-        "status": "unknown"
-      },
-      {
-        "date": "2026-11-27",
-        "time": "14:15",
-        "home": "المبرة",
-        "away": "الإخاء الأهلي عاليه",
-        "status": "upcoming"
+        "status": "finished",
+        "home_score": 0,
+        "away_score": 1,
+        "note": "مباراة مؤجلة من المرحلة الثالثة"
       },
       {
         "date": "2026-11-27",
@@ -220,15 +216,15 @@
       {
         "date": "2026-11-28",
         "time": "14:15",
-        "home": "الرياضي العباسية",
-        "away": "شباب الساحل",
+        "home": "المبرة",
+        "away": "الإخاء الأهلي عاليه",
         "status": "upcoming"
       },
       {
-        "date": "2026-11-28",
-        "time": "17:00",
-        "home": "جويا",
-        "away": "الصفاء",
+        "date": "2026-11-29",
+        "time": "14:15",
+        "home": "الرياضي العباسية",
+        "away": "شباب الساحل",
         "status": "upcoming"
       },
       {
@@ -240,18 +236,23 @@
       },
       {
         "date": "2026-11-29",
-        "time": "17:00",
+        "time": "16:30",
         "home": "الأنصار",
         "away": "طرابلس",
-        "status": "upcoming"
+        "status": "upcoming",
+        "note": "الموعد قيد التأكيد"
+      },
+      {
+        "date": "2026-11-29",
+        "time": "20:00",
+        "home": "جويا",
+        "away": "الصفاء",
+        "status": "upcoming",
+        "note": "الموعد قيد التأكيد"
       }
     ]
   },
   "sources": [
-    {
-      "name": "futbol24",
-      "url": "https://www.futbol24.com/national/Lebanon/Premier-League/2026-2027"
-    },
     {
       "name": "winwin",
       "url": "https://www.winwin.com/%D9%83%D8%B1%D8%A9-%D9%82%D8%AF%D9%85/%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A%D8%A7%D8%AA/%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D8%AA%D8%A7%D8%B2/%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8"
@@ -279,6 +280,14 @@
     {
       "name": "Lebanon24",
       "url": "https://www.lebanon24.com/news/sports/1599574"
+    },
+    {
+      "name": "MTV",
+      "url": "https://www.mtv.com.lb/news/1762007"
+    },
+    {
+      "name": "365Scores",
+      "url": "https://www.365scores.com/football/match/premier-league-566/nejmeh-sc-safa-8290-8291-566"
     }
   ]
 }
