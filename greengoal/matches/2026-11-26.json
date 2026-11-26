@@ -1,8 +1,8 @@
 {
   "date": "2026-11-26",
-  "final": false,
-  "updated": "18:48",
-  "headline": "ميلان في بيرايوس، ويوفنتوس مع أومونيا، وكريستال بالاس أمام ريال سوسيداد في الدوري الأوروبي الليلة",
+  "final": true,
+  "updated": "01:10",
+  "headline": "ميلان يقلب تأخره إلى فوز 4-2 في بيرايوس، وبلزن يكتسح بنفيكا برباعية، وموناكو يواصل العلامة الكاملة",
   "groups": [
     {
       "scope": "دولية",
@@ -12,91 +12,111 @@
           "time": "19:45",
           "home": "أولمبياكوس",
           "away": "ميلان",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "بوليسيتش ومورييرا في الدقائق الأخيرة بعد العودة من التأخر",
+          "home_score": 2,
+          "away_score": 4
         },
         {
           "time": "19:45",
           "home": "دينامو زغرب",
           "away": "باير ليفركوزن",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "تيلمان وكوانسا",
+          "home_score": 0,
+          "away_score": 2
         },
         {
           "time": "19:45",
           "home": "فيكتوريا بلزن",
           "away": "بنفيكا",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 4,
+          "away_score": 0
         },
         {
           "time": "19:45",
           "home": "مرسيليا",
           "away": "ليفسكي صوفيا",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 1,
+          "away_score": 0
         },
         {
           "time": "19:45",
           "home": "سيلتا فيغو",
           "away": "بورنموث",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "هدف الفوز لريان في الدقائق الأخيرة",
+          "home_score": 1,
+          "away_score": 2
         },
         {
           "time": "22:00",
           "home": "يوفنتوس",
           "away": "أومونيا نيقوسيا",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "كامبياسو وإيخاتور وكونسيساو وبوغا",
+          "home_score": 4,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "كريستال بالاس",
           "away": "ريال سوسيداد",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "ماتيتا (ركلة جزاء) وماكنيل بعد طرد جون مارتن",
+          "home_score": 2,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "ليون",
           "away": "ليلستروم",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "",
+          "home_score": 0,
+          "away_score": 0
         },
         {
           "time": "22:00",
           "home": "سندرلاند",
           "away": "ياغيلونيا بياليستوك",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "توتييروف لسندرلاند وجوزفياك لياغيلونيا",
+          "home_score": 1,
+          "away_score": 1
         },
         {
           "time": "22:00",
           "home": "توريينسي",
           "away": "سلتيك",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "هدف فوز سلتيك لكاميلو دوران في الدقائق الأخيرة",
+          "home_score": 1,
+          "away_score": 2
         }
       ]
     },
@@ -108,37 +128,45 @@
           "time": "19:45",
           "home": "برايتون",
           "away": "يونيفيرسيتاتيا كرايوفا",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "عثمان (2) ودي كاوبر وكوستولاس",
+          "home_score": 4,
+          "away_score": 0
         },
         {
           "time": "19:45",
           "home": "هارتس",
           "away": "موناكو",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "بالوغون سجّل هدف الفوز في الوقت بدل الضائع",
+          "home_score": 2,
+          "away_score": 3
         },
         {
           "time": "22:00",
           "home": "بوراتش بانيا لوكا",
           "away": "أتالانتا",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "أتالانتا عاد من التأخر بثلاثة أهداف متأخرة",
+          "home_score": 2,
+          "away_score": 3
         },
         {
           "time": "22:00",
           "home": "سسكا صوفيا",
           "away": "طرابزون سبور",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "طرابزون سبور حسم الفوز في الدقائق الأخيرة",
+          "home_score": 1,
+          "away_score": 2
         }
       ]
     },
@@ -161,19 +189,23 @@
           "time": "17:05",
           "home": "أبها",
           "away": "الشباب",
-          "status": "unknown",
+          "status": "finished",
           "venue": "",
           "channel": "ثمانية",
-          "note": "الشباب متقدّم 1-0 في آخر تحديث، والنتيجة النهائية بانتظار التأكيد"
+          "note": "الهدف: جوش براونهيل (39)",
+          "home_score": 0,
+          "away_score": 1
         },
         {
           "time": "19:30",
           "home": "الفيصلي",
           "away": "الدرعية",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "ثمانية",
-          "note": ""
+          "note": "الفيصلي عاد من التأخر بهدفين، والتعادل في الدقيقة 89",
+          "home_score": 2,
+          "away_score": 2
         }
       ]
     }
@@ -202,6 +234,54 @@
     {
       "name": "سعودي – أبها والشباب",
       "url": "https://www.so3ody.com/matches/2147279097"
+    },
+    {
+      "name": "ESPN – أولمبياكوس وميلان",
+      "url": "https://www.espn.com/soccer/report/_/gameId/401915521"
+    },
+    {
+      "name": "101 Great Goals – ملخّص الدوري الأوروبي",
+      "url": "https://www.101greatgoals.com/football/europa-league/europa-league-round-up-celtic-snatch-late-win-at-torreense-as-ac-milan-complete-stunning-comeback/"
+    },
+    {
+      "name": "Goal – يوفنتوس وكريستال بالاس",
+      "url": "https://www.goal.com/en-in/news/juventus-thrash-omonia-4-1-as-crystal-palace-down-real-sociedad-after-a-red-card/blt0abd549854bad32c"
+    },
+    {
+      "name": "مصراوي – نتائج الخميس 26 تشرين الثاني",
+      "url": "https://www.masrawy.com/sports/sports-arab-international/details/2026/11/27/3085186/"
+    },
+    {
+      "name": "ماسبيرو – الدوري الأوروبي",
+      "url": "https://www.maspero.eg/sport/2026/11/26/1009143/"
+    },
+    {
+      "name": "VAVEL – بلزن وبنفيكا",
+      "url": "https://www.vavel.com/en-us/soccer/2026/11/26/1280748-viktoria-plzen-vs-benfica-live-where-to-watch-lineups-and-real-time-updates-for-the-uefa-europa-league.html"
+    },
+    {
+      "name": "Irish News – سندرلاند وياغيلونيا",
+      "url": "https://www.irishnews.com/sport/soccer/sunderland-maintain-europa-league-play-off-push-with-jagiellonia-bialystok-draw-UIM6K25RFZMVLPRFVSLEPBJ4NA/"
+    },
+    {
+      "name": "نادي موناكو – هارتس وموناكو",
+      "url": "https://www.asmonaco.com/en/news/four-in-a-row-after-a-dramatic-finish-for-as-monaco-against-hearts-in-the-conference-league"
+    },
+    {
+      "name": "Flashscore – برايتون وكرايوفا",
+      "url": "https://flashscore.co.za/news/brighton-maintain-unbeaten-conference-league-record-with-win-over-univ-craiova/MPswPgxh"
+    },
+    {
+      "name": "Digisport – نتائج دوري المؤتمر",
+      "url": "https://digisport.ro/fotbal/conference-league/borac-atalanta-2-3-cska-sofia-trabzonspor-1-2-freiburg-twente-2-1-rezultatele-etapei-4-din-conference-league-4626055"
+    },
+    {
+      "name": "سبق – الشباب وأبها",
+      "url": "https://sabq.org/article/rudxies"
+    },
+    {
+      "name": "سبق – الفيصلي والدرعية",
+      "url": "https://sabq.org/article/16ke9f3"
     }
   ]
 }
