@@ -1,84 +1,239 @@
 {
   "date": "2026-11-27",
   "final": false,
-  "updated": "08:55",
-  "headline": "منتخب لبنان للكرة الشاطئية أمام إيران في نصف نهائي كأس آسيا ظهراً، والتضامن صور يستضيف العهد، ونوتنغهام فورست مع تشيلسي ليلاً",
+  "updated": "18:55",
+  "headline": "التضامن صور يُسقط العهد 2-1، ومنتخب لبنان للكرة الشاطئية يخرج من نصف نهائي آسيا أمام إيران، ونوتنغهام فورست مع تشيلسي ليلاً",
   "groups": [
     {
       "scope": "محلية",
       "competition": "كأس آسيا للكرة الشاطئية – نصف النهائي",
       "matches": [
-        {"time": "12:00", "home": "إيران", "away": "لبنان", "status": "upcoming", "venue": "ملعب بان نام خيم الشاطئي، فانغ نغا (تايلاند)", "channel": "", "note": ""}
+        {
+          "time": "12:00",
+          "home": "إيران",
+          "away": "لبنان",
+          "status": "finished",
+          "venue": "ملعب بان نام خيم الشاطئي، فانغ نغا (تايلاند)",
+          "channel": "",
+          "note": "إيران إلى النهائي",
+          "home_score": 10,
+          "away_score": 2
+        }
       ]
     },
     {
       "scope": "محلية",
       "competition": "بطولة فانتازيا لكرة القدم – المرحلة الثامنة",
       "matches": [
-        {"time": "14:15", "home": "التضامن صور", "away": "العهد", "status": "upcoming", "venue": "", "channel": "", "note": ""}
+        {
+          "time": "14:15",
+          "home": "التضامن صور",
+          "away": "العهد",
+          "status": "finished",
+          "venue": "ملعب صور البلدي",
+          "channel": "",
+          "note": "لوكاسي 33، مالك ديانغ 74 – يعقوبا ديوري 73",
+          "home_score": 2,
+          "away_score": 1
+        }
       ]
     },
     {
       "scope": "دولية",
       "competition": "الدوري الإنكليزي الممتاز – المرحلة 12",
       "matches": [
-        {"time": "22:00", "home": "نوتنغهام فورست", "away": "تشيلسي", "status": "upcoming", "venue": "", "channel": "beIN Sports", "note": ""}
+        {
+          "time": "22:00",
+          "home": "نوتنغهام فورست",
+          "away": "تشيلسي",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
       ]
     },
     {
       "scope": "دولية",
       "competition": "الدوري الإسباني – المرحلة 13",
       "matches": [
-        {"time": "22:00", "home": "ليفانتي", "away": "راسينغ سانتاندير", "status": "upcoming", "venue": "", "channel": "beIN Sports", "note": ""}
+        {
+          "time": "22:00",
+          "home": "ليفانتي",
+          "away": "راسينغ سانتاندير",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
       ]
     },
     {
       "scope": "دولية",
       "competition": "الدوري الإيطالي – المرحلة 13",
       "matches": [
-        {"time": "21:45", "home": "فينيسيا", "away": "بولونيا", "status": "upcoming", "venue": "", "channel": "", "note": ""}
+        {
+          "time": "21:45",
+          "home": "فينيسيا",
+          "away": "بولونيا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
       ]
     },
     {
       "scope": "دولية",
       "competition": "الدوري الألماني – المرحلة 11",
       "matches": [
-        {"time": "21:30", "home": "فيردر بريمن", "away": "بوروسيا مونشنغلادباخ", "status": "upcoming", "venue": "", "channel": "", "note": ""}
+        {
+          "time": "21:30",
+          "home": "فيردر بريمن",
+          "away": "بوروسيا مونشنغلادباخ",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
       ]
     },
     {
       "scope": "دولية",
       "competition": "الدوري الفرنسي – المرحلة 12",
       "matches": [
-        {"time": "21:45", "home": "بريست", "away": "باريس إف سي", "status": "upcoming", "venue": "", "channel": "beIN Sports", "note": ""}
+        {
+          "time": "21:45",
+          "home": "بريست",
+          "away": "باريس إف سي",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
       ]
     },
     {
       "scope": "دولية",
       "competition": "دوري روشن السعودي – المرحلة 13",
       "matches": [
-        {"time": "14:15", "home": "الخلود", "away": "الخليج", "status": "upcoming", "venue": "", "channel": "ثمانية", "note": ""},
-        {"time": "16:20", "home": "القادسية", "away": "الفيحاء", "status": "upcoming", "venue": "", "channel": "ثمانية", "note": ""},
-        {"time": "19:30", "home": "الاتحاد", "away": "نيوم", "status": "upcoming", "venue": "", "channel": "ثمانية", "note": ""}
+        {
+          "time": "14:15",
+          "home": "الخلود",
+          "away": "الخليج",
+          "status": "finished",
+          "venue": "",
+          "channel": "ثمانية",
+          "note": "",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "time": "16:20",
+          "home": "القادسية",
+          "away": "الفيحاء",
+          "status": "finished",
+          "venue": "",
+          "channel": "ثمانية",
+          "note": "القادسية يتصدّر مؤقتاً",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "time": "19:30",
+          "home": "الاتحاد",
+          "away": "نيوم",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "ثمانية",
+          "note": ""
+        }
       ]
     },
     {
       "scope": "دولية",
       "competition": "كأس العالم للناشئين (تحت 17 عاماً) – الجولة الثالثة",
       "matches": [
-        {"time": "17:00", "home": "الجزائر", "away": "جمهورية الدومينيكان", "status": "upcoming", "venue": "", "channel": "", "note": ""}
+        {
+          "time": "17:00",
+          "home": "الجزائر",
+          "away": "جمهورية الدومينيكان",
+          "status": "unknown",
+          "venue": "",
+          "channel": "",
+          "note": "تقدّمت الجزائر 1-0 في الشوط الأول؛ النتيجة النهائية لم تتأكد بعد"
+        }
       ]
     }
   ],
   "sources": [
-    {"name": "الاتحاد الآسيوي لكرة القدم (AFC) – نصف نهائي الكرة الشاطئية", "url": "https://www.the-afc.com/en/national/afc_beach_soccer_asian_cup.html/news/preview-sf-ir-iran-v-lebanon"},
-    {"name": "Beach Soccer Worldwide", "url": "https://beachsoccer.com/afc-beach-soccer-asian-cup-reaches-semi-finals-stage"},
-    {"name": "الأخبار – العهد في ضيافة التضامن صور", "url": "https://www.al-akhbar.com/NewspaperArticles/sports/911700/%D8%A7%D9%84%D8%B9%D9%87%D8%AF-%D9%81%D9%8A-%D8%B6%D9%8A%D8%A7%D9%81%D8%A9-%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D8%B5%D9%88%D8%B1"},
-    {"name": "LiveSoccerTV – مباريات 27 تشرين الثاني", "url": "https://www.livesoccertv.com/schedules/2026-11-27/"},
-    {"name": "Goal – جدول مباريات الجمعة", "url": "https://www.goal.com/ar-eg/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D8%AC%D8%AF%D9%88%D9%84-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9-27-%D9%86%D9%88%D9%81%D9%85%D8%A8%D8%B1-2026-%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9-%D9%88%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%82%D9%8A%D9%86/blt90f9ad89cc342895"},
-    {"name": "اليوم السابع – مواعيد مباريات الجمعة", "url": "https://www.youm7.com/story/2026/11/27/%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9-27-11-2026-%D9%88%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9/7633272"},
-    {"name": "Sky Sports – مباريات 27 تشرين الثاني", "url": "https://www.skysports.com/football-scores-fixtures/2026-11-27"},
-    {"name": "Sport News Africa – مواعيد الدوري الإنكليزي", "url": "https://sportnewsafrica.com/en/news/premier-league-fixtures-weekend-schedule-and-kick-off-times-27-29-november-2026/"},
-    {"name": "Sport News Africa – مواعيد الدوري الإسباني", "url": "https://sportnewsafrica.com/en/news/laliga-fixtures-weekend-schedule-and-kick-off-times-27-30-november-2026/"}
+    {
+      "name": "الاتحاد الآسيوي لكرة القدم (AFC) – نصف نهائي الكرة الشاطئية",
+      "url": "https://www.the-afc.com/en/national/afc_beach_soccer_asian_cup.html/news/preview-sf-ir-iran-v-lebanon"
+    },
+    {
+      "name": "Beach Soccer Worldwide",
+      "url": "https://beachsoccer.com/afc-beach-soccer-asian-cup-reaches-semi-finals-stage"
+    },
+    {
+      "name": "الأخبار – العهد في ضيافة التضامن صور",
+      "url": "https://www.al-akhbar.com/NewspaperArticles/sports/911700/%D8%A7%D9%84%D8%B9%D9%87%D8%AF-%D9%81%D9%8A-%D8%B6%D9%8A%D8%A7%D9%81%D8%A9-%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D8%B5%D9%88%D8%B1"
+    },
+    {
+      "name": "LiveSoccerTV – مباريات 27 تشرين الثاني",
+      "url": "https://www.livesoccertv.com/schedules/2026-11-27/"
+    },
+    {
+      "name": "Goal – جدول مباريات الجمعة",
+      "url": "https://www.goal.com/ar-eg/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D8%AC%D8%AF%D9%88%D9%84-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9-27-%D9%86%D9%88%D9%81%D9%85%D8%A8%D8%B1-2026-%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9-%D9%88%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%82%D9%8A%D9%86/blt90f9ad89cc342895"
+    },
+    {
+      "name": "اليوم السابع – مواعيد مباريات الجمعة",
+      "url": "https://www.youm7.com/story/2026/11/27/%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9-27-11-2026-%D9%88%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9/7633272"
+    },
+    {
+      "name": "Sky Sports – مباريات 27 تشرين الثاني",
+      "url": "https://www.skysports.com/football-scores-fixtures/2026-11-27"
+    },
+    {
+      "name": "Sport News Africa – مواعيد الدوري الإنكليزي",
+      "url": "https://sportnewsafrica.com/en/news/premier-league-fixtures-weekend-schedule-and-kick-off-times-27-29-november-2026/"
+    },
+    {
+      "name": "Sport News Africa – مواعيد الدوري الإسباني",
+      "url": "https://sportnewsafrica.com/en/news/laliga-fixtures-weekend-schedule-and-kick-off-times-27-30-november-2026/"
+    },
+    {
+      "name": "الاتحاد الآسيوي لكرة القدم – إيران 10-2 لبنان",
+      "url": "https://www.the-afc.com/en/national/afc_beach_soccer_asian_cup.html/news/s-final-ir-iran-10-2-lebanon"
+    },
+    {
+      "name": "Mehr News – إيران إلى النهائي",
+      "url": "https://en.mehrnews.com/news/249729/Iran-march-into-2026-AFC-Beach-Soccer-Asian-Cup-final"
+    },
+    {
+      "name": "MTV Lebanon – التضامن صور يسقط العهد",
+      "url": "https://www.mtv.com.lb/news/1762619"
+    },
+    {
+      "name": "اللواء – التضامن صور يستعيد نغمة الفوز",
+      "url": "https://aliwaa.com.lb/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D8%B5%D9%88%D8%B1-%D9%8A%D8%B3%D8%AA%D8%B9%D9%8A%D8%AF-%D9%86%D8%BA%D9%85%D8%A9-%D8%A7%D9%84%D9%81%D9%88%D8%B2-%D8%B9%D9%84%D9%89-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B6%D9%8A%D9%81%D9%87-%D8%A7%D9%84%D8%B9%D9%87%D8%AF"
+    },
+    {
+      "name": "المدينة – الخلود يتغلب على الخليج",
+      "url": "https://www.al-madina.com/article/1014971/"
+    },
+    {
+      "name": "الشرق للرياضة – القادسية يهزم الفيحاء",
+      "url": "https://sports.asharq.com/football/124363/"
+    },
+    {
+      "name": "صدى – القادسية ينتزع صدارة روشن",
+      "url": "https://slaati.com/2026/11/27/p2882819.html"
+    },
+    {
+      "name": "Foot Africa – الجزائر تتقدّم في الشوط الأول",
+      "url": "https://foot-africa.com/actualites/coupe-du-monde-u17-lalgerie-mene-face-a-la-republique-dominicaine-a-la-pause-1-0-1433114/"
+    }
   ]
 }

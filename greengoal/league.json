@@ -1,7 +1,7 @@
 {
   "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
-  "updated": "2026-11-27 16:30",
+  "updated": "2026-11-27 18:55",
   "verified": false,
   "standings": [
     {
@@ -35,13 +35,23 @@
       "pts": 14
     },
     {
+      "team": "التضامن صور",
+      "p": 8,
+      "w": 4,
+      "d": 1,
+      "l": 3,
+      "gf": 15,
+      "ga": 17,
+      "pts": 13
+    },
+    {
       "team": "العهد",
-      "p": 7,
+      "p": 8,
       "w": 3,
       "d": 3,
-      "l": 1,
-      "gf": 5,
-      "ga": 4,
+      "l": 2,
+      "gf": 6,
+      "ga": 6,
       "pts": 12
     },
     {
@@ -53,16 +63,6 @@
       "gf": 9,
       "ga": 6,
       "pts": 11
-    },
-    {
-      "team": "التضامن صور",
-      "p": 7,
-      "w": 3,
-      "d": 1,
-      "l": 3,
-      "gf": 13,
-      "ga": 16,
-      "pts": 10
     },
     {
       "team": "طرابلس",
@@ -211,7 +211,9 @@
         "time": "14:15",
         "home": "التضامن صور",
         "away": "العهد",
-        "status": "unknown"
+        "status": "finished",
+        "home_score": 2,
+        "away_score": 1
       },
       {
         "date": "2026-11-28",
@@ -293,6 +295,14 @@
     {
       "name": "365Scores",
       "url": "https://www.365scores.com/en-us/football/match/premier-league-566/al-ahed-tadamon-8287-8296-566"
+    },
+    {
+      "name": "اللواء",
+      "url": "https://aliwaa.com.lb/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D8%B5%D9%88%D8%B1-%D9%8A%D8%B3%D8%AA%D8%B9%D9%8A%D8%AF-%D9%86%D8%BA%D9%85%D8%A9-%D8%A7%D9%84%D9%81%D9%88%D8%B2-%D8%B9%D9%84%D9%89-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B6%D9%8A%D9%81%D9%87-%D8%A7%D9%84%D8%B9%D9%87%D8%AF"
+    },
+    {
+      "name": "MTV",
+      "url": "https://www.mtv.com.lb/news/1762619"
     }
   ]
 }
