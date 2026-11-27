@@ -1,172 +1,111 @@
 {
-  "date": "2026-11-26",
-  "final": true,
-  "updated": "01:10",
-  "headline": "ميلان يقلب تأخره إلى فوز 4-2 في بيرايوس، وبلزن يكتسح بنفيكا برباعية، وموناكو يواصل العلامة الكاملة",
+  "date": "2026-11-27",
+  "final": false,
+  "updated": "08:55",
+  "headline": "منتخب لبنان للكرة الشاطئية أمام إيران في نصف نهائي كأس آسيا ظهراً، والتضامن صور يستضيف العهد، ونوتنغهام فورست مع تشيلسي ليلاً",
   "groups": [
     {
-      "scope": "دولية",
-      "competition": "الدوري الأوروبي – المرحلة الخامسة",
+      "scope": "محلية",
+      "competition": "كأس آسيا للكرة الشاطئية – نصف النهائي",
       "matches": [
         {
-          "time": "19:45",
-          "home": "أولمبياكوس",
-          "away": "ميلان",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "بوليسيتش ومورييرا في الدقائق الأخيرة بعد العودة من التأخر",
-          "home_score": 2,
-          "away_score": 4
-        },
+          "time": "12:00",
+          "home": "إيران",
+          "away": "لبنان",
+          "status": "upcoming",
+          "venue": "ملعب بان نام خيم الشاطئي، فانغ نغا (تايلاند)",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "محلية",
+      "competition": "بطولة فانتازيا لكرة القدم – المرحلة الثامنة",
+      "matches": [
         {
-          "time": "19:45",
-          "home": "دينامو زغرب",
-          "away": "باير ليفركوزن",
-          "status": "finished",
+          "time": "14:15",
+          "home": "التضامن صور",
+          "away": "العهد",
+          "status": "upcoming",
           "venue": "",
-          "channel": "beIN Sports",
-          "note": "تيلمان وكوانسا",
-          "home_score": 0,
-          "away_score": 2
-        },
-        {
-          "time": "19:45",
-          "home": "فيكتوريا بلزن",
-          "away": "بنفيكا",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "",
-          "home_score": 4,
-          "away_score": 0
-        },
-        {
-          "time": "19:45",
-          "home": "مرسيليا",
-          "away": "ليفسكي صوفيا",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "",
-          "home_score": 1,
-          "away_score": 0
-        },
-        {
-          "time": "19:45",
-          "home": "سيلتا فيغو",
-          "away": "بورنموث",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "هدف الفوز لريان في الدقائق الأخيرة",
-          "home_score": 1,
-          "away_score": 2
-        },
-        {
-          "time": "22:00",
-          "home": "يوفنتوس",
-          "away": "أومونيا نيقوسيا",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "كامبياسو وإيخاتور وكونسيساو وبوغا",
-          "home_score": 4,
-          "away_score": 1
-        },
-        {
-          "time": "22:00",
-          "home": "كريستال بالاس",
-          "away": "ريال سوسيداد",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "ماتيتا (ركلة جزاء) وماكنيل بعد طرد جون مارتن",
-          "home_score": 2,
-          "away_score": 1
-        },
-        {
-          "time": "22:00",
-          "home": "ليون",
-          "away": "ليلستروم",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "",
-          "home_score": 0,
-          "away_score": 0
-        },
-        {
-          "time": "22:00",
-          "home": "سندرلاند",
-          "away": "ياغيلونيا بياليستوك",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "توتييروف لسندرلاند وجوزفياك لياغيلونيا",
-          "home_score": 1,
-          "away_score": 1
-        },
-        {
-          "time": "22:00",
-          "home": "توريينسي",
-          "away": "سلتيك",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "هدف فوز سلتيك لكاميلو دوران في الدقائق الأخيرة",
-          "home_score": 1,
-          "away_score": 2
+          "channel": "",
+          "note": ""
         }
       ]
     },
     {
       "scope": "دولية",
-      "competition": "دوري المؤتمر الأوروبي – المرحلة الرابعة",
+      "competition": "الدوري الإنكليزي الممتاز – المرحلة 12",
       "matches": [
         {
-          "time": "19:45",
-          "home": "برايتون",
-          "away": "يونيفيرسيتاتيا كرايوفا",
-          "status": "finished",
+          "time": "22:00",
+          "home": "نوتنغهام فورست",
+          "away": "تشيلسي",
+          "status": "upcoming",
           "venue": "",
           "channel": "beIN Sports",
-          "note": "عثمان (2) ودي كاوبر وكوستولاس",
-          "home_score": 4,
-          "away_score": 0
-        },
-        {
-          "time": "19:45",
-          "home": "هارتس",
-          "away": "موناكو",
-          "status": "finished",
-          "venue": "",
-          "channel": "beIN Sports",
-          "note": "بالوغون سجّل هدف الفوز في الوقت بدل الضائع",
-          "home_score": 2,
-          "away_score": 3
-        },
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الإسباني – المرحلة 13",
+      "matches": [
         {
           "time": "22:00",
-          "home": "بوراتش بانيا لوكا",
-          "away": "أتالانتا",
-          "status": "finished",
+          "home": "ليفانتي",
+          "away": "راسينغ سانتاندير",
+          "status": "upcoming",
           "venue": "",
           "channel": "beIN Sports",
-          "note": "أتالانتا عاد من التأخر بثلاثة أهداف متأخرة",
-          "home_score": 2,
-          "away_score": 3
-        },
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الإيطالي – المرحلة 13",
+      "matches": [
         {
-          "time": "22:00",
-          "home": "سسكا صوفيا",
-          "away": "طرابزون سبور",
-          "status": "finished",
+          "time": "21:45",
+          "home": "فينيسيا",
+          "away": "بولونيا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الألماني – المرحلة 11",
+      "matches": [
+        {
+          "time": "21:30",
+          "home": "فيردر بريمن",
+          "away": "بوروسيا مونشنغلادباخ",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الفرنسي – المرحلة 12",
+      "matches": [
+        {
+          "time": "21:45",
+          "home": "بريست",
+          "away": "باريس إف سي",
+          "status": "upcoming",
           "venue": "",
           "channel": "beIN Sports",
-          "note": "طرابزون سبور حسم الفوز في الدقائق الأخيرة",
-          "home_score": 1,
-          "away_score": 2
+          "note": ""
         }
       ]
     },
@@ -175,116 +114,89 @@
       "competition": "دوري روشن السعودي – المرحلة 13",
       "matches": [
         {
-          "time": "16:25",
-          "home": "الفتح",
-          "away": "الرياض",
-          "status": "finished",
+          "time": "14:15",
+          "home": "الخلود",
+          "away": "الخليج",
+          "status": "upcoming",
           "venue": "",
           "channel": "ثمانية",
-          "note": "الهدف: مراد باتنا (70)",
-          "home_score": 1,
-          "away_score": 0
+          "note": ""
         },
         {
-          "time": "17:05",
-          "home": "أبها",
-          "away": "الشباب",
-          "status": "finished",
+          "time": "16:20",
+          "home": "القادسية",
+          "away": "الفيحاء",
+          "status": "upcoming",
           "venue": "",
           "channel": "ثمانية",
-          "note": "الهدف: جوش براونهيل (39)",
-          "home_score": 0,
-          "away_score": 1
+          "note": ""
         },
         {
           "time": "19:30",
-          "home": "الفيصلي",
-          "away": "الدرعية",
-          "status": "finished",
+          "home": "الاتحاد",
+          "away": "نيوم",
+          "status": "upcoming",
           "venue": "",
           "channel": "ثمانية",
-          "note": "الفيصلي عاد من التأخر بهدفين، والتعادل في الدقيقة 89",
-          "home_score": 2,
-          "away_score": 2
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "كأس العالم للناشئين (تحت 17 عاماً) – الجولة الثالثة",
+      "matches": [
+        {
+          "time": "17:00",
+          "home": "الجزائر",
+          "away": "جمهورية الدومينيكان",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
         }
       ]
     }
   ],
   "sources": [
     {
-      "name": "الاتحاد الأوروبي لكرة القدم (UEFA) – الدوري الأوروبي",
-      "url": "https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures-and-re/"
+      "name": "الاتحاد الآسيوي لكرة القدم (AFC) – نصف نهائي الكرة الشاطئية",
+      "url": "https://www.the-afc.com/en/national/afc_beach_soccer_asian_cup.html/news/preview-sf-ir-iran-v-lebanon"
     },
     {
-      "name": "الاتحاد الأوروبي لكرة القدم (UEFA) – دوري المؤتمر",
-      "url": "https://www.uefa.com/uefaconferenceleague/news/02a8-2174cb200f25-b94693ddff4e-1000--202627-conference-league-all-the-league-phase-fixtures/"
+      "name": "Beach Soccer Worldwide",
+      "url": "https://beachsoccer.com/afc-beach-soccer-asian-cup-reaches-semi-finals-stage"
     },
     {
-      "name": "الشرق رياضة",
-      "url": "https://sports.asharq.com/football/124184/"
+      "name": "الأخبار – العهد في ضيافة التضامن صور",
+      "url": "https://www.al-akhbar.com/NewspaperArticles/sports/911700/%D8%A7%D9%84%D8%B9%D9%87%D8%AF-%D9%81%D9%8A-%D8%B6%D9%8A%D8%A7%D9%81%D8%A9-%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D8%B5%D9%88%D8%B1"
     },
     {
-      "name": "المشهد",
-      "url": "https://www.almashhad.news/news/509773"
+      "name": "LiveSoccerTV – مباريات 27 تشرين الثاني",
+      "url": "https://www.livesoccertv.com/schedules/2026-11-27/"
     },
     {
-      "name": "يلا شوت – الفتح يتجاوز الرياض",
-      "url": "https://www.ysscores.com/en/news/14106635/al-fateh-sc-edge-al-riyadh-with-batna-goal-in-saudi-pro-league"
+      "name": "Goal – جدول مباريات الجمعة",
+      "url": "https://www.goal.com/ar-eg/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D8%AC%D8%AF%D9%88%D9%84-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9-27-%D9%86%D9%88%D9%81%D9%85%D8%A8%D8%B1-2026-%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9-%D9%88%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%82%D9%8A%D9%86/blt90f9ad89cc342895"
     },
     {
-      "name": "سعودي – أبها والشباب",
-      "url": "https://www.so3ody.com/matches/2147279097"
+      "name": "اليوم السابع – مواعيد مباريات الجمعة",
+      "url": "https://www.youm7.com/story/2026/11/27/%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9-27-11-2026-%D9%88%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9/7633272"
     },
     {
-      "name": "ESPN – أولمبياكوس وميلان",
-      "url": "https://www.espn.com/soccer/report/_/gameId/401915521"
+      "name": "Sky Sports – مباريات 27 تشرين الثاني",
+      "url": "https://www.skysports.com/football-scores-fixtures/2026-11-27"
     },
     {
-      "name": "101 Great Goals – ملخّص الدوري الأوروبي",
-      "url": "https://www.101greatgoals.com/football/europa-league/europa-league-round-up-celtic-snatch-late-win-at-torreense-as-ac-milan-complete-stunning-comeback/"
+      "name": "Sport News Africa – مواعيد الدوري الإنكليزي",
+      "url": "https://sportnewsafrica.com/en/news/premier-league-fixtures-weekend-schedule-and-kick-off-times-27-29-november-2026/"
     },
     {
-      "name": "Goal – يوفنتوس وكريستال بالاس",
-      "url": "https://www.goal.com/en-in/news/juventus-thrash-omonia-4-1-as-crystal-palace-down-real-sociedad-after-a-red-card/blt0abd549854bad32c"
-    },
-    {
-      "name": "مصراوي – نتائج الخميس 26 تشرين الثاني",
-      "url": "https://www.masrawy.com/sports/sports-arab-international/details/2026/11/27/3085186/"
-    },
-    {
-      "name": "ماسبيرو – الدوري الأوروبي",
-      "url": "https://www.maspero.eg/sport/2026/11/26/1009143/"
-    },
-    {
-      "name": "VAVEL – بلزن وبنفيكا",
-      "url": "https://www.vavel.com/en-us/soccer/2026/11/26/1280748-viktoria-plzen-vs-benfica-live-where-to-watch-lineups-and-real-time-updates-for-the-uefa-europa-league.html"
-    },
-    {
-      "name": "Irish News – سندرلاند وياغيلونيا",
-      "url": "https://www.irishnews.com/sport/soccer/sunderland-maintain-europa-league-play-off-push-with-jagiellonia-bialystok-draw-UIM6K25RFZMVLPRFVSLEPBJ4NA/"
-    },
-    {
-      "name": "نادي موناكو – هارتس وموناكو",
-      "url": "https://www.asmonaco.com/en/news/four-in-a-row-after-a-dramatic-finish-for-as-monaco-against-hearts-in-the-conference-league"
-    },
-    {
-      "name": "Flashscore – برايتون وكرايوفا",
-      "url": "https://flashscore.co.za/news/brighton-maintain-unbeaten-conference-league-record-with-win-over-univ-craiova/MPswPgxh"
-    },
-    {
-      "name": "Digisport – نتائج دوري المؤتمر",
-      "url": "https://digisport.ro/fotbal/conference-league/borac-atalanta-2-3-cska-sofia-trabzonspor-1-2-freiburg-twente-2-1-rezultatele-etapei-4-din-conference-league-4626055"
-    },
-    {
-      "name": "سبق – الشباب وأبها",
-      "url": "https://sabq.org/article/rudxies"
-    },
-    {
-      "name": "سبق – الفيصلي والدرعية",
-      "url": "https://sabq.org/article/16ke9f3"
+      "name": "Sport News Africa – مواعيد الدوري الإسباني",
+      "url": "https://sportnewsafrica.com/en/news/laliga-fixtures-weekend-schedule-and-kick-off-times-27-30-november-2026/"
     }
   ],
-  "post_url": "https://www.greengoal.net/2026/11/26-2026.html",
-  "title": "نتائج مباريات الخميس 26 تشرين الثاني 2026",
-  "phase": "results"
+  "post_url": "https://www.greengoal.net/2026/11/27-2026.html",
+  "title": "مباريات اليوم الجمعة 27 تشرين الثاني 2026",
+  "phase": "fixtures"
 }
