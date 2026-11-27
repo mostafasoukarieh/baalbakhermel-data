@@ -1,8 +1,8 @@
 {
   "date": "2026-11-27",
-  "final": false,
-  "updated": "18:55",
-  "headline": "التضامن صور يُسقط العهد 2-1، ومنتخب لبنان للكرة الشاطئية يخرج من نصف نهائي آسيا أمام إيران، ونوتنغهام فورست مع تشيلسي ليلاً",
+  "final": true,
+  "updated": "00:55",
+  "headline": "التضامن صور يُسقط العهد 2-1، ونوتنغهام فورست يهزم تشيلسي 3-2، ولبنان يخرج من نصف نهائي آسيا للكرة الشاطئية",
   "groups": [
     {
       "scope": "محلية",
@@ -46,10 +46,12 @@
           "time": "22:00",
           "home": "نوتنغهام فورست",
           "away": "تشيلسي",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "غيبس-وايت (هدفان) وإيغور جيسوس – إيميغا (هدفان)",
+          "home_score": 3,
+          "away_score": 2
         }
       ]
     },
@@ -61,10 +63,12 @@
           "time": "22:00",
           "home": "ليفانتي",
           "away": "راسينغ سانتاندير",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "ثنائية بابلو غارسيا لراسينغ",
+          "home_score": 1,
+          "away_score": 3
         }
       ]
     },
@@ -76,10 +80,12 @@
           "time": "21:45",
           "home": "فينيسيا",
           "away": "بولونيا",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "",
-          "note": ""
+          "note": "",
+          "home_score": 0,
+          "away_score": 0
         }
       ]
     },
@@ -91,10 +97,12 @@
           "time": "21:30",
           "home": "فيردر بريمن",
           "away": "بوروسيا مونشنغلادباخ",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "",
-          "note": ""
+          "note": "",
+          "home_score": 3,
+          "away_score": 3
         }
       ]
     },
@@ -106,10 +114,12 @@
           "time": "21:45",
           "home": "بريست",
           "away": "باريس إف سي",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "هدف لوك زوغبي؛ بريست ثالثاً مؤقتاً",
+          "home_score": 1,
+          "away_score": 0
         }
       ]
     },
@@ -143,10 +153,12 @@
           "time": "19:30",
           "home": "الاتحاد",
           "away": "نيوم",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "ثمانية",
-          "note": ""
+          "note": "هدف يوسف النصيري",
+          "home_score": 1,
+          "away_score": 0
         }
       ]
     },
@@ -158,10 +170,12 @@
           "time": "17:00",
           "home": "الجزائر",
           "away": "جمهورية الدومينيكان",
-          "status": "unknown",
+          "status": "finished",
           "venue": "",
           "channel": "",
-          "note": "تقدّمت الجزائر 1-0 في الشوط الأول؛ النتيجة النهائية لم تتأكد بعد"
+          "note": "الجزائر إلى دور الـ32",
+          "home_score": 1,
+          "away_score": 0
         }
       ]
     }
@@ -234,9 +248,61 @@
     {
       "name": "Foot Africa – الجزائر تتقدّم في الشوط الأول",
       "url": "https://foot-africa.com/actualites/coupe-du-monde-u17-lalgerie-mene-face-a-la-republique-dominicaine-a-la-pause-1-0-1433114/"
+    },
+    {
+      "name": "Sky Sports – نوتنغهام فورست 3-2 تشيلسي",
+      "url": "https://www.skysports.com/football/nottingham-forest-vs-chelsea/8409236075870545232"
+    },
+    {
+      "name": "Yahoo Sports – فورست يهزم تشيلسي",
+      "url": "https://sports.yahoo.com/soccer/articles/chelsea-rocked-forest-pressure-alonso-220415394.html"
+    },
+    {
+      "name": "VAVEL – ليفانتي 1-3 راسينغ سانتاندير",
+      "url": "https://www.vavel.com/es/futbol/2026/11/27/1281009-levante-vs-racing-santander-en-vivo-resultado-goles-y-minuto-a-minuto-en-la-liga.html"
+    },
+    {
+      "name": "La Nación – راسينغ يفوز 3-1",
+      "url": "https://www.lanacion.com.ar/deportes/canchallena/racing-de-santander-vencio-3-1-a-levante-por-la-liga-de-espana-nid27112026/"
+    },
+    {
+      "name": "Virgilio Sport – فينيسيا 0-0 بولونيا",
+      "url": "https://www.virgilio.it/sport/dirette/live/serie-a/27-11-2026/venezia-bologna/2638251/"
+    },
+    {
+      "name": "VAVEL Italia – فينيسيا 0-0 بولونيا",
+      "url": "https://vavel.it/calcio/2026/11/27/1280997-venezia-bologna-in-diretta-risultato-gol-e-cronaca-in-tempo-reale-in-serie-a.html"
+    },
+    {
+      "name": "sport.de – فيردر بريمن 3-3 مونشنغلادباخ",
+      "url": "https://www.sport.de/fussball/deutschland-bundesliga/ma12193945/sv-werder-bremen_borussia-moenchengladbach/liveticker/"
+    },
+    {
+      "name": "news.de – تعادل بريمن وغلادباخ",
+      "url": "https://www.news.de/sport/860225623/sv-werder-bremen-vs-borussia-moenchengladbach-am-27-11-2026-in-der-bundesliga-26-27-tv-spielbericht-tore-aufstellung-und-tabelle-in-der-zusammenfassung/1/"
+    },
+    {
+      "name": "franceinfo – بريست 1-0 باريس إف سي",
+      "url": "https://www.franceinfo.fr/sports/foot/brest-bat-le-paris-fc-1-0-et-grimpe-provisoirement-sur-le-podium-de-la-ligue-1_8303847.html"
+    },
+    {
+      "name": "الشرق للرياضة – الاتحاد يفوز على نيوم",
+      "url": "https://sports.asharq.com/football/124384/"
+    },
+    {
+      "name": "صدى – الاتحاد يعبر نيوم بهدف",
+      "url": "https://slaati.com/2026/11/27/p2882860.html"
+    },
+    {
+      "name": "بطولات – الجزائر تفوز على الدومينيكان",
+      "url": "https://www.btolat.com/news/416461"
+    },
+    {
+      "name": "فيتو – نتائج الجولة الثالثة لمونديال الناشئين",
+      "url": "https://www.vetogate.com/5779549"
     }
   ],
   "post_url": "https://www.greengoal.net/2026/11/27-2026.html",
-  "title": "مباريات اليوم الجمعة 27 تشرين الثاني 2026: النتائج أولاً بأول",
-  "phase": "partial"
+  "title": "نتائج مباريات الجمعة 27 تشرين الثاني 2026",
+  "phase": "results"
 }
