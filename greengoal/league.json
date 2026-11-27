@@ -1,7 +1,7 @@
 {
   "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
-  "updated": "2026-11-26 08:40",
+  "updated": "2026-11-27 08:40",
   "verified": false,
   "standings": [
     {
@@ -232,7 +232,8 @@
         "time": "14:15",
         "home": "النجمة",
         "away": "الحكمة",
-        "status": "upcoming"
+        "status": "upcoming",
+        "note": "الموعد قيد التأكيد"
       },
       {
         "date": "2026-11-29",
@@ -288,6 +289,10 @@
     {
       "name": "365Scores",
       "url": "https://www.365scores.com/football/match/premier-league-566/nejmeh-sc-safa-8290-8291-566"
+    },
+    {
+      "name": "365Scores",
+      "url": "https://www.365scores.com/en-us/football/match/premier-league-566/al-ahed-tadamon-8287-8296-566"
     }
   ]
 }
