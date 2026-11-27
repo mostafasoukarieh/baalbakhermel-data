@@ -1,7 +1,7 @@
 {
   "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
-  "updated": "2026-11-27 08:40",
+  "updated": "2026-11-27 16:30",
   "verified": false,
   "standings": [
     {
@@ -211,7 +211,7 @@
         "time": "14:15",
         "home": "التضامن صور",
         "away": "العهد",
-        "status": "upcoming"
+        "status": "unknown"
       },
       {
         "date": "2026-11-28",
