@@ -1,8 +1,7 @@
 {
   "competition": "بطولة فانتازيا لكرة القدم – الدرجة الأولى",
   "season": "2026-2027",
-  "updated": "2026-11-27 18:55",
-  "verified": false,
+  "updated": "2026-11-28 08:30",
   "standings": [
     {
       "team": "جويا",
@@ -220,14 +219,16 @@
         "time": "14:15",
         "home": "المبرة",
         "away": "الإخاء الأهلي عاليه",
-        "status": "upcoming"
+        "status": "upcoming",
+        "venue": "ملعب الإمام الصدر – أنصار"
       },
       {
         "date": "2026-11-29",
         "time": "14:15",
         "home": "الرياضي العباسية",
         "away": "شباب الساحل",
-        "status": "upcoming"
+        "status": "upcoming",
+        "venue": "ملعب عباس ناصر"
       },
       {
         "date": "2026-11-29",
@@ -235,15 +236,15 @@
         "home": "النجمة",
         "away": "الحكمة",
         "status": "upcoming",
-        "note": "الموعد قيد التأكيد"
+        "venue": "ملعب المدينة الرياضية"
       },
       {
         "date": "2026-11-29",
-        "time": "16:30",
+        "time": "21:00",
         "home": "الأنصار",
         "away": "طرابلس",
         "status": "upcoming",
-        "note": "الموعد قيد التأكيد"
+        "venue": "ملعب جونيه"
       },
       {
         "date": "2026-11-29",
@@ -251,7 +252,7 @@
         "home": "جويا",
         "away": "الصفاء",
         "status": "upcoming",
-        "note": "الموعد قيد التأكيد"
+        "venue": "ملعب محمد سعيد سعد – جويا"
       }
     ]
   },
@@ -303,6 +304,10 @@
     {
       "name": "MTV",
       "url": "https://www.mtv.com.lb/news/1762619"
+    },
+    {
+      "name": "futbol24",
+      "url": "https://www.futbol24.com/national/Lebanon/Premier-League/2026-2027"
     }
   ]
 }
