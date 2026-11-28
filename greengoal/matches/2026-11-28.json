@@ -1,0 +1,253 @@
+{
+  "date": "2026-11-28",
+  "final": false,
+  "updated": "08:55",
+  "headline": "لبنان أمام عُمان على المركز الثالث وبطاقة المونديال في كأس آسيا للكرة الشاطئية، ونهائي كأس ليبرتادوريس، وريال مدريد مع ألافيس",
+  "groups": [
+    {
+      "scope": "محلية",
+      "competition": "كأس آسيا للكرة الشاطئية – مباراة المركز الثالث",
+      "matches": [
+        {
+          "time": "12:00",
+          "home": "عُمان",
+          "away": "لبنان",
+          "status": "upcoming",
+          "venue": "ملعب بان نام خيم الشاطئي، فانغ نغا (تايلاند)",
+          "channel": "قناة كأس آسيا على يوتيوب",
+          "note": "الفائز يتأهل إلى كأس العالم للكرة الشاطئية"
+        }
+      ]
+    },
+    {
+      "scope": "محلية",
+      "competition": "بطولة فانتازيا لكرة القدم – المرحلة الثامنة",
+      "matches": [
+        {
+          "time": "14:15",
+          "home": "المبرة",
+          "away": "الإخاء الأهلي عاليه",
+          "status": "upcoming",
+          "venue": "ملعب الإمام الصدر – أنصار",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "كأس ليبرتادوريس – النهائي",
+      "matches": [
+        {
+          "time": "22:00",
+          "home": "بالميراس",
+          "away": "إستوديانتس دي لا بلاتا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الإسباني – المرحلة 14",
+      "matches": [
+        {
+          "time": "19:30",
+          "home": "إلتشي",
+          "away": "أتلتيكو مدريد",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "22:00",
+          "home": "ريال مدريد",
+          "away": "ألافيس",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الإنكليزي الممتاز – المرحلة 12",
+      "matches": [
+        {
+          "time": "17:00",
+          "home": "مانشستر يونايتد",
+          "away": "برنتفورد",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        },
+        {
+          "time": "19:30",
+          "home": "إيبسويتش تاون",
+          "away": "أستون فيلا",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الإيطالي – المرحلة 13",
+      "matches": [
+        {
+          "time": "19:00",
+          "home": "تورينو",
+          "away": "لاتسيو",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        },
+        {
+          "time": "21:45",
+          "home": "إنتر",
+          "away": "جنوى",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الألماني – المرحلة 11",
+      "matches": [
+        {
+          "time": "16:30",
+          "home": "هامبورغ",
+          "away": "بايرن ميونيخ",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        },
+        {
+          "time": "19:30",
+          "home": "شتوتغارت",
+          "away": "أينتراخت فرانكفورت",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "الدوري الفرنسي – المرحلة 12",
+      "matches": [
+        {
+          "time": "21:45",
+          "home": "باريس سان جيرمان",
+          "away": "لوريان",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "beIN Sports",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري روشن السعودي – المرحلة 13",
+      "matches": [
+        {
+          "time": "14:15",
+          "home": "الحزم",
+          "away": "النصر",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        },
+        {
+          "time": "16:20",
+          "home": "الاتفاق",
+          "away": "الهلال",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        },
+        {
+          "time": "19:30",
+          "home": "الأهلي",
+          "away": "التعاون",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "كأس آسيا للكرة الشاطئية – النهائي",
+      "matches": [
+        {
+          "time": "13:30",
+          "home": "إيران",
+          "away": "اليابان",
+          "status": "upcoming",
+          "venue": "ملعب بان نام خيم الشاطئي، فانغ نغا (تايلاند)",
+          "channel": "قناة كأس آسيا على يوتيوب",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "scope": "دولية",
+      "competition": "دوري أبطال أفريقيا – دور المجموعات",
+      "matches": [
+        {
+          "time": "18:00",
+          "home": "الزمالك",
+          "away": "النادي الأفريقي",
+          "status": "upcoming",
+          "venue": "",
+          "channel": "",
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "صحيفة عُمان – مباراة المركز الثالث والنهائي",
+      "url": "https://www.omandaily.om/article/1215816"
+    },
+    {
+      "name": "Beach Soccer Worldwide – اليابان وإيران في النهائي",
+      "url": "https://beachsoccer.com/japan-and-iran-to-discuss-afc-beach-soccer-asian-cup-title"
+    },
+    {
+      "name": "futbol24 – الدوري اللبناني",
+      "url": "https://www.futbol24.com/national/Lebanon/Premier-League/2026-2027"
+    },
+    {
+      "name": "winwin – الدوري اللبناني",
+      "url": "https://www.winwin.com/%D9%83%D8%B1%D8%A9-%D9%82%D8%AF%D9%85/%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A%D8%A7%D8%AA/%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D8%AA%D8%A7%D8%B2/%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8"
+    },
+    {
+      "name": "الشرق للرياضة – مواعيد مباريات السبت",
+      "url": "https://sports.asharq.com/football/124360/%D9%86%D9%87%D8%A7%D8%A6%D9%8A-%D9%83%D8%A3%D8%B3-%D9%84%D9%8A%D8%A8%D8%B1%D8%AA%D8%A7%D8%AF%D9%88%D8%B1%D9%8A%D8%B3-%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D8%A8%D8%AA-28-%D9%86%D9%88%D9%81%D9%85%D8%A8%D8%B1-2026/"
+    },
+    {
+      "name": "AS Goal – أهم مباريات السبت",
+      "url": "https://as-goal.net/koora-news/european-football/most-important-matches-today-saturday-november-28-2026/"
+    }
+  ]
+}
