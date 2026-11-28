@@ -1,8 +1,8 @@
 {
   "date": "2026-11-28",
   "final": false,
-  "updated": "08:55",
-  "headline": "لبنان أمام عُمان على المركز الثالث وبطاقة المونديال في كأس آسيا للكرة الشاطئية، ونهائي كأس ليبرتادوريس، وريال مدريد مع ألافيس",
+  "updated": "18:55",
+  "headline": "عُمان تنتزع برونزية آسيا للكرة الشاطئية من لبنان 8-6، وإيران بطلة، والهلال يعود إلى الصدارة، وبانتظار نهائي ليبرتادوريس وريال مدريد مع ألافيس",
   "groups": [
     {
       "scope": "محلية",
@@ -12,10 +12,12 @@
           "time": "12:00",
           "home": "عُمان",
           "away": "لبنان",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "ملعب بان نام خيم الشاطئي، فانغ نغا (تايلاند)",
           "channel": "قناة كأس آسيا على يوتيوب",
-          "note": "الفائز يتأهل إلى كأس العالم للكرة الشاطئية"
+          "note": "عُمان تحرز البرونزية وتتأهل إلى كأس العالم، ولبنان رابع آسيا",
+          "home_score": 8,
+          "away_score": 6
         }
       ]
     },
@@ -27,10 +29,10 @@
           "time": "14:15",
           "home": "المبرة",
           "away": "الإخاء الأهلي عاليه",
-          "status": "upcoming",
+          "status": "unknown",
           "venue": "ملعب الإمام الصدر – أنصار",
           "channel": "",
-          "note": ""
+          "note": "لم تتأكد النتيجة بعد"
         }
       ]
     },
@@ -81,10 +83,10 @@
           "time": "17:00",
           "home": "مانشستر يونايتد",
           "away": "برنتفورد",
-          "status": "upcoming",
+          "status": "unknown",
           "venue": "",
           "channel": "beIN Sports",
-          "note": ""
+          "note": "برنتفورد تقدّم 2-0 في الشوط الأول، والنتيجة النهائية لم تتأكد بعد"
         },
         {
           "time": "19:30",
@@ -129,10 +131,12 @@
           "time": "16:30",
           "home": "هامبورغ",
           "away": "بايرن ميونيخ",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "",
-          "note": ""
+          "note": "",
+          "home_score": 0,
+          "away_score": 0
         },
         {
           "time": "19:30",
@@ -168,19 +172,23 @@
           "time": "14:15",
           "home": "الحزم",
           "away": "النصر",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "",
-          "note": ""
+          "note": "هدف سامو كوستا",
+          "home_score": 0,
+          "away_score": 1
         },
         {
           "time": "16:20",
           "home": "الاتفاق",
           "away": "الهلال",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "",
           "channel": "",
-          "note": ""
+          "note": "ثنائية واتكينز، والهلال يستعيد الصدارة",
+          "home_score": 1,
+          "away_score": 3
         },
         {
           "time": "19:30",
@@ -201,10 +209,12 @@
           "time": "13:30",
           "home": "إيران",
           "away": "اليابان",
-          "status": "upcoming",
+          "status": "finished",
           "venue": "ملعب بان نام خيم الشاطئي، فانغ نغا (تايلاند)",
           "channel": "قناة كأس آسيا على يوتيوب",
-          "note": ""
+          "note": "إيران بطلة آسيا للمرة الخامسة",
+          "home_score": 3,
+          "away_score": 1
         }
       ]
     },
@@ -216,10 +226,12 @@
           "time": "18:00",
           "home": "الزمالك",
           "away": "النادي الأفريقي",
-          "status": "upcoming",
+          "status": "live",
           "venue": "",
           "channel": "",
-          "note": ""
+          "note": "الشوط الأول – هدف شيكو بانزا (د5)",
+          "home_score": 1,
+          "away_score": 0
         }
       ]
     }
@@ -248,6 +260,30 @@
     {
       "name": "AS Goal – أهم مباريات السبت",
       "url": "https://as-goal.net/koora-news/european-football/most-important-matches-today-saturday-november-28-2026/"
+    },
+    {
+      "name": "الاتحاد الآسيوي لكرة القدم – عُمان ولبنان",
+      "url": "https://www.the-afc.com/en/national/afc_beach_soccer_asian_cup.html/news/oman-beat-lebanon-to-finish-third-1"
+    },
+    {
+      "name": "اللواء – منتخب الكرة الشاطئية",
+      "url": "https://aliwaa.com.lb/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D9%84%D9%84%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D8%B4%D8%A7%D8%B7%D9%8A%D9%8A%D8%A9-%D8%A7%D8%AE%D9%81%D9%82-%D8%A8%D8%A7%D9%84%D8%AA%D8%A7%D9%87%D9%84-%D9%84%D9%83%D8%A7%D8%B3-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-%D9%84%D9%83%D9%86%D9%87-%D9%83%D8%B3%D8%A8-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%85-%D9%88%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D8%B1"
+    },
+    {
+      "name": "الاتحاد الآسيوي – نهائي إيران واليابان",
+      "url": "https://www.the-afc.com/en/national/afc_beach_soccer_asian_cup.html/news/ir-iran-fight-back-to-lift-fifth-title"
+    },
+    {
+      "name": "The National – النصر والهلال",
+      "url": "https://www.thenationalnews.com/sport/football/2026/11/28/cristiano-ronaldos-al-nassr-win-but-al-hilal-regain-top-spot/"
+    },
+    {
+      "name": "365Scores – هامبورغ وبايرن",
+      "url": "https://www.365scores.com/en-us/football/match/bundesliga-25/bayern-munich-hamburger-sv-331-334-25"
+    },
+    {
+      "name": "مصراوي – الزمالك والأفريقي",
+      "url": "https://www.masrawy.com/sports/sports_news/details/2026/11/28/3085914/"
     }
   ]
 }
